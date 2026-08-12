@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Natural-range-based climate-suitability maps for Eucalyptus, Corymbia and Pinus species.">
+  <title>Species Suitability | Environmental Maps</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <link rel="stylesheet" href="styles.css?v=20260812brand1">
+  <link rel="stylesheet" href="species.css?v=20260812species9">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="assets/images/CAMCORE_LOGO_TRANSPARENT.png" alt="Camcore">
+      <span data-i18n="brand">Environmental Maps</span>
+    </a>
+    <nav>
+      <a href="index.html#collections" data-i18n="nav_collections">Collections</a>
+      <a href="index.html#maps" data-i18n="nav_frost">Frost maps</a>
+      <a href="methods.html" data-i18n="nav_methods">Methods &amp; data</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme"><span>◐</span><span data-i18n="theme">Theme</span></button>
+      <div class="language-switcher" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="species-hero">
+      <div>
+        <p class="kicker" data-i18n="collection_number">Collection 02</p>
+        <h1 data-i18n="title">Species Suitability</h1>
+        <p class="species-subtitle" data-i18n="subtitle">Analyses based on the natural ranges of the species.</p>
+      </div>
+      <div class="species-summary" aria-label="Collection summary">
+        <span><strong id="species-count">52</strong><span data-i18n="species">species</span></span>
+        <span><strong>4</strong><span data-i18n="analytical_layers">analytical layers</span></span>
+        <span><strong>1981–2024</strong><span data-i18n="climate_period">climate period</span></span>
+      </div>
+    </section>
+
+    <section class="species-section">
+      <div class="section-heading species-heading">
+        <div><p class="kicker" data-i18n="interactive_map">Interactive map</p><h2 data-i18n="explore_title">Browse group, species and suitability layer</h2></div>
+        <p data-i18n="explore_text">The first prototype exposes all four analytical products for Eucalyptus amplifolia. Other species are catalogued for staged optimization.</p>
+      </div>
+
+      <div class="species-workspace">
+        <aside class="species-catalog" aria-label="Species catalogue">
+          <label class="species-search-label" for="species-search" data-i18n="search_species">Search species</label>
+          <input id="species-search" class="species-search" type="search" placeholder="Type a scientific name…" data-i18n-placeholder="search_placeholder">
+          <div id="species-groups" class="species-groups"></div>
+        </aside>
+
+        <div class="species-map-stage">
+          <form id="species-place-search" class="place-search" role="search">
+            <label class="sr-only" for="species-place-input" data-i18n="search_location">Search for a location</label>
+            <input id="species-place-input" list="species-known-places" autocomplete="off" data-i18n-placeholder="search_location_placeholder" placeholder="Search a city or region…">
+            <datalist id="species-known-places"></datalist>
+            <button type="submit" data-i18n="find">Find</button>
+          </form>
+          <div id="species-search-message" class="search-message" aria-live="polite"></div>
+          <div id="species-map" aria-label="Species suitability map"></div>
+          <div class="species-preview-badge"><span></span><span data-i18n="prototype_badge">Scientific prototype</span></div>
+          <div class="species-legend" aria-label="Suitability legend">
+            <strong data-i18n="legend_title">Climate suitability</strong>
+            <div class="species-legend-ramp"></div>
+            <div><span>0</span><span>0.5</span><span>1</span></div>
+            <small><span data-i18n="low">Lower</span><span data-i18n="high">Higher</span></small>
+          </div>
+        </div>
+
+        <aside class="species-layer-panel" aria-label="Analytical layers">
+          <p class="panel-label" data-i18n="selected_species">Selected species</p>
+          <h2><em id="selected-species">Eucalyptus amplifolia</em></h2>
+          <p id="preview-message" class="species-note" data-i18n="preview_message">Four analytical products are available in this preview.</p>
+          <p class="panel-label layer-label" data-i18n="choose_layer">Choose an analytical layer</p>
+          <div id="species-layer-list" class="species-layer-list"></div>
+          <div class="species-metadata">
+            <dl>
+                <div><dt data-i18n="period">Period</dt><dd>1981–2024</dd></div>
+                <div><dt data-i18n="resolution">Resolution</dt><dd>2.5 arc-minutes</dd></div>
+                <div><dt data-i18n="domain">Spatial domain</dt><dd id="species-domain">50°S–50°N</dd></div>
+                <div><dt data-i18n="range">Value range</dt><dd id="species-value-range">0–1</dd></div>
+              <div><dt data-i18n="mean">Global mean</dt><dd id="species-mean">—</dd></div>
+            </dl>
+          </div>
+          <label class="species-opacity"><span data-i18n="opacity">Opacity</span><output id="species-opacity-value">88%</output><input id="species-opacity" type="range" min="10" max="100" value="88"></label>
+          <a id="species-download" class="download-button species-download" href="#"><span data-i18n="download_geotiff">Download GeoTIFF</span><span aria-hidden="true">↓</span></a>
+          <p class="species-disclaimer" data-i18n="disclaimer">Suitability describes climatic similarity to observed natural ranges. It is not a direct prediction of productivity, survival or physiological limits.</p>
+          <section class="analysis-panel" aria-labelledby="species-analysis-heading">
+            <p id="species-analysis-heading" class="panel-label" data-i18n="analysis_tools">Inspect and analyze</p>
+            <p class="analysis-hint" data-i18n="analysis_hint">Click the map to inspect a value, or draw an area to summarize it.</p>
+            <div class="analysis-actions">
+              <button id="species-draw-rectangle" type="button" data-i18n="draw_rectangle">Rectangle</button>
+              <button id="species-draw-polygon" type="button" data-i18n="draw_polygon">Polygon</button>
+              <button id="species-clear-selection" type="button" data-i18n="clear_selection">Clear</button>
+            </div>
+            <p id="species-analysis-loading" class="analysis-loading" aria-live="polite"></p>
+            <div id="species-selection-empty" class="selection-empty" data-i18n="no_selection">No area selected.</div>
+            <div id="species-selection-results" class="selection-results" hidden>
+              <dl>
+                <div><dt data-i18n="selected_area">Selected area</dt><dd id="species-selection-area">—</dd></div>
+                <div><dt data-i18n="sampled_cells">Sampled cells</dt><dd id="species-selection-count">—</dd></div>
+                <div><dt data-i18n="minimum">Minimum</dt><dd id="species-selection-min">—</dd></div>
+                <div><dt data-i18n="mean">Mean</dt><dd id="species-selection-mean">—</dd></div>
+                <div><dt data-i18n="median">Median</dt><dd id="species-selection-median">—</dd></div>
+                <div><dt data-i18n="maximum">Maximum</dt><dd id="species-selection-max">—</dd></div>
+              </dl>
+              <canvas id="species-selection-chart" width="260" height="112" aria-label="Histogram of selected values"></canvas>
+              <p class="analysis-note" data-i18n="analysis_note">Statistics use a numerical web grid; download the GeoTIFF for native-resolution analysis.</p>
+              <div class="export-actions"><button id="species-export-csv" type="button">CSV</button><button id="species-export-geojson" type="button">GeoJSON</button></div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer><strong>Camcore Environmental Map Collections</strong><p data-i18n="footer">Research maps and decision support</p></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="species.generated.js?v=20260812tools5"></script>
+  <script src="species.js?v=20260812tools5"></script>
+</body>
+</html>

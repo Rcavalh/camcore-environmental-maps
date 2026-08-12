@@ -34,3 +34,6 @@ checkpoints/
 !web/assets/layers/*.png
 !web/assets/layers/*.webp
 !web/assets/layers/*.json
+!web/assets/species-geotiff/*.tif
+web/assets/species/*COMPOSITE_SUITABILITY*
+web/assets/species-geotiff/*COMPOSITE_SUITABILITY*

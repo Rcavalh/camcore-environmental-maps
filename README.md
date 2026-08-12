@@ -16,17 +16,19 @@ O infográfico resume o fluxo completo baseado em estações meteorológicas, de
 
 ## Citation and contributors / Citação e colaboradores
 
-GitHub citation metadata are provided in [`CITATION.cff`](CITATION.cff), and the current manuscript author list is documented in [`CONTRIBUTORS.md`](CONTRIBUTORS.md). Individual CRediT roles will be added only after approval by all authors.
+GitHub citation metadata are provided in [`CITATION.cff`](CITATION.cff). The current repository author and contribution statement are documented in [`CONTRIBUTORS.md`](CONTRIBUTORS.md); manuscript authorship will be established separately before submission.
 
 ## English
 
-This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active collection. **Species Recommendation** and **Bioclimatic Variables** are reserved as independent, intentionally empty collections until their scientific datasets and documentation are ready.
+This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active collection. A prototype of **Species Suitability** presents analyses based on species' natural ranges, while **Bioclimatic Variables** remains reserved.
 
 ### Portal collections
 
 - **Frost Climatology — active:** occurrence probability, expected frost days, seasonal minimum temperature and terrain context.
-- **Species Recommendation — reserved:** no layers or results published yet.
+- **Species Suitability — prototype:** natural-range-based suitability maps organized by taxonomic group, species and analytical layer.
 - **Bioclimatic Variables — reserved:** no layers or results published yet.
+
+The current Species Suitability demonstrator includes four layers each for *Eucalyptus amplifolia* and *Eucalyptus urophylla*, location search, pixel inspection, rectangle/polygon summaries, CSV/GeoJSON export, full-screen mode and original GeoTIFF downloads. High-density browser previews improve visual rendering but do not alter the native 2.5 arc-minute analytical resolution.
 
 Future datasets should receive their own catalogue, methods and provenance rather than being mixed into the frost-climatology collection.
 

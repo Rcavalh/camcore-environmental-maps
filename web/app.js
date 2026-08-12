@@ -11,9 +11,9 @@ Object.assign(translations.en,{
   domain:'Camcore geospatial portal',hero_title:'Environmental maps for research and decision support.',hero_text:'Explore scientific map collections connecting climate, terrain and environmental decision support.',
   collections_count:'map collections',languages:'languages',research_data:'research data',collections_kicker:'Map collections',collections_title:'Choose a research theme',
   collections_text:'Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.',
-  available_now:'Available now',reserved:'Reserved',frost_type:'Climate hazard',decision_support:'Decision support',environmental_context:'Environmental context',
-  frost_collection:'Frost Climatology',species_collection:'Species Recommendation',bioclimate_collection:'Bioclimatic Variables',
-  frost_collection_text:'Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.',empty_collection:'Collection space reserved for future datasets.',open_collection:'Open collection',
+  available_now:'Available now',preview_available:'Preview available',reserved:'Reserved',frost_type:'Climate hazard',decision_support:'Decision support',environmental_context:'Environmental context',
+  frost_collection:'Frost Climatology',species_collection:'Species Suitability',bioclimate_collection:'Bioclimatic Variables',
+  frost_collection_text:'Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.',species_collection_text:'Analyses based on the natural ranges of the species.',empty_collection:'Collection space reserved for future datasets.',open_collection:'Open collection',
   interactive_title:'Explore the frost-climatology layers',about_kicker:'Data access',about_title:'Selected analytical maps are available for download.',
   about_text:'Only selected map products will be released as GeoTIFFs at approximately 30 m resolution. Availability depends on source licences, file size and publication status.',
   read_methods:'Methods & data',footer_brand:'Camcore Environmental Map Collections',footer_text:'Research maps and decision support'
@@ -23,9 +23,9 @@ Object.assign(translations.pt,{
   domain:'Portal geoespacial Camcore',hero_title:'Mapas ambientais para pesquisa e apoio à decisão.',hero_text:'Explore coleções científicas que conectam clima, terreno e apoio à decisão ambiental.',
   collections_count:'coleções de mapas',languages:'idiomas',research_data:'dados científicos',collections_kicker:'Coleções de mapas',collections_title:'Escolha um tema de pesquisa',
   collections_text:'Cada coleção possui escopo científico, catálogo de mapas e identidade visual próprios. Novas coleções podem ser adicionadas sem alterar o restante do portal.',
-  available_now:'Disponível agora',reserved:'Reservada',frost_type:'Risco climático',decision_support:'Apoio à decisão',environmental_context:'Contexto ambiental',
-  frost_collection:'Climatologia de Geadas',species_collection:'Recomendação de Espécies',bioclimate_collection:'Variáveis Bioclimáticas',
-  frost_collection_text:'Probabilidade de ocorrência, dias esperados de geada, temperatura mínima sazonal e contexto do terreno.',empty_collection:'Espaço reservado para conjuntos de dados futuros.',open_collection:'Abrir coleção',
+  available_now:'Disponível agora',preview_available:'Prévia disponível',reserved:'Reservada',frost_type:'Risco climático',decision_support:'Apoio à decisão',environmental_context:'Contexto ambiental',
+  frost_collection:'Climatologia de Geadas',species_collection:'Adequabilidade de Espécies',bioclimate_collection:'Variáveis Bioclimáticas',
+  frost_collection_text:'Probabilidade de ocorrência, dias esperados de geada, temperatura mínima sazonal e contexto do terreno.',species_collection_text:'Análises baseadas nas distribuições naturais das espécies.',empty_collection:'Espaço reservado para conjuntos de dados futuros.',open_collection:'Abrir coleção',
   interactive_title:'Explore as camadas de climatologia de geadas',about_kicker:'Acesso aos dados',about_title:'Mapas analíticos selecionados estão disponíveis para download.',
   about_text:'Somente produtos cartográficos selecionados serão disponibilizados como GeoTIFFs com resolução aproximada de 30 m. A disponibilidade depende das licenças das fontes, do tamanho dos arquivos e do status de publicação.',
   read_methods:'Métodos e dados',footer_brand:'Coleções de Mapas Ambientais Camcore',footer_text:'Mapas científicos e apoio à decisão'
@@ -240,3 +240,14 @@ document.querySelectorAll('.collection-card[data-target]').forEach(card=>{
   card.addEventListener('click',event=>{if(!event.target.closest('a'))openCollection()});
   card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openCollection()}})
 });
+
+document.querySelectorAll('.collection-card[data-href]').forEach(card=>{
+  const openCollection=()=>{window.location.href=card.dataset.href};
+  card.tabIndex=0;card.setAttribute('role','link');
+  card.addEventListener('click',event=>{if(!event.target.closest('a'))openCollection()});
+  card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openCollection()}})
+});
+const collectionRail=document.querySelector('.collection-grid');
+const scrollCollections=direction=>collectionRail?.scrollBy({left:direction*Math.min(collectionRail.clientWidth*.86,460),behavior:'smooth'});
+document.getElementById('collections-previous')?.addEventListener('click',()=>scrollCollections(-1));
+document.getElementById('collections-next')?.addEventListener('click',()=>scrollCollections(1));

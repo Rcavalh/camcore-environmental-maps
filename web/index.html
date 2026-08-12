@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
-  <link rel="stylesheet" href="styles.css?v=20260812maptools1">
+  <link rel="stylesheet" href="styles.css?v=20260812brand1">
 </head>
 <body>
   <header class="site-header">
@@ -49,7 +49,7 @@
     <section id="collections" class="collections-section">
       <div class="section-heading collections-heading">
         <div><p class="kicker" data-i18n="collections_kicker">Map collections</p><h2 data-i18n="collections_title">Choose a research theme</h2></div>
-        <p data-i18n="collections_text">Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.</p>
+        <div class="collections-intro"><p data-i18n="collections_text">Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.</p><div class="collection-carousel-controls" aria-label="Browse map collections"><button id="collections-previous" type="button" aria-label="Previous collection">←</button><button id="collections-next" type="button" aria-label="Next collection">→</button></div></div>
       </div>
 
       <div class="collection-grid">
@@ -62,12 +62,13 @@
           <a href="#maps" data-i18n="open_collection">Open collection</a>
         </article>
 
-        <article class="collection-card collection-species is-reserved" aria-disabled="true">
-          <div class="collection-topline"><span class="collection-number">02</span><span class="collection-status" data-i18n="reserved">Reserved</span></div>
+        <article class="collection-card collection-species is-active" data-href="species.html">
+          <div class="collection-topline"><span class="collection-number">02</span><span class="collection-status" data-i18n="preview_available">Preview available</span></div>
           <div class="collection-symbol" aria-hidden="true"><i data-lucide="leaf"></i></div>
-          <p class="collection-type" data-i18n="decision_support">Decision support</p>
-          <h3 data-i18n="species_collection">Species Recommendation</h3>
-          <p class="reserved-copy" data-i18n="empty_collection">Collection space reserved for future datasets.</p>
+          <p class="collection-type" data-i18n="species_type">Climate suitability</p>
+          <h3 data-i18n="species_collection">Species Suitability</h3>
+          <p data-i18n="species_collection_text">Analyses based on the natural ranges of the species.</p>
+          <a href="species.html" data-i18n="open_collection">Open collection</a>
         </article>
 
         <article class="collection-card collection-bioclimate is-reserved" aria-disabled="true">
@@ -173,6 +174,6 @@
   <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
   <script src="layers.generated.js?v=20260812portal"></script>
   <script src="analysis-manifest.generated.js?v=20260812portal"></script>
-  <script src="app.js?v=20260812maptools1"></script>
+  <script src="app.js?v=20260812species7"></script>
 </body>
 </html>
