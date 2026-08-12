@@ -7,7 +7,7 @@ Object.assign(translations.en,{analysis_tools:'Inspect and analyze',analysis_hin
 Object.assign(translations.pt,{analysis_tools:'Inspecionar e analisar',analysis_hint:'Clique no mapa para consultar um valor ou desenhe uma área para resumi-la.',draw_rectangle:'Retângulo',draw_polygon:'Polígono',clear_selection:'Limpar',no_selection:'Nenhuma área selecionada.',selected_area:'Área selecionada',sampled_cells:'Células amostradas',minimum:'Mínimo',mean:'Média',median:'Mediana',maximum:'Máximo',analysis_note:'As estatísticas usam uma grade numérica web; baixe o GeoTIFF para análises na resolução nativa.',loading_values:'Carregando valores numéricos…',no_valid_values:'Não há valores válidos nesta seleção.',point_value:'Valor do mapa',coordinates:'Coordenadas',group_complete:'Período completo',group_periods:'Períodos de cinco anos',group_enso:'Fases do ENSO',group_terrain:'Terreno'});
 
 Object.assign(translations.en,{
-  brand:'Camcore Environmental Maps',nav_collections:'Collections',nav_maps:'Map explorer',nav_methods:'Methods & data',theme:'Theme',
+  brand:'Environmental Maps',nav_collections:'Collections',nav_maps:'Map explorer',nav_methods:'Methods & data',theme:'Theme',
   domain:'Camcore geospatial portal',hero_title:'Environmental maps for research and decision support.',hero_text:'Explore scientific map collections connecting climate, terrain and environmental decision support.',
   collections_count:'map collections',languages:'languages',research_data:'research data',collections_kicker:'Map collections',collections_title:'Choose a research theme',
   collections_text:'Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.',
@@ -19,7 +19,7 @@ Object.assign(translations.en,{
   read_methods:'Methods & data',footer_brand:'Camcore Environmental Map Collections',footer_text:'Research maps and decision support'
 });
 Object.assign(translations.pt,{
-  brand:'Mapas Ambientais Camcore',nav_collections:'Coleções',nav_maps:'Explorador de mapas',nav_methods:'Métodos e dados',theme:'Tema',
+  brand:'Mapas Ambientais',nav_collections:'Coleções',nav_maps:'Explorador de mapas',nav_methods:'Métodos e dados',theme:'Tema',
   domain:'Portal geoespacial Camcore',hero_title:'Mapas ambientais para pesquisa e apoio à decisão.',hero_text:'Explore coleções científicas que conectam clima, terreno e apoio à decisão ambiental.',
   collections_count:'coleções de mapas',languages:'idiomas',research_data:'dados científicos',collections_kicker:'Coleções de mapas',collections_title:'Escolha um tema de pesquisa',
   collections_text:'Cada coleção possui escopo científico, catálogo de mapas e identidade visual próprios. Novas coleções podem ser adicionadas sem alterar o restante do portal.',
