@@ -1,5 +1,7 @@
 # Camcore Environmental Maps
 
+<img src="web/assets/images/CAMCORE_LOGO_TRANSPARENT.png" alt="Camcore — Global partners for the future of our forests" width="420">
+
 [Português](#português) · [English](#english) · [Interactive portal](web/index.html)
 
 ![Portal preview](web/assets/images/portal_preview.png)

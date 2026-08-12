@@ -31,6 +31,9 @@ Object.assign(translations.pt,{
   read_methods:'Métodos e dados',footer_brand:'Coleções de Mapas Ambientais Camcore',footer_text:'Mapas científicos e apoio à decisão'
 });
 
+Object.assign(translations.en,{basemap_map:'Map',basemap_satellite:'Satellite',fullscreen_map:'Full screen map',exit_fullscreen:'Exit full screen'});
+Object.assign(translations.pt,{basemap_map:'Mapa',basemap_satellite:'Satélite',fullscreen_map:'Mapa em tela cheia',exit_fullscreen:'Sair da tela cheia'});
+
 const layerText={
   en:{frost_probability:['Frost-occurrence probability','Reduced block-balanced Random Forest · 2000–2025','Complete five-state analytical surface'],expected_frost_days:['Expected frost days per season','Reduced block-balanced Random Forest · 2000–2025','Complete five-state analytical surface'],seasonal_tmin:['Seasonal minimum temperature','Reduced block-balanced Random Forest · 2000–2025','Complete five-state analytical surface'],hand:['Height above nearest drainage','HAND derived from ANADEM · 2-km flow-path search','Derived terrain layer'],anadem:['Terrain elevation','ANADEM v1 digital terrain model · native ~30 m','Third-party source layer; cite Laipelt et al. (2024)']},
   pt:{frost_probability:['Probabilidade de ocorrência de geada','Random Forest reduzido e balanceado por blocos · 2000–2025','Superfície analítica completa para os cinco estados'],expected_frost_days:['Dias esperados de geada por temporada','Random Forest reduzido e balanceado por blocos · 2000–2025','Superfície analítica completa para os cinco estados'],seasonal_tmin:['Temperatura mínima sazonal','Random Forest reduzido e balanceado por blocos · 2000–2025','Superfície analítica completa para os cinco estados'],hand:['Altura acima da drenagem mais próxima','HAND derivado do ANADEM · busca de fluxo de 2 km','Camada derivada do terreno'],anadem:['Elevação do terreno','Modelo digital de terreno ANADEM v1 · ~30 m nativos','Camada de terceiros; cite Laipelt et al. (2024)']}
@@ -45,18 +48,30 @@ const places=[
 ];
 
 const palettes={RdYlBu:'linear-gradient(90deg,#a50026,#f46d43,#ffffbf,#74add1,#313695)',RdYlBu_r:'linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026)',viridis:'linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725)',gist_earth:'linear-gradient(90deg,#17336b,#478d82,#a9b26f,#c49a6c,#f5f2ed)'};
-const state={catalog:window.FROST_LAYERS||[],overlay:null,marker:null,active:null,opacity:.88,lang:localStorage.getItem('frost-lang')||'en',analysisCache:{},analysisPromises:{},selectionLayer:null,selectionSamples:[],selectionStats:null,drawing:false};
+const state={catalog:window.FROST_LAYERS||[],overlay:null,marker:null,active:null,opacity:.88,lang:localStorage.getItem('frost-lang')||'en',basemapType:localStorage.getItem('frost-basemap')||'map',analysisCache:{},analysisPromises:{},selectionLayer:null,selectionSamples:[],selectionStats:null,drawing:false};
 const initialTheme=localStorage.getItem('frost-theme')||'dark';
 document.documentElement.dataset.theme=initialTheme;
 
 const map=L.map('map',{zoomControl:false,preferCanvas:true,minZoom:4,maxZoom:11});
 L.control.zoom({position:'topright'}).addTo(map);
 L.control.scale({imperial:false,position:'bottomleft'}).addTo(map);
-const basemap=L.tileLayer('https://{s}.basemaps.cartocdn.com/{theme}/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18});
 map.createPane('labelsPane');map.getPane('labelsPane').style.zIndex=650;map.getPane('labelsPane').style.pointerEvents='none';
-const labels=L.tileLayer('https://{s}.basemaps.cartocdn.com/{theme}/{z}/{x}/{y}{r}.png',{pane:'labelsPane',attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18});
-function updateBasemap(){const dark=document.documentElement.dataset.theme==='dark';basemap.setUrl(`https://{s}.basemaps.cartocdn.com/${dark?'dark_nolabels':'light_nolabels'}/{z}/{x}/{y}{r}.png`);labels.setUrl(`https://{s}.basemaps.cartocdn.com/${dark?'dark_only_labels':'light_only_labels'}/{z}/{x}/{y}{r}.png`)}
-updateBasemap();basemap.addTo(map);labels.addTo(map);
+const cartographicBase=L.tileLayer('',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18});
+const cartographicLabels=L.tileLayer('',{pane:'labelsPane',attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18});
+const satelliteBase=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{attribution:'Tiles &copy; Esri',maxZoom:18});
+const satelliteLabels=L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{pane:'labelsPane',attribution:'Labels &copy; Esri',maxZoom:18});
+function updateBasemap(){
+  [cartographicBase,cartographicLabels,satelliteBase,satelliteLabels].forEach(layer=>{if(map.hasLayer(layer))map.removeLayer(layer)});
+  if(state.basemapType==='satellite'){satelliteBase.addTo(map);satelliteLabels.addTo(map)}
+  else{const dark=document.documentElement.dataset.theme==='dark';cartographicBase.setUrl(`https://{s}.basemaps.cartocdn.com/${dark?'dark_nolabels':'light_nolabels'}/{z}/{x}/{y}{r}.png`);cartographicLabels.setUrl(`https://{s}.basemaps.cartocdn.com/${dark?'dark_only_labels':'light_only_labels'}/{z}/{x}/{y}{r}.png`);cartographicBase.addTo(map);cartographicLabels.addTo(map)}
+  document.querySelectorAll('.basemap-option').forEach(button=>button.classList.toggle('active',button.dataset.basemap===state.basemapType));
+}
+const MapTools=L.Control.extend({options:{position:'topright'},onAdd(){const container=L.DomUtil.create('div','leaflet-bar map-tools-control');container.innerHTML='<button class="basemap-option" data-basemap="map" type="button">Map</button><button class="basemap-option" data-basemap="satellite" type="button">Satellite</button><button class="fullscreen-map" type="button" aria-pressed="false" aria-label="Full screen map" title="Full screen map">&#x26F6;</button>';L.DomEvent.disableClickPropagation(container);L.DomEvent.disableScrollPropagation(container);container.querySelectorAll('.basemap-option').forEach(button=>button.addEventListener('click',()=>{state.basemapType=button.dataset.basemap;localStorage.setItem('frost-basemap',state.basemapType);updateBasemap()}));container.querySelector('.fullscreen-map').addEventListener('click',toggleMapFullscreen);return container}});
+new MapTools().addTo(map);
+function toggleMapFullscreen(){const stage=document.querySelector('.map-stage'),active=stage.classList.toggle('map-fullscreen');document.body.classList.toggle('map-fullscreen-open',active);const button=document.querySelector('.fullscreen-map');button.setAttribute('aria-pressed',String(active));button.textContent=active?'×':'⛶';updateMapToolLanguage();setTimeout(()=>map.invalidateSize(),80)}
+function updateMapToolLanguage(){const t=translations[state.lang],mapButton=document.querySelector('[data-basemap="map"]'),satelliteButton=document.querySelector('[data-basemap="satellite"]'),fullscreenButton=document.querySelector('.fullscreen-map'),active=document.querySelector('.map-stage')?.classList.contains('map-fullscreen');if(mapButton)mapButton.textContent=t.basemap_map||'Map';if(satelliteButton)satelliteButton.textContent=t.basemap_satellite||'Satellite';if(fullscreenButton){const label=active?(t.exit_fullscreen||'Exit full screen'):(t.fullscreen_map||'Full screen map');fullscreenButton.setAttribute('aria-label',label);fullscreenButton.title=label}}
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.querySelector('.map-stage')?.classList.contains('map-fullscreen'))toggleMapFullscreen()});
+updateBasemap();
 
 function fmt(value){return Math.abs(value)>=100?Math.round(value).toLocaleString():Number(value).toFixed(2)}
 function localizedLayer(layer){
@@ -69,7 +84,7 @@ function renderLanguage(){
   document.querySelectorAll('[data-i18n]').forEach(el=>{const value=translations[state.lang][el.dataset.i18n];if(value)el.textContent=value});
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const value=translations[state.lang][el.dataset.i18nPlaceholder];if(value)el.placeholder=value});
   document.querySelectorAll('[data-lang]').forEach(button=>button.classList.toggle('active',button.dataset.lang===state.lang));
-  renderLayerButtons();if(state.active)activate(state.active.id,false)
+  updateMapToolLanguage();renderLayerButtons();if(state.active)activate(state.active.id,false)
 }
 function renderLayerButtons(){
   const list=document.getElementById('layer-list');list.innerHTML='';
