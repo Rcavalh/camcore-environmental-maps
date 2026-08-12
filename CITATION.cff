@@ -1,11 +1,34 @@
 cff-version: 1.2.0
-message: "If you use this code or the associated frost-risk products, please cite the software release, Dryad dataset and accompanying article."
-title: "Southern Brazil Frost-Risk Maps"
+message: "If you use this code or the associated frost-climatology products, please cite the software release, Dryad dataset and accompanying article."
+title: "Camcore Environmental Maps: Frost Climatology"
 type: software
 authors:
   - family-names: "Cavalheiro"
     given-names: "Ricardo"
-version: 0.1.0-prototype
-date-released: 2026-08-08
-repository-code: "https://github.com/TO-BE-ASSIGNED/southern-brazil-frost-risk"
+    affiliation: "Camcore, North Carolina State University"
+  - family-names: "Figura"
+    given-names: "Marco Aurelio"
+    affiliation: "Klabin S.A."
+  - family-names: "Nieto"
+    given-names: "Sebastian Lawrance"
+    affiliation: "Department of Forestry and Environmental Resources, North Carolina State University"
+  - family-names: "Hodge"
+    given-names: "Gary"
+    affiliation: "Camcore, North Carolina State University"
+  - family-names: "Sanchez"
+    given-names: "Giorgina"
+    affiliation: "Center for Geospatial Analytics, North Carolina State University"
+  - family-names: "Vatsavai"
+    given-names: "Ranga Raju"
+    affiliation: "Department of Computer Science, North Carolina State University"
+  - family-names: "Dalla Corte"
+    given-names: "Ana Paula"
+    affiliation: "Department of Forest Engineering, Federal University of Paraná"
+  - family-names: "Acosta"
+    given-names: "Juan Jose"
+    affiliation: "Camcore, North Carolina State University"
+version: 0.1.0
+date-released: 2026-08-12
+repository-code: "https://github.com/Rcavalh/camcore-environmental-maps"
+url: "https://rcavalh.github.io/camcore-environmental-maps/"
 license: "LicenseRef-PendingAuthorApproval"

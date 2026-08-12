@@ -4,6 +4,18 @@
 
 ![Portal preview](web/assets/images/portal_preview.png)
 
+## Analytical workflow / Fluxo analítico
+
+![Reproducible analytical workflow for frost climatology](docs/images/FROST_CLIMATOLOGY_ANALYTICAL_WORKFLOW.png)
+
+This infographic summarizes the complete station-based workflow, from observed frost responses and environmental predictors through grouped spatial validation, interpretation and 30 m GeoTIFF products.
+
+O infográfico resume o fluxo completo baseado em estações meteorológicas, desde as respostas observadas e os preditores ambientais até a validação espacial agrupada, a interpretação e os produtos GeoTIFF de 30 m.
+
+## Citation and contributors / Citação e colaboradores
+
+GitHub citation metadata are provided in [`CITATION.cff`](CITATION.cff), and the current manuscript author list is documented in [`CONTRIBUTORS.md`](CONTRIBUTORS.md). Individual CRediT roles will be added only after approval by all authors.
+
 ## English
 
 This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active collection. **Species Recommendation** and **Bioclimatic Variables** are reserved as independent, intentionally empty collections until their scientific datasets and documentation are ready.
