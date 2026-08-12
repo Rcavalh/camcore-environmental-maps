@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Methods, data provenance and collection architecture for Camcore Environmental Maps.">
+  <title>Methods &amp; data · Camcore Environmental Maps</title>
+  <link rel="stylesheet" href="styles.css?v=20260812icons1">
+  <style>
+    .method-shell{max-width:1040px;margin:auto;padding:66px 24px 110px}.method-head h1{max-width:850px;margin:24px 0 0;font:500 clamp(2.7rem,6vw,5.5rem)/.95 Georgia,serif;letter-spacing:-.05em}.back{color:var(--accent);font-size:.76rem;font-weight:800;text-decoration:none}.prose{max-width:790px;margin-top:62px}.prose h2{margin:40px 0 11px;font:500 1.6rem Georgia,serif}.prose p{color:var(--muted);font-size:.88rem;line-height:1.72}.prose .citation{padding:17px;border-left:3px solid var(--accent);background:var(--surface-2)}.collection-note{margin:30px 0;padding:20px;border:1px solid var(--line);border-radius:11px;background:var(--surface)}.collection-note strong{color:var(--ink)}[data-copy="pt"]{display:none}body.pt [data-copy="en"]{display:none}body.pt [data-copy="pt"]{display:block}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark"></span><span data-en="Camcore Environmental Maps" data-pt="Mapas Ambientais Camcore">Camcore Environmental Maps</span></a>
+    <nav><a href="index.html#collections" data-en="Collections" data-pt="Coleções">Collections</a><a href="index.html#maps" data-en="Map explorer" data-pt="Explorador de mapas">Map explorer</a><a href="methods.html" data-en="Methods &amp; data" data-pt="Métodos e dados">Methods &amp; data</a></nav>
+    <div class="header-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span class="theme-icon"></span><span data-en="Theme" data-pt="Tema">Theme</span></button><div class="language"><button type="button" data-lang="en" class="active">EN</button><button type="button" data-lang="pt">PT</button></div></div>
+  </header>
+  <main class="method-shell">
+    <div class="method-head"><a class="back" href="index.html"><span aria-hidden="true">←</span> <span data-en="Back to portal" data-pt="Voltar ao portal">Back to portal</span></a><h1 data-copy="en">Methods and data behind the map collections.</h1><h1 data-copy="pt">Métodos e dados das coleções de mapas.</h1></div>
+
+    <article class="prose" data-copy="en">
+      <p class="kicker">Portal architecture</p>
+      <p class="collection-note"><strong>Frost Climatology</strong> is the active scientific collection. <strong>Species Recommendation</strong> and <strong>Bioclimatic Variables</strong> are reserved as independent collections; no layers or results are assigned to them yet.</p>
+      <h2>Frost observations and endpoints</h2><p>Responses were derived from INMET meteorological-station observations for the fixed frost season from 15 May to 15 August. The workflow estimates three complementary dimensions of climatological hazard: annual frost-occurrence probability, expected frost days per eligible season and seasonal minimum temperature. Cold-tail summaries use the 25th percentile of annual minimum-temperature predictions to represent recurrent cold conditions without relying on a single extreme year.</p>
+      <h2>Environmental predictors</h2><p>The model uses 115 predictors organized into spatial and temporal position, ANADEM terrain and HAND, ERA5-Land atmospheric conditions, and quality-screened MODIS land-surface observations. Annual ERA5-Land and MODIS summaries are paired with the corresponding station and frost season. Fine-resolution physiography refines local valley, ridge and drainage contrasts; it does not convert the coarser climate products into direct 30 m meteorological measurements.</p>
+      <h2>Model and validation</h2><p>A Random Forest classifier estimates frost occurrence, while separate Random Forest regressors estimate frost frequency and seasonal minimum temperature. Five-fold station-grouped cross-validation withholds every year from each validation station, directly testing transfer to locations not used for model fitting. Imputation, feature handling and model fitting are estimated only from each training fold.</p>
+      <h2>Local and HPC execution</h2><p>Python and R workstation implementations train and predict the same endpoints from a prepared station-year matrix. The HPC workflow applies the frozen production model to checkpointed native-grid tiles and merges them only after every tile passes its completion checks.</p>
+      <h2>ANADEM provenance</h2><p class="citation">Laipelt, L. et al. ANADEM: A Digital Terrain Model for South America. <em>Remote Sensing</em> 16, 2321 (2024). <a href="https://doi.org/10.3390/rs16132321">https://doi.org/10.3390/rs16132321</a>.</p>
+      <h2>Spatial prediction and interpretation</h2><p>Validated models are transferred to the native ANADEM grid using annual environmental covariates and the fitted training-data imputer. No spatial smoothing is applied. The approximately 30 m outputs are model-based predictions whose fine-scale structure is informed by terrain and drainage, not observations made at every raster cell. Web layers are visualization derivatives; analytical downloads preserve the GeoTIFF values and metadata. These products support research, environmental planning and decision support, not operational weather forecasting or site-specific prescriptions.</p>
+    </article>
+
+    <article class="prose" data-copy="pt">
+      <p class="kicker">Arquitetura do portal</p>
+      <p class="collection-note"><strong>Climatologia de Geadas</strong> é a coleção científica ativa. <strong>Recomendação de Espécies</strong> e <strong>Variáveis Bioclimáticas</strong> estão reservadas como coleções independentes; nenhuma camada ou resultado foi atribuído a elas por enquanto.</p>
+      <h2>Observações de geada e variáveis-resposta</h2><p>As respostas foram derivadas de observações das estações meteorológicas do INMET para a estação de geadas fixada entre 15 de maio e 15 de agosto. O fluxo estima três dimensões complementares do risco climatológico: probabilidade anual de ocorrência, número esperado de dias de geada por estação elegível e temperatura mínima sazonal. Os resumos da cauda fria usam o percentil 25 das predições anuais de temperatura mínima para representar condições frias recorrentes sem depender de um único ano extremo.</p>
+      <h2>Preditores ambientais</h2><p>O modelo utiliza 115 preditores organizados em posição espacial e temporal, terreno ANADEM e HAND, condições atmosféricas ERA5-Land e observações da superfície terrestre MODIS com controle de qualidade. Os resumos anuais do ERA5-Land e MODIS são pareados com a estação meteorológica e a respectiva estação de geadas. A fisiografia detalhada refina contrastes locais entre vales, divisores e drenagens; ela não transforma os produtos climáticos mais grosseiros em medições meteorológicas diretas de 30 m.</p>
+      <h2>Modelo e validação</h2><p>Um classificador Random Forest estima a ocorrência de geada, enquanto regressores Random Forest separados estimam a frequência e a temperatura mínima sazonal. A validação cruzada em cinco grupos de estações retém todos os anos de cada estação de validação fora do treinamento, testando diretamente a transferência para locais não utilizados no ajuste. Imputação, tratamento das variáveis e ajuste dos modelos são estimados somente em cada conjunto de treinamento.</p>
+      <h2>Execução local e no HPC</h2><p>As implementações em Python e R treinam e predizem as mesmas respostas a partir de uma matriz estação–ano preparada. O fluxo HPC aplica o modelo final aos tiles da grade nativa com checkpoints e somente os une depois que todos passam pelas verificações de conclusão.</p>
+      <h2>Proveniência do ANADEM</h2><p class="citation">Laipelt, L. et al. ANADEM: A Digital Terrain Model for South America. <em>Remote Sensing</em> 16, 2321 (2024). <a href="https://doi.org/10.3390/rs16132321">https://doi.org/10.3390/rs16132321</a>.</p>
+      <h2>Predição espacial e interpretação</h2><p>Os modelos validados são transferidos para a grade nativa do ANADEM usando covariáveis ambientais anuais e o imputador ajustado com os dados de treinamento. Nenhuma suavização espacial é aplicada. Os produtos de aproximadamente 30 m são predições baseadas em modelos, cuja estrutura fina é informada pelo terreno e pela drenagem, e não observações realizadas em cada célula. As camadas web são derivados para visualização; os downloads analíticos preservam os valores e metadados dos GeoTIFFs. Esses produtos apoiam pesquisa, planejamento ambiental e tomada de decisão, não previsão meteorológica operacional ou prescrições específicas para um local.</p>
+    </article>
+  </main>
+  <script>
+    const savedTheme=localStorage.getItem('frost-theme')||'dark';document.documentElement.dataset.theme=savedTheme;
+    const savedLang=localStorage.getItem('frost-lang')||'en';
+    function lang(x){document.body.classList.toggle('pt',x==='pt');document.documentElement.lang=x;document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===x));document.querySelectorAll('[data-en]').forEach(e=>e.textContent=e.dataset[x]);localStorage.setItem('frost-lang',x)}
+    document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>lang(b.dataset.lang));lang(savedLang);
+    document.getElementById('theme-toggle').onclick=()=>{const t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;localStorage.setItem('frost-theme',t)};
+  </script>
+</body></html>

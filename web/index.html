@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Camcore's bilingual portal for environmental, forest and climate map collections.">
+  <title>Camcore Environmental Maps</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <link rel="stylesheet" href="styles.css?v=20260812icons2">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Camcore Environmental Maps home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span data-i18n="brand">Camcore Environmental Maps</span>
+    </a>
+    <nav>
+      <a href="#collections" data-i18n="nav_collections">Collections</a>
+      <a href="#maps" data-i18n="nav_maps">Map explorer</a>
+      <a href="methods.html" data-i18n="nav_methods">Methods &amp; data</a>
+    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme">
+        <span class="theme-icon" aria-hidden="true"></span><span data-i18n="theme">Theme</span>
+      </button>
+      <div class="language" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro portal-intro">
+      <div>
+        <p class="kicker" data-i18n="domain">Camcore geospatial portal</p>
+        <h1 data-i18n="hero_title">Environmental maps for research and decision support.</h1>
+        <p data-i18n="hero_text">Explore scientific map collections connecting climate, terrain and environmental decision support.</p>
+      </div>
+      <div class="study-meta" aria-label="Portal summary">
+        <span><strong>3</strong> <span data-i18n="collections_count">map collections</span></span>
+        <span><strong>EN / PT</strong> <span data-i18n="languages">languages</span></span>
+        <span><strong>Open</strong> <span data-i18n="research_data">research data</span></span>
+      </div>
+    </section>
+
+    <section id="collections" class="collections-section">
+      <div class="section-heading collections-heading">
+        <div><p class="kicker" data-i18n="collections_kicker">Map collections</p><h2 data-i18n="collections_title">Choose a research theme</h2></div>
+        <p data-i18n="collections_text">Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.</p>
+      </div>
+
+      <div class="collection-grid">
+        <article class="collection-card collection-frost is-active" data-target="#maps">
+          <div class="collection-topline"><span class="collection-number">01</span><span class="collection-status" data-i18n="available_now">Available now</span></div>
+          <div class="collection-symbol" aria-hidden="true"><i data-lucide="snowflake"></i></div>
+          <p class="collection-type" data-i18n="frost_type">Climate hazard</p>
+          <h3 data-i18n="frost_collection">Frost Climatology</h3>
+          <p data-i18n="frost_collection_text">Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.</p>
+          <a href="#maps" data-i18n="open_collection">Open collection</a>
+        </article>
+
+        <article class="collection-card collection-species is-reserved" aria-disabled="true">
+          <div class="collection-topline"><span class="collection-number">02</span><span class="collection-status" data-i18n="reserved">Reserved</span></div>
+          <div class="collection-symbol" aria-hidden="true"><i data-lucide="leaf"></i></div>
+          <p class="collection-type" data-i18n="decision_support">Decision support</p>
+          <h3 data-i18n="species_collection">Species Recommendation</h3>
+          <p class="reserved-copy" data-i18n="empty_collection">Collection space reserved for future datasets.</p>
+        </article>
+
+        <article class="collection-card collection-bioclimate is-reserved" aria-disabled="true">
+          <div class="collection-topline"><span class="collection-number">03</span><span class="collection-status" data-i18n="reserved">Reserved</span></div>
+          <div class="collection-symbol" aria-hidden="true"><i data-lucide="chart-no-axes-combined"></i></div>
+          <p class="collection-type" data-i18n="environmental_context">Environmental context</p>
+          <h3 data-i18n="bioclimate_collection">Bioclimatic Variables</h3>
+          <p class="reserved-copy" data-i18n="empty_collection">Collection space reserved for future datasets.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="maps" class="map-section collection-explorer collection-frost-theme">
+      <div class="collection-banner">
+        <span class="collection-index">Collection 01</span>
+        <span class="collection-chip" data-i18n="frost_collection">Frost Climatology</span>
+      </div>
+      <div class="section-heading">
+        <div><p class="kicker" data-i18n="interactive_kicker">Interactive map</p><h2 data-i18n="interactive_title">Explore the frost-climatology layers</h2></div>
+        <p data-i18n="interactive_text">Search for a city, switch layers and inspect local patterns. Downloads retain the analytical GeoTIFF values.</p>
+      </div>
+
+      <div class="map-card">
+        <div class="map-stage">
+          <form id="place-search" class="place-search" role="search">
+            <label class="sr-only" for="place-input" data-i18n="search_label">Search for a city or region</label>
+            <input id="place-input" list="known-places" autocomplete="off" data-i18n-placeholder="search_placeholder" placeholder="Search a city or region…">
+            <datalist id="known-places"></datalist>
+            <button type="submit" data-i18n="search_button">Find</button>
+          </form>
+          <div id="search-message" class="search-message" aria-live="polite"></div>
+          <div id="map" aria-label="Interactive geospatial map"></div>
+          <div id="legend" class="legend" aria-live="polite"></div>
+          <div class="preview-badge"><span></span><span data-i18n="preview_badge">Map preview</span></div>
+        </div>
+
+        <aside class="map-panel" aria-label="Map controls">
+          <div class="panel-collection-label"><span></span><span data-i18n="frost_collection">Frost Climatology</span></div>
+          <p class="panel-label" data-i18n="choose_layer">Choose a layer</p>
+          <div id="layer-list" class="layer-list"></div>
+          <div class="opacity-control">
+            <label for="opacity"><span data-i18n="opacity">Opacity</span><output id="opacity-value">88%</output></label>
+            <input id="opacity" type="range" min="10" max="100" value="88">
+          </div>
+          <div class="selected-layer">
+            <p class="panel-label" data-i18n="selected_layer">Selected layer</p>
+            <h3 id="layer-title">Loading…</h3>
+            <p id="layer-subtitle" class="layer-subtitle"></p>
+            <dl>
+              <div><dt data-i18n="display_range">Display range</dt><dd id="layer-range">—</dd></div>
+              <div><dt data-i18n="native_grid">Native grid</dt><dd id="layer-grid">—</dd></div>
+              <div><dt data-i18n="coverage">Coverage</dt><dd id="layer-coverage">—</dd></div>
+            </dl>
+            <p id="layer-status" class="layer-status"></p>
+            <a id="layer-download" class="download-button" href="#"><span data-i18n="download_geotiff">Download GeoTIFF</span><span aria-hidden="true">↓</span></a>
+          </div>
+          <section class="analysis-panel" aria-labelledby="analysis-heading">
+            <p id="analysis-heading" class="panel-label" data-i18n="analysis_tools">Inspect and analyze</p>
+            <p class="analysis-hint" data-i18n="analysis_hint">Click the map to inspect a value, or draw an area to summarize it.</p>
+            <div class="analysis-actions">
+              <button id="draw-rectangle" type="button" data-i18n="draw_rectangle">Rectangle</button>
+              <button id="draw-polygon" type="button" data-i18n="draw_polygon">Polygon</button>
+              <button id="clear-selection" type="button" data-i18n="clear_selection">Clear</button>
+            </div>
+            <p id="analysis-loading" class="analysis-loading" aria-live="polite"></p>
+            <div id="selection-empty" class="selection-empty" data-i18n="no_selection">No area selected.</div>
+            <div id="selection-results" class="selection-results" hidden>
+              <dl>
+                <div><dt data-i18n="selected_area">Selected area</dt><dd id="selection-area">—</dd></div>
+                <div><dt data-i18n="sampled_cells">Sampled cells</dt><dd id="selection-count">—</dd></div>
+                <div><dt data-i18n="minimum">Minimum</dt><dd id="selection-min">—</dd></div>
+                <div><dt data-i18n="mean">Mean</dt><dd id="selection-mean">—</dd></div>
+                <div><dt data-i18n="median">Median</dt><dd id="selection-median">—</dd></div>
+                <div><dt data-i18n="maximum">Maximum</dt><dd id="selection-max">—</dd></div>
+              </dl>
+              <canvas id="selection-chart" width="260" height="112" aria-label="Histogram of selected values"></canvas>
+              <p class="analysis-note" data-i18n="analysis_note">Statistics use a numerical web grid; download the GeoTIFF for native-resolution analysis.</p>
+              <div class="export-actions">
+                <button id="export-csv" type="button">CSV</button>
+                <button id="export-geojson" type="button">GeoJSON</button>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="about portal-about">
+      <div><p class="kicker" data-i18n="about_kicker">Data access</p><h2 data-i18n="about_title">Selected analytical maps are available for download.</h2></div>
+      <p data-i18n="about_text">Only selected map products will be released as GeoTIFFs at approximately 30 m resolution. Availability depends on source licences, file size and publication status.</p>
+      <a href="methods.html" data-i18n="read_methods">Methods &amp; data</a>
+    </section>
+  </main>
+
+  <footer>
+    <strong data-i18n="footer_brand">Camcore Environmental Map Collections</strong>
+    <p data-i18n="footer_text">Research maps and decision support</p>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons({attrs:{'stroke-width':1.6}});</script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="layers.generated.js?v=20260812portal"></script>
+  <script src="analysis-manifest.generated.js?v=20260812portal"></script>
+  <script src="app.js?v=20260812portal3"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+name: southern-brazil-frost-risk-experimental
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - geopandas
+  - joblib
+  - matplotlib
+  - numpy
+  - pandas
+  - pyarrow
+  - pyproj
+  - pytorch
+  - rasterio
+  - scikit-learn
+  - scipy
+  - shap
+  - shapely
+  - xgboost
+  - pip
+  - pip:
+      - tabpfn

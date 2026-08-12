@@ -1,0 +1,9 @@
+{
+  "project_root": "/path/to/frost-risk-project",
+  "anadem_dem": "/path/to/ANADEM_30m.tif",
+  "hand_2000m": "/path/to/HAND_2000m_30m.tif",
+  "era5_station_year_directory": "/path/to/era5_station_year_features",
+  "modis_station_year": "/path/to/modis_station_year_features.parquet",
+  "model_bundle": "/path/to/RF_BLOCK_BALANCED_ALL_ENDPOINTS.joblib",
+  "output_directory": "/path/to/outputs"
+}

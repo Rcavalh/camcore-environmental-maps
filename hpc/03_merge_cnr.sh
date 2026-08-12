@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#BSUB -J frost5_merge
+#BSUB -q cnr
+#BSUB -n 4
+#BSUB -W 12:00
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=32GB]"
+#BSUB -o 8.Dados_Meteorologicos_Publicos/08_Five_State_Environmental_Integration/hpc_full_native_rf/logs/lsf_merge.%J.out
+#BSUB -e 8.Dados_Meteorologicos_Publicos/08_Five_State_Environmental_Integration/hpc_full_native_rf/logs/lsf_merge.%J.err
+set -euo pipefail
+source 8.Dados_Meteorologicos_Publicos/08_Five_State_Environmental_Integration/hpc_full_native_rf/hpc/runtime_env.sh
+"$FROST_PYTHON_BIN" "$FROST_MODULE/scripts/30_merge_full_native_balanced_rf_shards.py" \
+  --tile-size 512 --shard-count 96
+echo "HPC_FULL_NATIVE_MERGE_OK"

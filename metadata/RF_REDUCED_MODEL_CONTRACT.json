@@ -1,0 +1,16 @@
+{
+  "status": "RF_BLOCK_BALANCED_ALL_ENDPOINTS_OK",
+  "feature_count": 115,
+  "feature_blocks": {
+    "Terrain/HAND/space/time": 19,
+    "ERA5-Land": 64,
+    "MODIS": 32
+  },
+  "endpoints": [
+    "probability",
+    "frost_days",
+    "seasonal_tmin_c"
+  ],
+  "feature_manifest": "FINAL_BLOCK_BALANCED_FEATURES.csv",
+  "note": "Portable metadata copy; machine-specific source paths removed."
+}

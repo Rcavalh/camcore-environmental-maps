@@ -1,0 +1,36 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/portal/
+.Rhistory
+.RData
+
+# Secrets and machine-specific configuration
+.env
+.env.*
+!*.example
+config/source_roots.json
+*token*
+
+# Large rasters and model artifacts
+*.tif
+*.tiff
+*.vrt
+*.joblib
+*.pkl
+*.npz
+*.parquet
+
+# Generated outputs
+outputs/
+work/
+logs/
+checkpoints/
+
+# Keep lightweight portal layers explicitly
+!web/assets/layers/*.png
+!web/assets/layers/*.webp
+!web/assets/layers/*.json

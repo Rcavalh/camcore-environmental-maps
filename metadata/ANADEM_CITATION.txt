@@ -1,0 +1,7 @@
+Laipelt, L.; de Andrade, B.C.; Collischonn, W.; Teixeira, A.A.; de Paiva, R.C.D.; Ruhoff, A. (2024).
+ANADEM: A Digital Terrain Model for South America.
+Remote Sensing, 16(13), 2321.
+https://doi.org/10.3390/rs16132321
+
+Official project: https://hge-iph.github.io/anadem/
+Google Earth Engine asset: projects/et-brasil/assets/anadem/v1

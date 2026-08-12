@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code or the associated frost-risk products, please cite the software release, Dryad dataset and accompanying article."
+title: "Southern Brazil Frost-Risk Maps"
+type: software
+authors:
+  - family-names: "Cavalheiro"
+    given-names: "Ricardo"
+version: 0.1.0-prototype
+date-released: 2026-08-08
+repository-code: "https://github.com/TO-BE-ASSIGNED/southern-brazil-frost-risk"
+license: "LicenseRef-PendingAuthorApproval"
