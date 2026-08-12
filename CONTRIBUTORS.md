@@ -2,7 +2,7 @@
 
 The scientific contributors are listed below in the current manuscript order:
 
-1. Ricardo Cavalheiro — Camcore and the Department of Forestry and Environmental Resources, North Carolina State University
+1. [Ricardo Cavalheiro](https://orcid.org/0009-0007-1159-5088) — Camcore and the Department of Forestry and Environmental Resources, North Carolina State University
 2. Marco Aurelio Figura — Klabin S.A.
 3. Sebastian Lawrance Nieto — Department of Forestry and Environmental Resources, North Carolina State University
 4. Gary Hodge — Camcore and the Department of Forestry and Environmental Resources, North Carolina State University
