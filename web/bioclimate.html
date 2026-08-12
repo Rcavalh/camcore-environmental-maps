@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive BIO1-BIO19 climate maps derived from TerraClimate and CHIRPS for 1981–2025, covering 50°S–50°N.">
+  <title>Bioclimatic Variables | Environmental Maps</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <link rel="stylesheet" href="styles.css?v=20260812brand1">
+  <link rel="stylesheet" href="bioclimate.css?v=20260812bio2">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img class="brand-logo" src="assets/images/CAMCORE_LOGO_TRANSPARENT.png" alt="Camcore"><span data-i18n="brand">Environmental Maps</span></a>
+    <nav><a href="index.html#collections" data-i18n="nav_collections">Collections</a><a href="index.html#maps" data-i18n="nav_frost">Frost maps</a><a href="methods.html" data-i18n="nav_methods">Methods &amp; data</a></nav>
+    <div class="header-actions"><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme"><span>◐</span><span data-i18n="theme">Theme</span></button><div class="language-switcher" aria-label="Language"><button type="button" data-lang="en">EN</button><button type="button" data-lang="pt">PT</button></div></div>
+  </header>
+  <main>
+    <section class="bioclimate-hero">
+      <div><p class="kicker" data-i18n="collection_number">Collection 03</p><h1 data-i18n="title">Bioclimatic Variables</h1><p class="bioclimate-subtitle" data-i18n="subtitle">Temperature and precipitation summaries across 50°S–50°N for environmental analysis.</p></div>
+      <div class="bioclimate-summary" aria-label="Collection summary"><span><strong id="bioclimate-count">19</strong><span data-i18n="bioclimate">variables</span></span><span><strong>2</strong><span data-i18n="analytical_layers">variable groups</span></span><span><strong>1981–2025</strong><span data-i18n="climate_period">climate period</span></span></div>
+    </section>
+    <section class="bioclimate-section">
+      <div class="section-heading bioclimate-heading"><div><p class="kicker" data-i18n="interactive_map">Interactive map</p><h2 data-i18n="explore_title">Browse temperature and precipitation variables</h2></div><p data-i18n="explore_text">All 19 BIOCLIM layers can be inspected by point or summarized within a user-defined area.</p></div>
+      <div class="bioclimate-workspace">
+        <aside class="bioclimate-catalog" aria-label="Bioclimatic catalogue"><label class="bioclimate-search-label" for="bioclimate-search" data-i18n="search_bioclimate">Search variable</label><input id="bioclimate-search" class="bioclimate-search" type="search" placeholder="Type BIO code or variable name…" data-i18n-placeholder="search_placeholder"><div id="bioclimate-groups" class="bioclimate-groups"></div></aside>
+        <div class="bioclimate-map-stage">
+          <form id="bioclimate-place-search" class="place-search" role="search"><label class="sr-only" for="bioclimate-place-input" data-i18n="search_location">Search for a location</label><input id="bioclimate-place-input" list="bioclimate-known-places" autocomplete="off" data-i18n-placeholder="search_location_placeholder" placeholder="Search a city or region…"><datalist id="bioclimate-known-places"></datalist><button type="submit" data-i18n="find">Find</button></form>
+          <div id="bioclimate-search-message" class="search-message" aria-live="polite"></div><div id="bioclimate-map" aria-label="Bioclimatic variable map"></div>
+          <div class="bioclimate-preview-badge"><span></span><span data-i18n="prototype_badge">1981–2025 climate</span></div>
+          <div class="bioclimate-legend" aria-label="Variable legend"><strong id="bioclimate-legend-title" data-i18n="legend_title">Variable value</strong><div class="bioclimate-legend-ramp"></div><div><span id="bioclimate-legend-min">Lower</span><span id="bioclimate-legend-mid">Median</span><span id="bioclimate-legend-max">Higher</span></div><small><span data-i18n="low">Lower</span><span data-i18n="high">Higher</span></small></div>
+        </div>
+        <aside class="bioclimate-layer-panel" aria-label="Bioclimatic variable">
+          <p class="panel-label" data-i18n="selected_bioclimate">Selected variable</p><h2 id="selected-bioclimate">BIO1 — Annual mean temperature</h2><p id="preview-message" class="bioclimate-note" data-i18n="preview_message">The map preserves the source grid; colors use a robust 2nd–98th percentile display stretch.</p><p class="panel-label layer-label" data-i18n="choose_layer">Map layer</p><div id="bioclimate-layer-list" class="bioclimate-layer-list"></div>
+          <div class="bioclimate-metadata"><dl><div><dt data-i18n="period">Period</dt><dd>1981–2025</dd></div><div><dt data-i18n="resolution">Resolution</dt><dd>2.5 arc-minutes</dd></div><div><dt data-i18n="domain">Spatial domain</dt><dd id="bioclimate-domain">50°S–50°N</dd></div><div><dt data-i18n="range">Value range</dt><dd id="bioclimate-value-range">—</dd></div><div><dt data-i18n="mean">Domain mean</dt><dd id="bioclimate-mean">—</dd></div></dl></div>
+          <label class="bioclimate-opacity"><span data-i18n="opacity">Opacity</span><output id="bioclimate-opacity-value">88%</output><input id="bioclimate-opacity" type="range" min="10" max="100" value="88"></label><a id="bioclimate-download" class="download-button bioclimate-download" href="#"><span data-i18n="download_geotiff">GeoTIFF repository forthcoming</span><span aria-hidden="true">↓</span></a><p class="bioclimate-disclaimer" data-i18n="disclaimer">Colors are standardized independently for each variable for visualization. Pixel values and exported summaries retain the variable's physical units.</p>
+          <section class="analysis-panel" aria-labelledby="bioclimate-analysis-heading"><p id="bioclimate-analysis-heading" class="panel-label" data-i18n="analysis_tools">Inspect and analyze</p><p class="analysis-hint" data-i18n="analysis_hint">Click the map to inspect a value, or draw an area to summarize it.</p><div class="analysis-actions"><button id="bioclimate-draw-rectangle" type="button" data-i18n="draw_rectangle">Rectangle</button><button id="bioclimate-draw-polygon" type="button" data-i18n="draw_polygon">Polygon</button><button id="bioclimate-clear-selection" type="button" data-i18n="clear_selection">Clear</button></div><p id="bioclimate-analysis-loading" class="analysis-loading" aria-live="polite"></p><div id="bioclimate-selection-empty" class="selection-empty" data-i18n="no_selection">No area selected.</div><div id="bioclimate-selection-results" class="selection-results" hidden><dl><div><dt data-i18n="selected_area">Selected area</dt><dd id="bioclimate-selection-area">—</dd></div><div><dt data-i18n="sampled_cells">Sampled cells</dt><dd id="bioclimate-selection-count">—</dd></div><div><dt data-i18n="minimum">Minimum</dt><dd id="bioclimate-selection-min">—</dd></div><div><dt data-i18n="mean">Mean</dt><dd id="bioclimate-selection-mean">—</dd></div><div><dt data-i18n="median">Median</dt><dd id="bioclimate-selection-median">—</dd></div><div><dt data-i18n="maximum">Maximum</dt><dd id="bioclimate-selection-max">—</dd></div></dl><canvas id="bioclimate-selection-chart" width="260" height="112" aria-label="Histogram of selected values"></canvas><p class="analysis-note" data-i18n="analysis_note">Portal statistics use an optimized numerical grid. GeoTIFFs retain the native 2.5-arc-minute resolution.</p><div class="export-actions"><button id="bioclimate-export-csv" type="button">CSV</button><button id="bioclimate-export-geojson" type="button">GeoJSON</button></div></div></section>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer><strong>Camcore Environmental Map Collections</strong><p data-i18n="footer">Research maps and decision support</p></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script><script src="bioclimate.generated.js?v=20260812bio2"></script><script src="bioclimate.js?v=20260812bio2"></script>
+</body>
+</html>

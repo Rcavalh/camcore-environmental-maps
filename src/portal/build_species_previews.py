@@ -7,7 +7,6 @@ import argparse
 import base64
 import json
 import re
-import shutil
 from pathlib import Path
 
 import numpy as np
@@ -18,10 +17,6 @@ from rasterio.enums import Resampling
 DEFAULT_SOURCE = Path(r"Z:\ENVIROMICS\Camcore26\Articles\9.Data_paper_SSTool")
 NODATA = 65535
 QUANTIZED_MAXIMUM = 65534
-PREVIEW_SPECIES = {
-    "Eucalyptus amplifolia": "Eucalyptus_amplifolia_parquet",
-    "Eucalyptus urophylla": "Eucalyptus_urophylla_parquet",
-}
 LAYER_NAMES = {
     "overall": ("OVERALL_SUITABILITY", "Overall suitability", "Adequabilidade geral"),
     "scaled_koppen": ("KOPPEN_CLIMATE_OVERLAP", "K\u00f6ppen climate overlap", "Sobreposi\u00e7\u00e3o clim\u00e1tica de K\u00f6ppen"),
@@ -60,7 +55,7 @@ def species_catalog(source: Path) -> dict[str, list[str]]:
     eucalypts = [
         display_name(path.name)
         for path in sorted((source / "species_rasters_all").iterdir())
-        if path.is_dir() and path.name.startswith(("Eucalyptus_", "Corymbia_"))
+        if path.is_dir() and path.name.startswith("Eucalyptus_")
     ]
     excluded = {"Pinus_tecunumanii_High_parquet", "Pinus_tecunumanii_Low_parquet"}
     pines = [
@@ -69,6 +64,14 @@ def species_catalog(source: Path) -> dict[str, list[str]]:
         if path.is_dir() and path.name.startswith("Pinus_") and path.name not in excluded
     ]
     return {"eucalypts": eucalypts, "pines": pines}
+
+
+def eucalyptus_species(source: Path) -> dict[str, str]:
+    return {
+        display_name(path.name): path.name
+        for path in sorted((source / "species_rasters_all").iterdir())
+        if path.is_dir() and path.name.startswith("Eucalyptus_")
+    }
 
 
 def web_mercator_preview(src: rasterio.io.DatasetReader, width: int) -> tuple[np.ndarray, list[list[float]]]:
@@ -129,7 +132,14 @@ def main() -> int:
         default=1.0,
         help="High-density visual enlargement applied after native-grid reprojection; it does not change analytical resolution.",
     )
-    parser.add_argument("--analysis-width", type=int, default=1440)
+    parser.add_argument("--analysis-width", type=int, default=720)
+    parser.add_argument("--preview-format", choices=("webp", "png"), default="webp")
+    parser.add_argument("--webp-quality", type=int, default=90)
+    parser.add_argument(
+        "--species",
+        action="append",
+        help="Scientific name to build. Repeat as needed; omit to build every Eucalyptus species.",
+    )
     args = parser.parse_args()
 
     preview_dir = args.web / "assets" / "species"
@@ -137,27 +147,41 @@ def main() -> int:
     download_dir = args.web / "assets" / "species-geotiff"
     for directory in (preview_dir, analysis_dir, download_dir):
         directory.mkdir(parents=True, exist_ok=True)
-    for old_preview in preview_dir.glob("*.png"):
-        old_preview.unlink()
+    for pattern in ("*.png", "*.webp"):
+        for old_preview in preview_dir.glob(pattern):
+            old_preview.unlink()
     for old_grid in analysis_dir.glob("*.generated.js"):
         old_grid.unlink()
 
+    available_species = eucalyptus_species(args.source)
+    if args.species:
+        missing = [name for name in args.species if name not in available_species]
+        if missing:
+            raise ValueError(f"Unknown Eucalyptus species: {', '.join(missing)}")
+        preview_species = {name: available_species[name] for name in args.species}
+    else:
+        preview_species = available_species
+
     species_layers: dict[str, list[dict[str, object]]] = {}
     analysis_manifest: dict[str, dict[str, object]] = {}
-    for species_name, folder_name in PREVIEW_SPECIES.items():
+    for species_index, (species_name, folder_name) in enumerate(preview_species.items(), start=1):
+        print(f"SPECIES_BUILD_START={species_index}/{len(preview_species)} {species_name}", flush=True)
         species_dir = args.source / "species_rasters_all" / folder_name
         species_code = file_code(species_name)
         layers: list[dict[str, object]] = []
         for source_code, (public_code, title, title_pt) in LAYER_NAMES.items():
             raster_path = species_dir / f"{folder_name}_{source_code}.tif"
             if not raster_path.is_file():
-                raise FileNotFoundError(raster_path)
-            output_name = f"{species_code}__{public_code}.png"
+                print(f"SPECIES_LAYER_MISSING={species_name} {source_code}", flush=True)
+                continue
+            output_name = f"{species_code}__{public_code}.{args.preview_format}"
             grid_id = f"{slug(species_name)}--{slug(public_code)}"
             grid_name = f"{species_code}__{public_code}.generated.js"
             tif_name = f"{species_code}__{public_code}.tif"
             with rasterio.open(raster_path) as src:
-                preview_width = src.width if args.width <= 0 else args.width
+                # Two source pixels per web pixel preserve the raster's visual structure
+                # while keeping the complete Eucalyptus catalogue within Pages limits.
+                preview_width = max(2, src.width // 2) if args.width <= 0 else args.width
                 values, leaflet_bounds = web_mercator_preview(src, preview_width)
                 valid = np.isfinite(values)
                 if not valid.any():
@@ -169,11 +193,20 @@ def main() -> int:
                         round(preview_image.height * args.display_scale),
                     )
                     preview_image = preview_image.resize(display_size, Image.Resampling.BICUBIC)
-                preview_image.save(preview_dir / output_name, optimize=True)
+                if args.preview_format == "webp":
+                    preview_image.save(
+                        preview_dir / output_name,
+                        format="WEBP",
+                        quality=args.webp_quality,
+                        method=6,
+                        exact=True,
+                    )
+                else:
+                    preview_image.save(preview_dir / output_name, optimize=True)
                 analysis_values, _ = web_mercator_preview(src, min(args.analysis_width, src.width))
                 write_analysis_grid(analysis_dir / grid_name, grid_id, analysis_values, leaflet_bounds)
-                shutil.copy2(raster_path, download_dir / tif_name)
                 sampled = values[valid]
+                local_download = download_dir / tif_name
                 layers.append(
                     {
                         "id": slug(public_code),
@@ -181,8 +214,8 @@ def main() -> int:
                         "code": public_code,
                         "title": title,
                         "titlePt": title_pt,
-                        "image": f"assets/species/{output_name}?v=20260812tools5",
-                        "download": f"assets/species-geotiff/{tif_name}",
+                        "image": f"assets/species/{output_name}?v=20260812all1",
+                        "download": f"assets/species-geotiff/{tif_name}" if local_download.is_file() else None,
                         "bounds": leaflet_bounds,
                         "minimum": round(float(np.nanmin(sampled)), 4),
                         "maximum": round(float(np.nanmax(sampled)), 4),
@@ -192,13 +225,14 @@ def main() -> int:
                     }
                 )
             analysis_manifest[grid_id] = {"url": f"assets/species-analysis/{grid_name}"}
-        species_layers[species_name] = layers
+        if layers:
+            species_layers[species_name] = layers
 
     payload = {
-        "period": "1981\u20132024",
+        "period": "1981\u20132025",
         "resolution": "2.5 arc-minutes",
         "domain": "50\u00b0S\u201350\u00b0N",
-        "previewSpecies": list(PREVIEW_SPECIES),
+        "previewSpecies": list(species_layers),
         "groups": species_catalog(args.source),
         "speciesLayers": species_layers,
         "analysisManifest": analysis_manifest,

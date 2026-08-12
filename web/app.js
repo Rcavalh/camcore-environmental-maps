@@ -13,7 +13,7 @@ Object.assign(translations.en,{
   collections_text:'Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.',
   available_now:'Available now',preview_available:'Preview available',reserved:'Reserved',frost_type:'Climate hazard',decision_support:'Decision support',environmental_context:'Environmental context',
   frost_collection:'Frost Climatology',species_collection:'Species Suitability',bioclimate_collection:'Bioclimatic Variables',
-  frost_collection_text:'Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.',species_collection_text:'Analyses based on the natural ranges of the species.',empty_collection:'Collection space reserved for future datasets.',open_collection:'Open collection',
+  frost_collection_text:'Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.',species_collection_text:'Analyses based on the natural ranges of the species.',bioclimate_collection_text:'Global BIO1–BIO19 temperature and precipitation summaries for 1981–2025.',empty_collection:'Collection space reserved for future datasets.',open_collection:'Open collection',
   interactive_title:'Explore the frost-climatology layers',about_kicker:'Data access',about_title:'Selected analytical maps are available for download.',
   about_text:'Only selected map products will be released as GeoTIFFs at approximately 30 m resolution. Availability depends on source licences, file size and publication status.',
   read_methods:'Methods & data',footer_brand:'Camcore Environmental Map Collections',footer_text:'Research maps and decision support'
@@ -25,7 +25,7 @@ Object.assign(translations.pt,{
   collections_text:'Cada coleção possui escopo científico, catálogo de mapas e identidade visual próprios. Novas coleções podem ser adicionadas sem alterar o restante do portal.',
   available_now:'Disponível agora',preview_available:'Prévia disponível',reserved:'Reservada',frost_type:'Risco climático',decision_support:'Apoio à decisão',environmental_context:'Contexto ambiental',
   frost_collection:'Climatologia de Geadas',species_collection:'Adequabilidade de Espécies',bioclimate_collection:'Variáveis Bioclimáticas',
-  frost_collection_text:'Probabilidade de ocorrência, dias esperados de geada, temperatura mínima sazonal e contexto do terreno.',species_collection_text:'Análises baseadas nas distribuições naturais das espécies.',empty_collection:'Espaço reservado para conjuntos de dados futuros.',open_collection:'Abrir coleção',
+  frost_collection_text:'Probabilidade de ocorrência, dias esperados de geada, temperatura mínima sazonal e contexto do terreno.',species_collection_text:'Análises baseadas nas distribuições naturais das espécies.',bioclimate_collection_text:'Sínteses globais BIO1–BIO19 de temperatura e precipitação para 1981–2025.',empty_collection:'Espaço reservado para conjuntos de dados futuros.',open_collection:'Abrir coleção',
   interactive_title:'Explore as camadas de climatologia de geadas',about_kicker:'Acesso aos dados',about_title:'Mapas analíticos selecionados estão disponíveis para download.',
   about_text:'Somente produtos cartográficos selecionados serão disponibilizados como GeoTIFFs com resolução aproximada de 30 m. A disponibilidade depende das licenças das fontes, do tamanho dos arquivos e do status de publicação.',
   read_methods:'Métodos e dados',footer_brand:'Coleções de Mapas Ambientais Camcore',footer_text:'Mapas científicos e apoio à decisão'

@@ -20,7 +20,7 @@ GitHub citation metadata are provided in [`CITATION.cff`](CITATION.cff). The cur
 
 ## English
 
-This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active collection. A prototype of **Species Suitability** presents analyses based on species' natural ranges, while **Bioclimatic Variables** remains reserved.
+This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active production collection. **Species Suitability** presents natural-range-based analyses for Eucalyptus species, and **Bioclimatic Variables** presents BIO1–BIO19 temperature and precipitation layers for 1981–2025 across 50°S–50°N.
 
 ### Portal collections
 
@@ -29,6 +29,8 @@ This repository supports a bilingual portal for Camcore environmental map collec
 - **Bioclimatic Variables — reserved:** no layers or results published yet.
 
 The current Species Suitability demonstrator includes four layers each for *Eucalyptus amplifolia* and *Eucalyptus urophylla*, location search, pixel inspection, rectangle/polygon summaries, CSV/GeoJSON export, full-screen mode and original GeoTIFF downloads. High-density browser previews improve visual rendering but do not alter the native 2.5 arc-minute analytical resolution.
+
+The Species Suitability layers summarize the 1981–2025 climate period and extend the analytical framework described by Cavalheiro et al. (2026): Cavalheiro, R., Aguiar, A.M., Vatsavai, R.R. *et al.* A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions. *Tree Genetics & Genomes* **22**, 16 (2026). [https://doi.org/10.1007/s11295-026-01741-0](https://doi.org/10.1007/s11295-026-01741-0). Collection-specific interpretation and distribution guidance are provided in [`docs/SPECIES_SUITABILITY.md`](docs/SPECIES_SUITABILITY.md).
 
 Future datasets should receive their own catalogue, methods and provenance rather than being mixed into the frost-climatology collection.
 
@@ -110,3 +112,8 @@ web/            bilingual GitHub Pages portal
 ```
 
 Code licensing remains pending author approval. No credentials or machine-specific private paths belong in the public repository.
+
+Collection documentation:
+
+- [`docs/SPECIES_SUITABILITY.md`](docs/SPECIES_SUITABILITY.md)
+- [`docs/BIOCLIMATIC_VARIABLES.md`](docs/BIOCLIMATIC_VARIABLES.md)

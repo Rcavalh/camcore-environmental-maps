@@ -12,3 +12,28 @@ date-released: 2026-08-12
 repository-code: "https://github.com/Rcavalh/camcore-environmental-maps"
 url: "https://rcavalh.github.io/camcore-environmental-maps/"
 license: "LicenseRef-PendingAuthorApproval"
+references:
+  - type: article
+    title: "A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions"
+    authors:
+      - family-names: "Cavalheiro"
+        given-names: "Ricardo"
+      - family-names: "Aguiar"
+        given-names: "Aurelio Mendes"
+      - family-names: "Vatsavai"
+        given-names: "Ranga Raju"
+      - family-names: "Jain"
+        given-names: "Mragisha"
+      - family-names: "Hammond"
+        given-names: "William M."
+      - family-names: "Hodge"
+        given-names: "Gary"
+      - family-names: "Acosta"
+        given-names: "Juan Jose"
+      - family-names: "Fritsche-Neto"
+        given-names: "Roberto"
+    journal: "Tree Genetics & Genomes"
+    volume: 22
+    year: 2026
+    doi: "10.1007/s11295-026-01741-0"
+    url: "https://doi.org/10.1007/s11295-026-01741-0"

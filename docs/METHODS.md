@@ -34,3 +34,9 @@ The complete-period maps summarize 2000–2025. Period and ENSO maps retain the 
 Terrain elevation is derived from ANADEM v1, the approximately 30 m digital terrain model developed for South America by Laipelt et al. (2024). ANADEM removes vegetation-related bias from Copernicus DEM GLO-30 using machine learning, GEDI elevation information and multispectral predictors. The authors report that the data are freely available for use through Google Earth Engine (`projects/et-brasil/assets/anadem/v1`) and MGRS downloads from the official project website.
 
 Reference: Laipelt, L.; de Andrade, B.C.; Collischonn, W.; Teixeira, A.A.; de Paiva, R.C.D.; Ruhoff, A. ANADEM: A Digital Terrain Model for South America. *Remote Sensing* **2024**, *16*, 2321. https://doi.org/10.3390/rs16132321.
+
+## Species Suitability collection
+
+The Species Suitability maps summarize the 1981–2025 climate period at a native resolution of 2.5 arc-minutes. The mapped products represent climatic similarity to the observed natural distribution of each species and include bioclimatic-envelope overlap, Köppen-climate overlap, PCA–Mahalanobis similarity and overall suitability. These scores are screening indices, not direct predictions of survival, productivity or physiological limits.
+
+Methods reference: Cavalheiro, R.; Aguiar, A.M.; Vatsavai, R.R.; et al. A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions. *Tree Genetics & Genomes* **2026**, *22*, 16. https://doi.org/10.1007/s11295-026-01741-0.

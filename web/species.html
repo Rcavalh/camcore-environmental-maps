@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
   <link rel="stylesheet" href="styles.css?v=20260812brand1">
-  <link rel="stylesheet" href="species.css?v=20260812species9">
+  <link rel="stylesheet" href="species.css?v=20260812all2">
 </head>
 <body>
   <header class="site-header">
@@ -38,14 +38,14 @@
       <div class="species-summary" aria-label="Collection summary">
         <span><strong id="species-count">52</strong><span data-i18n="species">species</span></span>
         <span><strong>4</strong><span data-i18n="analytical_layers">analytical layers</span></span>
-        <span><strong>1981–2024</strong><span data-i18n="climate_period">climate period</span></span>
+        <span><strong>1981–2025</strong><span data-i18n="climate_period">climate period</span></span>
       </div>
     </section>
 
     <section class="species-section">
       <div class="section-heading species-heading">
         <div><p class="kicker" data-i18n="interactive_map">Interactive map</p><h2 data-i18n="explore_title">Browse group, species and suitability layer</h2></div>
-        <p data-i18n="explore_text">The first prototype exposes all four analytical products for Eucalyptus amplifolia. Other species are catalogued for staged optimization.</p>
+        <p data-i18n="explore_text">All Eucalyptus species are available with their natural-range-based suitability products.</p>
       </div>
 
       <div class="species-workspace">
@@ -81,7 +81,7 @@
           <div id="species-layer-list" class="species-layer-list"></div>
           <div class="species-metadata">
             <dl>
-                <div><dt data-i18n="period">Period</dt><dd>1981–2024</dd></div>
+                <div><dt data-i18n="period">Period</dt><dd>1981–2025</dd></div>
                 <div><dt data-i18n="resolution">Resolution</dt><dd>2.5 arc-minutes</dd></div>
                 <div><dt data-i18n="domain">Spatial domain</dt><dd id="species-domain">50°S–50°N</dd></div>
                 <div><dt data-i18n="range">Value range</dt><dd id="species-value-range">0–1</dd></div>
@@ -111,7 +111,7 @@
                 <div><dt data-i18n="maximum">Maximum</dt><dd id="species-selection-max">—</dd></div>
               </dl>
               <canvas id="species-selection-chart" width="260" height="112" aria-label="Histogram of selected values"></canvas>
-              <p class="analysis-note" data-i18n="analysis_note">Statistics use a numerical web grid; download the GeoTIFF for native-resolution analysis.</p>
+              <p class="analysis-note" data-i18n="analysis_note">Portal statistics use an optimized numerical grid. GeoTIFFs retain the native 2.5-arc-minute resolution.</p>
               <div class="export-actions"><button id="species-export-csv" type="button">CSV</button><button id="species-export-geojson" type="button">GeoJSON</button></div>
             </div>
           </section>
@@ -123,7 +123,7 @@
   <footer><strong>Camcore Environmental Map Collections</strong><p data-i18n="footer">Research maps and decision support</p></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
-  <script src="species.generated.js?v=20260812tools5"></script>
-  <script src="species.js?v=20260812tools5"></script>
+  <script src="species.generated.js?v=20260812all2"></script>
+  <script src="species.js?v=20260812all2"></script>
 </body>
 </html>
