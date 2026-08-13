@@ -19,7 +19,9 @@ Cavalheiro, R., Aguiar, A.M., Vatsavai, R.R. *et al.* A new environmental-based 
 
 ## Web visualization and analytical downloads
 
-The portal uses Web Mercator WebP previews generated at one-half of the source grid width, together with a numerical inspection grid, so that all Eucalyptus maps remain responsive in a static website. These derivatives are visualization products and do not change the native 2.5-arc-minute analytical resolution of the source GeoTIFFs. Original-resolution analysis should use the downloadable GeoTIFF products.
+The portal includes 38 Eucalyptus and 10 Pinus species. It uses Web Mercator WebP previews generated at one-half of the source grid width, together with a numerical inspection grid, so that the complete catalogue remains responsive in a static website. These derivatives are visualization products and do not change the native 2.5-arc-minute analytical resolution of the source GeoTIFFs. Original-resolution analysis should use the downloadable GeoTIFF products.
+
+The high- and low-elevation *Pinus tecunumanii* source variants are retained in the research archive but are not presented as separate species in the public catalogue; the portal exposes the species-level product.
 
 The production architecture separates responsibilities:
 

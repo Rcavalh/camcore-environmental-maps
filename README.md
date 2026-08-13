@@ -20,7 +20,7 @@ GitHub citation metadata are provided in [`CITATION.cff`](CITATION.cff). The cur
 
 ## English
 
-This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active production collection. **Species Suitability** presents natural-range-based analyses for Eucalyptus species, and **Bioclimatic Variables** presents BIO1–BIO19 temperature and precipitation layers for 1981–2025 across 50°S–50°N.
+This repository supports a bilingual portal for Camcore environmental map collections. **Frost Climatology** is the active production collection. **Species Suitability** presents natural-range-based analyses for Eucalyptus and Pinus species, and **Bioclimatic Variables** presents BIO1–BIO19 temperature and precipitation layers for 1981–2025 across 50°S–50°N.
 
 ### Portal collections
 
@@ -28,7 +28,7 @@ This repository supports a bilingual portal for Camcore environmental map collec
 - **Species Suitability — prototype:** natural-range-based suitability maps organized by taxonomic group, species and analytical layer.
 - **Bioclimatic Variables — reserved:** no layers or results published yet.
 
-The current Species Suitability demonstrator includes four layers each for *Eucalyptus amplifolia* and *Eucalyptus urophylla*, location search, pixel inspection, rectangle/polygon summaries, CSV/GeoJSON export, full-screen mode and original GeoTIFF downloads. High-density browser previews improve visual rendering but do not alter the native 2.5 arc-minute analytical resolution.
+The Species Suitability collection includes 38 Eucalyptus and 10 Pinus species, with four analytical products per species where available. It supports location search, pixel inspection, rectangle/polygon summaries, CSV/GeoJSON export and full-screen mode. High-density browser previews improve visual rendering but do not alter the native 2.5 arc-minute analytical resolution.
 
 The Species Suitability layers summarize the 1981–2025 climate period and extend the analytical framework described by Cavalheiro et al. (2026): Cavalheiro, R., Aguiar, A.M., Vatsavai, R.R. *et al.* A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions. *Tree Genetics & Genomes* **22**, 16 (2026). [https://doi.org/10.1007/s11295-026-01741-0](https://doi.org/10.1007/s11295-026-01741-0). Collection-specific interpretation and distribution guidance are provided in [`docs/SPECIES_SUITABILITY.md`](docs/SPECIES_SUITABILITY.md).
 

@@ -66,12 +66,22 @@ def species_catalog(source: Path) -> dict[str, list[str]]:
     return {"eucalypts": eucalypts, "pines": pines}
 
 
-def eucalyptus_species(source: Path) -> dict[str, str]:
-    return {
-        display_name(path.name): path.name
+def portal_species(source: Path) -> dict[str, Path]:
+    """Return the primary species products exposed by the public portal."""
+    species = {
+        display_name(path.name): path
         for path in sorted((source / "species_rasters_all").iterdir())
         if path.is_dir() and path.name.startswith("Eucalyptus_")
     }
+    excluded = {"Pinus_tecunumanii_High_parquet", "Pinus_tecunumanii_Low_parquet"}
+    species.update(
+        {
+            display_name(path.name): path
+            for path in sorted((source / "species_rasters_pinus").iterdir())
+            if path.is_dir() and path.name.startswith("Pinus_") and path.name not in excluded
+        }
+    )
+    return species
 
 
 def web_mercator_preview(src: rasterio.io.DatasetReader, width: int) -> tuple[np.ndarray, list[list[float]]]:
@@ -138,7 +148,7 @@ def main() -> int:
     parser.add_argument(
         "--species",
         action="append",
-        help="Scientific name to build. Repeat as needed; omit to build every Eucalyptus species.",
+        help="Scientific name to build. Repeat as needed; omit to build every portal species.",
     )
     args = parser.parse_args()
 
@@ -153,20 +163,20 @@ def main() -> int:
     for old_grid in analysis_dir.glob("*.generated.js"):
         old_grid.unlink()
 
-    available_species = eucalyptus_species(args.source)
+    available_species = portal_species(args.source)
     if args.species:
         missing = [name for name in args.species if name not in available_species]
         if missing:
-            raise ValueError(f"Unknown Eucalyptus species: {', '.join(missing)}")
+            raise ValueError(f"Unknown portal species: {', '.join(missing)}")
         preview_species = {name: available_species[name] for name in args.species}
     else:
         preview_species = available_species
 
     species_layers: dict[str, list[dict[str, object]]] = {}
     analysis_manifest: dict[str, dict[str, object]] = {}
-    for species_index, (species_name, folder_name) in enumerate(preview_species.items(), start=1):
+    for species_index, (species_name, species_dir) in enumerate(preview_species.items(), start=1):
         print(f"SPECIES_BUILD_START={species_index}/{len(preview_species)} {species_name}", flush=True)
-        species_dir = args.source / "species_rasters_all" / folder_name
+        folder_name = species_dir.name
         species_code = file_code(species_name)
         layers: list[dict[str, object]] = []
         for source_code, (public_code, title, title_pt) in LAYER_NAMES.items():
@@ -180,7 +190,7 @@ def main() -> int:
             tif_name = f"{species_code}__{public_code}.tif"
             with rasterio.open(raster_path) as src:
                 # Two source pixels per web pixel preserve the raster's visual structure
-                # while keeping the complete Eucalyptus catalogue within Pages limits.
+                # while keeping the complete Eucalyptus and Pinus catalogue within Pages limits.
                 preview_width = max(2, src.width // 2) if args.width <= 0 else args.width
                 values, leaflet_bounds = web_mercator_preview(src, preview_width)
                 valid = np.isfinite(values)
@@ -214,7 +224,7 @@ def main() -> int:
                         "code": public_code,
                         "title": title,
                         "titlePt": title_pt,
-                        "image": f"assets/species/{output_name}?v=20260812all1",
+                        "image": f"assets/species/{output_name}?v=20260813pine1",
                         "download": f"assets/species-geotiff/{tif_name}" if local_download.is_file() else None,
                         "bounds": leaflet_bounds,
                         "minimum": round(float(np.nanmin(sampled)), 4),

@@ -40,7 +40,17 @@ window.SPECIES_SUITABILITY = {
     "Eucalyptus tricarpa",
     "Eucalyptus urophylla",
     "Eucalyptus viminalis",
-    "Eucalyptus wandoo"
+    "Eucalyptus wandoo",
+    "Pinus caribaea",
+    "Pinus douglasiana",
+    "Pinus elliottii",
+    "Pinus greggii",
+    "Pinus maximinoi",
+    "Pinus oocarpa",
+    "Pinus patula",
+    "Pinus radiata",
+    "Pinus taeda",
+    "Pinus tecunumanii"
   ],
   "groups": {
     "eucalypts": [
@@ -104,7 +114,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_AMPLIFOLIA__OVERALL_SUITABILITY.tif",
         "bounds": [
           [
@@ -128,7 +138,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_AMPLIFOLIA__KOPPEN_CLIMATE_OVERLAP.tif",
         "bounds": [
           [
@@ -152,7 +162,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_AMPLIFOLIA__PCA_MAHALANOBIS_SIMILARITY.tif",
         "bounds": [
           [
@@ -176,7 +186,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_AMPLIFOLIA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_AMPLIFOLIA__BIOCLIMATIC_ENVELOPE.tif",
         "bounds": [
           [
@@ -202,7 +212,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_BADJENSIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BADJENSIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -226,7 +236,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_BADJENSIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BADJENSIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -250,7 +260,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_BADJENSIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BADJENSIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -274,7 +284,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_BADJENSIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BADJENSIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -300,7 +310,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_BENTHAMII__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BENTHAMII__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -324,7 +334,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_BENTHAMII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BENTHAMII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -348,7 +358,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_BENTHAMII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BENTHAMII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -372,7 +382,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_BENTHAMII__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BENTHAMII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -398,7 +408,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_BRASSIANA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BRASSIANA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -422,7 +432,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_BRASSIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BRASSIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -446,7 +456,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_BRASSIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BRASSIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -470,7 +480,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_BRASSIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_BRASSIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -496,7 +506,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_CAMALDULENSIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CAMALDULENSIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -520,7 +530,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_CAMALDULENSIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CAMALDULENSIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -544,7 +554,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_CAMALDULENSIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CAMALDULENSIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -570,7 +580,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_CLADOCALYX__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CLADOCALYX__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -594,7 +604,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_CLADOCALYX__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CLADOCALYX__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -618,7 +628,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_CLADOCALYX__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CLADOCALYX__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -642,7 +652,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_CLADOCALYX__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_CLADOCALYX__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -668,7 +678,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_DEGLUPTA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DEGLUPTA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -692,7 +702,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_DEGLUPTA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DEGLUPTA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -716,7 +726,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_DEGLUPTA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DEGLUPTA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -740,7 +750,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_DEGLUPTA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DEGLUPTA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -766,7 +776,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -790,7 +800,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -814,7 +824,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -838,7 +848,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DIVERSICOLOR__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -864,7 +874,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -888,7 +898,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -912,7 +922,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -936,7 +946,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DORRIGOENSIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -962,7 +972,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -986,7 +996,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1010,7 +1020,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1034,7 +1044,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DREPANOPHYLLA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1060,7 +1070,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_DUNNII__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DUNNII__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1084,7 +1094,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_DUNNII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DUNNII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1108,7 +1118,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_DUNNII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DUNNII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1132,7 +1142,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_DUNNII__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_DUNNII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1158,7 +1168,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_GLOBULUS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GLOBULUS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1182,7 +1192,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_GLOBULUS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GLOBULUS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1206,7 +1216,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_GLOBULUS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GLOBULUS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1230,7 +1240,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_GLOBULUS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GLOBULUS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1256,7 +1266,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1280,7 +1290,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1304,7 +1314,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1328,7 +1338,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GOMPHOCEPHALA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1354,7 +1364,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_GRANDIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRANDIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1378,7 +1388,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_GRANDIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRANDIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1402,7 +1412,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_GRANDIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRANDIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1426,7 +1436,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_GRANDIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRANDIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1452,7 +1462,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_GRISEA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRISEA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1476,7 +1486,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_GRISEA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRISEA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1500,7 +1510,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_GRISEA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRISEA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1524,7 +1534,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_GRISEA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_GRISEA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1550,7 +1560,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1574,7 +1584,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1598,7 +1608,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1622,7 +1632,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_LONGIROSTRATA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1648,7 +1658,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_MACARTHURII__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MACARTHURII__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1672,7 +1682,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_MACARTHURII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MACARTHURII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1696,7 +1706,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_MACARTHURII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MACARTHURII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1720,7 +1730,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_MACARTHURII__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MACARTHURII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1746,7 +1756,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_MAJOR__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MAJOR__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1770,7 +1780,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_MAJOR__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MAJOR__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1794,7 +1804,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_MAJOR__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MAJOR__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1818,7 +1828,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_MAJOR__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MAJOR__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1844,7 +1854,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_MARGINATA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MARGINATA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1868,7 +1878,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_MARGINATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MARGINATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1892,7 +1902,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_MARGINATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MARGINATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1916,7 +1926,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_MARGINATA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MARGINATA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1942,7 +1952,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_MICROCARPA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MICROCARPA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1966,7 +1976,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_MICROCARPA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MICROCARPA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -1990,7 +2000,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_MICROCARPA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MICROCARPA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2014,7 +2024,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_MICROCARPA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MICROCARPA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2040,7 +2050,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_MOLUCCANA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MOLUCCANA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2064,7 +2074,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_MOLUCCANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MOLUCCANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2088,7 +2098,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_MOLUCCANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MOLUCCANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2112,7 +2122,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_MOLUCCANA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_MOLUCCANA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2138,7 +2148,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_NITENS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_NITENS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2162,7 +2172,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_NITENS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_NITENS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2186,7 +2196,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_NITENS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_NITENS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2210,7 +2220,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_NITENS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_NITENS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2236,7 +2246,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2260,7 +2270,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2284,7 +2294,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2308,7 +2318,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_OCCIDENTALIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2334,7 +2344,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_PELLITA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PELLITA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2358,7 +2368,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_PELLITA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PELLITA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2382,7 +2392,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_PELLITA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PELLITA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2406,7 +2416,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_PELLITA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PELLITA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2432,7 +2442,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_PROPINQUA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PROPINQUA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2456,7 +2466,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_PROPINQUA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PROPINQUA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2480,7 +2490,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_PROPINQUA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PROPINQUA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2504,7 +2514,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_PROPINQUA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PROPINQUA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2530,7 +2540,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_PUNCTATA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PUNCTATA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2554,7 +2564,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_PUNCTATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PUNCTATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2578,7 +2588,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_PUNCTATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PUNCTATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2602,7 +2612,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_PUNCTATA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_PUNCTATA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2628,7 +2638,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_RAVERETIANA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_RAVERETIANA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2652,7 +2662,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_RAVERETIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_RAVERETIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2676,7 +2686,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_RAVERETIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_RAVERETIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2700,7 +2710,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_RAVERETIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_RAVERETIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2726,7 +2736,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_ROBUSTA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_ROBUSTA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2750,7 +2760,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_ROBUSTA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_ROBUSTA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2774,7 +2784,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_ROBUSTA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_ROBUSTA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2798,7 +2808,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_ROBUSTA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_ROBUSTA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2824,7 +2834,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_SALIGNA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SALIGNA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2848,7 +2858,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_SALIGNA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SALIGNA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2872,7 +2882,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_SALIGNA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SALIGNA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2896,7 +2906,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_SALIGNA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SALIGNA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2922,7 +2932,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2946,7 +2956,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2970,7 +2980,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -2994,7 +3004,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROPHLOIA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3020,7 +3030,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3044,7 +3054,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3068,7 +3078,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3092,7 +3102,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SIDEROXYLON__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3118,7 +3128,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_SMITHII__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SMITHII__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3142,7 +3152,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_SMITHII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SMITHII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3166,7 +3176,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_SMITHII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SMITHII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3190,7 +3200,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_SMITHII__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_SMITHII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3216,7 +3226,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_TERETICORNIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TERETICORNIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3240,7 +3250,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_TERETICORNIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TERETICORNIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3264,7 +3274,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_TERETICORNIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TERETICORNIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3288,7 +3298,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_TERETICORNIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TERETICORNIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3314,7 +3324,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_THOZETIANA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_THOZETIANA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3338,7 +3348,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_THOZETIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_THOZETIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3362,7 +3372,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_THOZETIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_THOZETIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3386,7 +3396,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_THOZETIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_THOZETIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3412,7 +3422,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_TRICARPA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TRICARPA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3436,7 +3446,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_TRICARPA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TRICARPA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3460,7 +3470,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_TRICARPA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TRICARPA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3484,7 +3494,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_TRICARPA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_TRICARPA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3510,7 +3520,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_UROPHYLLA__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_UROPHYLLA__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_UROPHYLLA__OVERALL_SUITABILITY.tif",
         "bounds": [
           [
@@ -3534,7 +3544,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_UROPHYLLA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_UROPHYLLA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_UROPHYLLA__KOPPEN_CLIMATE_OVERLAP.tif",
         "bounds": [
           [
@@ -3558,7 +3568,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_UROPHYLLA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_UROPHYLLA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_UROPHYLLA__PCA_MAHALANOBIS_SIMILARITY.tif",
         "bounds": [
           [
@@ -3582,7 +3592,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_UROPHYLLA__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_UROPHYLLA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": "assets/species-geotiff/EUCALYPTUS_UROPHYLLA__BIOCLIMATIC_ENVELOPE.tif",
         "bounds": [
           [
@@ -3608,7 +3618,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_VIMINALIS__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_VIMINALIS__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3632,7 +3642,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_VIMINALIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_VIMINALIS__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3656,7 +3666,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_VIMINALIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_VIMINALIS__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3680,7 +3690,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_VIMINALIS__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_VIMINALIS__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3706,7 +3716,7 @@ window.SPECIES_SUITABILITY = {
         "code": "OVERALL_SUITABILITY",
         "title": "Overall suitability",
         "titlePt": "Adequabilidade geral",
-        "image": "assets/species/EUCALYPTUS_WANDOO__OVERALL_SUITABILITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_WANDOO__OVERALL_SUITABILITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3730,7 +3740,7 @@ window.SPECIES_SUITABILITY = {
         "code": "KOPPEN_CLIMATE_OVERLAP",
         "title": "Köppen climate overlap",
         "titlePt": "Sobreposição climática de Köppen",
-        "image": "assets/species/EUCALYPTUS_WANDOO__KOPPEN_CLIMATE_OVERLAP.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_WANDOO__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3754,7 +3764,7 @@ window.SPECIES_SUITABILITY = {
         "code": "PCA_MAHALANOBIS_SIMILARITY",
         "title": "PCA–Mahalanobis similarity",
         "titlePt": "Similaridade PCA–Mahalanobis",
-        "image": "assets/species/EUCALYPTUS_WANDOO__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_WANDOO__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3778,7 +3788,7 @@ window.SPECIES_SUITABILITY = {
         "code": "BIOCLIMATIC_ENVELOPE",
         "title": "Bioclimatic envelope",
         "titlePt": "Envelope bioclimático",
-        "image": "assets/species/EUCALYPTUS_WANDOO__BIOCLIMATIC_ENVELOPE.webp?v=20260812all1",
+        "image": "assets/species/EUCALYPTUS_WANDOO__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
         "download": null,
         "bounds": [
           [
@@ -3793,6 +3803,986 @@ window.SPECIES_SUITABILITY = {
         "minimum": 0.0,
         "maximum": 1.0,
         "mean": 0.2399,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus caribaea": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-caribaea--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_CARIBAEA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0002,
+        "maximum": 1.0,
+        "mean": 0.3403,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-caribaea--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_CARIBAEA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.154,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-caribaea--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_CARIBAEA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4705,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-caribaea--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_CARIBAEA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.3942,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus douglasiana": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-douglasiana--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_DOUGLASIANA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0001,
+        "maximum": 1.0,
+        "mean": 0.2554,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-douglasiana--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_DOUGLASIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0249,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-douglasiana--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_DOUGLASIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4781,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-douglasiana--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_DOUGLASIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2614,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus elliottii": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-elliottii--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_ELLIOTTII__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2899,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-elliottii--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_ELLIOTTII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.1082,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-elliottii--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_ELLIOTTII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4841,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-elliottii--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_ELLIOTTII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2753,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus greggii": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-greggii--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_GREGGII__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.278,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-greggii--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_GREGGII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0577,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-greggii--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_GREGGII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4858,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-greggii--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_GREGGII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2888,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus maximinoi": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-maximinoi--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_MAXIMINOI__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0064,
+        "maximum": 1.0,
+        "mean": 0.3328,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-maximinoi--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_MAXIMINOI__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.1613,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-maximinoi--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_MAXIMINOI__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4756,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-maximinoi--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_MAXIMINOI__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.3598,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus oocarpa": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-oocarpa--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_OOCARPA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.016,
+        "maximum": 1.0,
+        "mean": 0.3469,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-oocarpa--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_OOCARPA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.1739,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-oocarpa--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_OOCARPA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4764,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-oocarpa--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_OOCARPA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.3889,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus patula": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-patula--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_PATULA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0002,
+        "maximum": 1.0,
+        "mean": 0.2941,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-patula--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_PATULA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0484,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-patula--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_PATULA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4824,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-patula--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_PATULA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.3494,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus radiata": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-radiata--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_RADIATA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 0.8348,
+        "mean": 0.1972,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-radiata--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_RADIATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0873,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-radiata--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_RADIATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.5015,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-radiata--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_RADIATA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0019,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus taeda": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-taeda--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_TAEDA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0001,
+        "maximum": 1.0,
+        "mean": 0.2855,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-taeda--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_TAEDA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.062,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-taeda--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_TAEDA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.5049,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-taeda--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_TAEDA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2873,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      }
+    ],
+    "Pinus tecunumanii": [
+      {
+        "id": "overall-suitability",
+        "gridId": "pinus-tecunumanii--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/PINUS_TECUNUMANII__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0027,
+        "maximum": 1.0,
+        "mean": 0.3191,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "pinus-tecunumanii--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/PINUS_TECUNUMANII__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0964,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "pinus-tecunumanii--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/PINUS_TECUNUMANII__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4715,
+        "previewWidth": 4320,
+        "previewHeight": 1390
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "pinus-tecunumanii--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/PINUS_TECUNUMANII__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.3874,
         "previewWidth": 4320,
         "previewHeight": 1390
       }
@@ -4251,6 +5241,126 @@ window.SPECIES_SUITABILITY = {
     },
     "eucalyptus-wandoo--bioclimatic-envelope": {
       "url": "assets/species-analysis/EUCALYPTUS_WANDOO__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-caribaea--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_CARIBAEA__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-caribaea--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_CARIBAEA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-caribaea--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_CARIBAEA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-caribaea--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_CARIBAEA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-douglasiana--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_DOUGLASIANA__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-douglasiana--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_DOUGLASIANA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-douglasiana--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_DOUGLASIANA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-douglasiana--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_DOUGLASIANA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-elliottii--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_ELLIOTTII__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-elliottii--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_ELLIOTTII__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-elliottii--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_ELLIOTTII__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-elliottii--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_ELLIOTTII__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-greggii--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_GREGGII__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-greggii--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_GREGGII__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-greggii--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_GREGGII__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-greggii--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_GREGGII__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-maximinoi--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_MAXIMINOI__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-maximinoi--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_MAXIMINOI__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-maximinoi--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_MAXIMINOI__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-maximinoi--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_MAXIMINOI__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-oocarpa--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_OOCARPA__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-oocarpa--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_OOCARPA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-oocarpa--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_OOCARPA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-oocarpa--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_OOCARPA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-patula--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_PATULA__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-patula--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_PATULA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-patula--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_PATULA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-patula--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_PATULA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-radiata--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_RADIATA__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-radiata--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_RADIATA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-radiata--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_RADIATA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-radiata--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_RADIATA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-taeda--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_TAEDA__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-taeda--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_TAEDA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-taeda--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_TAEDA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-taeda--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_TAEDA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "pinus-tecunumanii--overall-suitability": {
+      "url": "assets/species-analysis/PINUS_TECUNUMANII__OVERALL_SUITABILITY.generated.js"
+    },
+    "pinus-tecunumanii--koppen-climate-overlap": {
+      "url": "assets/species-analysis/PINUS_TECUNUMANII__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "pinus-tecunumanii--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/PINUS_TECUNUMANII__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "pinus-tecunumanii--bioclimatic-envelope": {
+      "url": "assets/species-analysis/PINUS_TECUNUMANII__BIOCLIMATIC_ENVELOPE.generated.js"
     }
   }
 };
