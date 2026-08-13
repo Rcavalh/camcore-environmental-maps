@@ -41,6 +41,10 @@ window.SPECIES_SUITABILITY = {
     "Eucalyptus urophylla",
     "Eucalyptus viminalis",
     "Eucalyptus wandoo",
+    "Corymbia citriodora",
+    "Corymbia henryi",
+    "Corymbia maculata",
+    "Corymbia torelliana",
     "Pinus caribaea",
     "Pinus douglasiana",
     "Pinus elliottii",
@@ -92,6 +96,12 @@ window.SPECIES_SUITABILITY = {
       "Eucalyptus urophylla",
       "Eucalyptus viminalis",
       "Eucalyptus wandoo"
+    ],
+    "corymbias": [
+      "Corymbia citriodora",
+      "Corymbia henryi",
+      "Corymbia maculata",
+      "Corymbia torelliana"
     ],
     "pines": [
       "Pinus caribaea",
@@ -4786,6 +4796,374 @@ window.SPECIES_SUITABILITY = {
         "previewWidth": 4320,
         "previewHeight": 1390
       }
+    ],
+    "Corymbia citriodora": [
+      {
+        "id": "overall-suitability",
+        "gridId": "corymbia-citriodora--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/CORYMBIA_CITRIODORA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.1542,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "corymbia-citriodora--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/CORYMBIA_CITRIODORA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0961,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "corymbia-citriodora--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/CORYMBIA_CITRIODORA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2115,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      }
+    ],
+    "Corymbia henryi": [
+      {
+        "id": "overall-suitability",
+        "gridId": "corymbia-henryi--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/CORYMBIA_HENRYI__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.1805,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "corymbia-henryi--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/CORYMBIA_HENRYI__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0617,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "corymbia-henryi--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/CORYMBIA_HENRYI__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4873,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "corymbia-henryi--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/CORYMBIA_HENRYI__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0926,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      }
+    ],
+    "Corymbia maculata": [
+      {
+        "id": "overall-suitability",
+        "gridId": "corymbia-maculata--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/CORYMBIA_MACULATA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.241,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "corymbia-maculata--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/CORYMBIA_MACULATA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.073,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "corymbia-maculata--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/CORYMBIA_MACULATA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4873,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "corymbia-maculata--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/CORYMBIA_MACULATA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2533,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      }
+    ],
+    "Corymbia torelliana": [
+      {
+        "id": "overall-suitability",
+        "gridId": "corymbia-torelliana--overall-suitability",
+        "code": "OVERALL_SUITABILITY",
+        "title": "Overall suitability",
+        "titlePt": "Adequabilidade geral",
+        "image": "assets/species/CORYMBIA_TORELLIANA__OVERALL_SUITABILITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2258,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "koppen-climate-overlap",
+        "gridId": "corymbia-torelliana--koppen-climate-overlap",
+        "code": "KOPPEN_CLIMATE_OVERLAP",
+        "title": "Köppen climate overlap",
+        "titlePt": "Sobreposição climática de Köppen",
+        "image": "assets/species/CORYMBIA_TORELLIANA__KOPPEN_CLIMATE_OVERLAP.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.0815,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "pca-mahalanobis-similarity",
+        "gridId": "corymbia-torelliana--pca-mahalanobis-similarity",
+        "code": "PCA_MAHALANOBIS_SIMILARITY",
+        "title": "PCA–Mahalanobis similarity",
+        "titlePt": "Similaridade PCA–Mahalanobis",
+        "image": "assets/species/CORYMBIA_TORELLIANA__PCA_MAHALANOBIS_SIMILARITY.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.4896,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      },
+      {
+        "id": "bioclimatic-envelope",
+        "gridId": "corymbia-torelliana--bioclimatic-envelope",
+        "code": "BIOCLIMATIC_ENVELOPE",
+        "title": "Bioclimatic envelope",
+        "titlePt": "Envelope bioclimático",
+        "image": "assets/species/CORYMBIA_TORELLIANA__BIOCLIMATIC_ENVELOPE.webp?v=20260813pine1",
+        "download": null,
+        "bounds": [
+          [
+            -49.999999999999986,
+            -179.99999999999997
+          ],
+          [
+            49.99999999997728,
+            179.9999999996726
+          ]
+        ],
+        "minimum": 0.0,
+        "maximum": 1.0,
+        "mean": 0.2014,
+        "previewWidth": 2160,
+        "previewHeight": 695
+      }
     ]
   },
   "analysisManifest": {
@@ -5361,6 +5739,51 @@ window.SPECIES_SUITABILITY = {
     },
     "pinus-tecunumanii--bioclimatic-envelope": {
       "url": "assets/species-analysis/PINUS_TECUNUMANII__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "corymbia-citriodora--overall-suitability": {
+      "url": "assets/species-analysis/CORYMBIA_CITRIODORA__OVERALL_SUITABILITY.generated.js"
+    },
+    "corymbia-citriodora--koppen-climate-overlap": {
+      "url": "assets/species-analysis/CORYMBIA_CITRIODORA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "corymbia-citriodora--bioclimatic-envelope": {
+      "url": "assets/species-analysis/CORYMBIA_CITRIODORA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "corymbia-henryi--overall-suitability": {
+      "url": "assets/species-analysis/CORYMBIA_HENRYI__OVERALL_SUITABILITY.generated.js"
+    },
+    "corymbia-henryi--koppen-climate-overlap": {
+      "url": "assets/species-analysis/CORYMBIA_HENRYI__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "corymbia-henryi--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/CORYMBIA_HENRYI__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "corymbia-henryi--bioclimatic-envelope": {
+      "url": "assets/species-analysis/CORYMBIA_HENRYI__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "corymbia-maculata--overall-suitability": {
+      "url": "assets/species-analysis/CORYMBIA_MACULATA__OVERALL_SUITABILITY.generated.js"
+    },
+    "corymbia-maculata--koppen-climate-overlap": {
+      "url": "assets/species-analysis/CORYMBIA_MACULATA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "corymbia-maculata--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/CORYMBIA_MACULATA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "corymbia-maculata--bioclimatic-envelope": {
+      "url": "assets/species-analysis/CORYMBIA_MACULATA__BIOCLIMATIC_ENVELOPE.generated.js"
+    },
+    "corymbia-torelliana--overall-suitability": {
+      "url": "assets/species-analysis/CORYMBIA_TORELLIANA__OVERALL_SUITABILITY.generated.js"
+    },
+    "corymbia-torelliana--koppen-climate-overlap": {
+      "url": "assets/species-analysis/CORYMBIA_TORELLIANA__KOPPEN_CLIMATE_OVERLAP.generated.js"
+    },
+    "corymbia-torelliana--pca-mahalanobis-similarity": {
+      "url": "assets/species-analysis/CORYMBIA_TORELLIANA__PCA_MAHALANOBIS_SIMILARITY.generated.js"
+    },
+    "corymbia-torelliana--bioclimatic-envelope": {
+      "url": "assets/species-analysis/CORYMBIA_TORELLIANA__BIOCLIMATIC_ENVELOPE.generated.js"
     }
   }
 };

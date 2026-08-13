@@ -57,13 +57,18 @@ def species_catalog(source: Path) -> dict[str, list[str]]:
         for path in sorted((source / "species_rasters_all").iterdir())
         if path.is_dir() and path.name.startswith("Eucalyptus_")
     ]
+    corymbias = [
+        display_name(path.name)
+        for path in sorted((source / "species_rasters_all").iterdir())
+        if path.is_dir() and path.name.startswith("Corymbia_")
+    ]
     excluded = {"Pinus_tecunumanii_High_parquet", "Pinus_tecunumanii_Low_parquet"}
     pines = [
         display_name(path.name)
         for path in sorted((source / "species_rasters_pinus").iterdir())
         if path.is_dir() and path.name.startswith("Pinus_") and path.name not in excluded
     ]
-    return {"eucalypts": eucalypts, "pines": pines}
+    return {"eucalypts": eucalypts, "corymbias": corymbias, "pines": pines}
 
 
 def portal_species(source: Path) -> dict[str, Path]:
@@ -73,6 +78,13 @@ def portal_species(source: Path) -> dict[str, Path]:
         for path in sorted((source / "species_rasters_all").iterdir())
         if path.is_dir() and path.name.startswith("Eucalyptus_")
     }
+    species.update(
+        {
+            display_name(path.name): path
+            for path in sorted((source / "species_rasters_all").iterdir())
+            if path.is_dir() and path.name.startswith("Corymbia_")
+        }
+    )
     excluded = {"Pinus_tecunumanii_High_parquet", "Pinus_tecunumanii_Low_parquet"}
     species.update(
         {
@@ -146,6 +158,11 @@ def main() -> int:
     parser.add_argument("--preview-format", choices=("webp", "png"), default="webp")
     parser.add_argument("--webp-quality", type=int, default=90)
     parser.add_argument(
+        "--incremental",
+        action="store_true",
+        help="Preserve existing assets and merge rebuilt species into the current catalogue.",
+    )
+    parser.add_argument(
         "--species",
         action="append",
         help="Scientific name to build. Repeat as needed; omit to build every portal species.",
@@ -157,11 +174,12 @@ def main() -> int:
     download_dir = args.web / "assets" / "species-geotiff"
     for directory in (preview_dir, analysis_dir, download_dir):
         directory.mkdir(parents=True, exist_ok=True)
-    for pattern in ("*.png", "*.webp"):
-        for old_preview in preview_dir.glob(pattern):
-            old_preview.unlink()
-    for old_grid in analysis_dir.glob("*.generated.js"):
-        old_grid.unlink()
+    if not args.incremental:
+        for pattern in ("*.png", "*.webp"):
+            for old_preview in preview_dir.glob(pattern):
+                old_preview.unlink()
+        for old_grid in analysis_dir.glob("*.generated.js"):
+            old_grid.unlink()
 
     available_species = portal_species(args.source)
     if args.species:
@@ -190,7 +208,7 @@ def main() -> int:
             tif_name = f"{species_code}__{public_code}.tif"
             with rasterio.open(raster_path) as src:
                 # Two source pixels per web pixel preserve the raster's visual structure
-                # while keeping the complete Eucalyptus and Pinus catalogue within Pages limits.
+                # while keeping the complete Eucalyptus, Corymbia and Pinus catalogue within Pages limits.
                 preview_width = max(2, src.width // 2) if args.width <= 0 else args.width
                 values, leaflet_bounds = web_mercator_preview(src, preview_width)
                 valid = np.isfinite(values)
@@ -247,12 +265,27 @@ def main() -> int:
         "speciesLayers": species_layers,
         "analysisManifest": analysis_manifest,
     }
-    (args.web / "species.generated.js").write_text(
+    catalogue_path = args.web / "species.generated.js"
+    if args.incremental and catalogue_path.is_file():
+        source = catalogue_path.read_text(encoding="utf-8").strip()
+        prefix = "window.SPECIES_SUITABILITY = "
+        if source.startswith(prefix):
+            previous = json.loads(source[len(prefix):].removesuffix(";"))
+            previous_layers = previous.get("speciesLayers", {})
+            previous_layers.update(payload["speciesLayers"])
+            previous_manifest = previous.get("analysisManifest", {})
+            previous_manifest.update(payload["analysisManifest"])
+            payload["speciesLayers"] = previous_layers
+            payload["analysisManifest"] = previous_manifest
+            payload["previewSpecies"] = [
+                name for names in payload["groups"].values() for name in names if name in previous_layers
+            ]
+    catalogue_path.write_text(
         "window.SPECIES_SUITABILITY = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n",
         encoding="utf-8",
     )
     print(f"SPECIES_PROTOTYPE_OK={sum(map(len, species_layers.values()))}")
-    print(f"PREVIEW_SPECIES={len(species_layers)} EUCALYPTS={len(payload['groups']['eucalypts'])} PINES={len(payload['groups']['pines'])}")
+    print(f"PREVIEW_SPECIES={len(payload['previewSpecies'])} EUCALYPTS={len(payload['groups']['eucalypts'])} CORYMBIAS={len(payload['groups']['corymbias'])} PINES={len(payload['groups']['pines'])}")
     return 0
 
 

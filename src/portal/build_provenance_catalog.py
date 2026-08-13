@@ -18,11 +18,13 @@ def main()->int:
             lat,lon=number(row.get('Latitude')),number(row.get('Longitude'))
             species=clean(row.get('Species')); name=clean(row.get('Provenance Name'))
             if not species or not name or lat is None or lon is None or not(-90<=lat<=90 and -180<=lon<=180):continue
-            group='eucalypts' if clean(row.get('Species group')).lower()=='eucalypt' else 'pines' if clean(row.get('Species group')).lower()=='pine' else 'other'
+            group='corymbias' if species.startswith('Corymbia ') else 'eucalypts' if clean(row.get('Species group')).lower()=='eucalypt' else 'pines' if clean(row.get('Species group')).lower()=='pine' else 'other'
             records.append({'species':species,'group':group,'name':name,'code':clean(row.get('Prov Code TP')) or clean(row.get('Prov Abbreviation Unique')),'lat':round(lat,6),'lon':round(lon,6),'country':clean(row.get('Country  ')),'state':clean(row.get('State or\n Department')),'municipality':clean(row.get('Municipality')),'altitudeMin':number(row.get('Altitude Min')),'altitudeMax':number(row.get('Altitude Max')),'yearFirst':number(row.get('Year First')),'standType':clean(row.get('Type Stand'))})
     groups=defaultdict(set)
     for item in records: groups[item['group']].add(item['species'])
-    payload={'groups':{key:sorted(value) for key,value in groups.items()},'records':records,'speciesCount':len({x['species'] for x in records}),'pointCount':len(records),'countryCount':len({x['country'] for x in records if x['country']})}
+    group_order=('eucalypts','corymbias','pines','other')
+    ordered_groups={key:sorted(groups[key]) for key in group_order if groups.get(key)}
+    payload={'groups':ordered_groups,'records':records,'speciesCount':len({x['species'] for x in records}),'pointCount':len(records),'countryCount':len({x['country'] for x in records if x['country']})}
     (args.web/'provenances.generated.js').write_text('window.CAMCORE_PROVENANCES='+json.dumps(payload,ensure_ascii=False,separators=(',',':'))+';\n',encoding='utf-8')
     print(f'PROVENANCE_CATALOG_OK={payload["speciesCount"]} species; {payload["pointCount"]} points')
     return 0
