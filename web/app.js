@@ -15,8 +15,8 @@ Object.assign(translations.en,{
   frost_collection:'Frost Climatology',species_collection:'Species Suitability',bioclimate_collection:'Bioclimatic Variables',
   frost_collection_text:'Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.',species_collection_text:'Analyses based on the natural ranges of the species.',bioclimate_collection_text:'Global BIO1–BIO19 temperature and precipitation summaries for 1981–2025.',empty_collection:'Collection space reserved for future datasets.',open_collection:'Open collection',
   interactive_title:'Explore the frost-climatology layers',about_kicker:'Data access',about_title:'Selected analytical maps are available for download.',
-  about_text:'Only selected map products will be released as GeoTIFFs at approximately 30 m resolution. Availability depends on source licences, file size and publication status.',
-  read_methods:'Methods & data',footer_brand:'Camcore Environmental Map Collections',footer_text:'Research maps and decision support'
+  about_text:'The complete 2000–2026 frost-climatology collection and its analytical GeoTIFFs are archived on Zenodo under DOI 10.5281/zenodo.21918677.',
+  read_methods:'Methods & data',open_dataset:'Open Zenodo dataset',footer_brand:'Camcore Environmental Map Collections',footer_text:'Research maps and decision support'
 });
 Object.assign(translations.pt,{
   brand:'Mapas Ambientais',nav_collections:'Coleções',nav_maps:'Explorador de mapas',nav_methods:'Métodos e dados',theme:'Tema',
@@ -27,8 +27,8 @@ Object.assign(translations.pt,{
   frost_collection:'Climatologia de Geadas',species_collection:'Adequabilidade de Espécies',bioclimate_collection:'Variáveis Bioclimáticas',
   frost_collection_text:'Probabilidade de ocorrência, dias esperados de geada, temperatura mínima sazonal e contexto do terreno.',species_collection_text:'Análises baseadas nas distribuições naturais das espécies.',bioclimate_collection_text:'Sínteses globais BIO1–BIO19 de temperatura e precipitação para 1981–2025.',empty_collection:'Espaço reservado para conjuntos de dados futuros.',open_collection:'Abrir coleção',
   interactive_title:'Explore as camadas de climatologia de geadas',about_kicker:'Acesso aos dados',about_title:'Mapas analíticos selecionados estão disponíveis para download.',
-  about_text:'Somente produtos cartográficos selecionados serão disponibilizados como GeoTIFFs com resolução aproximada de 30 m. A disponibilidade depende das licenças das fontes, do tamanho dos arquivos e do status de publicação.',
-  read_methods:'Métodos e dados',footer_brand:'Coleções de Mapas Ambientais Camcore',footer_text:'Mapas científicos e apoio à decisão'
+  about_text:'A coleção completa de climatologia de geadas de 2000–2026 e seus GeoTIFFs analíticos estão arquivados no Zenodo sob o DOI 10.5281/zenodo.21918677.',
+  read_methods:'Métodos e dados',open_dataset:'Abrir conjunto de dados no Zenodo',footer_brand:'Coleções de Mapas Ambientais Camcore',footer_text:'Mapas científicos e apoio à decisão'
 });
 
 Object.assign(translations.en,{basemap_map:'Map',basemap_satellite:'Satellite',fullscreen_map:'Full screen map',exit_fullscreen:'Exit full screen'});

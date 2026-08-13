@@ -38,6 +38,8 @@ python -m http.server 8000 --directory web
 
 Then open `http://localhost:8000`. The analytical GeoTIFFs are not embedded in the website; the PNGs are visualization derivatives only.
 
+The authoritative 2000–2026 Frost Climatology GeoTIFF collection and supporting metadata are archived on Zenodo: [https://doi.org/10.5281/zenodo.21918677](https://doi.org/10.5281/zenodo.21918677).
+
 Additional collection builders:
 
 ```bash

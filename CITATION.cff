@@ -13,6 +13,16 @@ repository-code: "https://github.com/Rcavalh/camcore-environmental-maps"
 url: "https://rcavalh.github.io/camcore-environmental-maps/"
 license: "LicenseRef-PendingAuthorApproval"
 references:
+  - type: dataset
+    title: "Fine-resolution frost climatology maps for south-central Brazil, 2000–2026"
+    authors:
+      - family-names: "Cavalheiro"
+        given-names: "Ricardo"
+        orcid: "https://orcid.org/0009-0007-1159-5088"
+    year: 2026
+    version: "1.0.0"
+    doi: "10.5281/zenodo.21918677"
+    url: "https://doi.org/10.5281/zenodo.21918677"
   - type: article
     title: "A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions"
     authors:

@@ -1,5 +1,7 @@
 # Camcore Environmental Maps
 
+[![Frost Climatology dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21918677.svg)](https://doi.org/10.5281/zenodo.21918677)
+
 <img src="web/assets/images/CAMCORE_LOGO_TRANSPARENT.png" alt="Camcore — Global partners for the future of our forests" width="420">
 
 [Português](#português) · [English](#english) · [Interactive portal](web/index.html)
@@ -67,7 +69,7 @@ Historical filenames containing `smoke` are retained to preserve provenance and 
 
 ### Data availability
 
-The GitHub repository contains code, metadata and lightweight map previews. Final full-resolution GeoTIFFs will be deposited in Dryad after merge and quality control. The current probability layer is explicitly an incomplete development preview.
+The GitHub repository contains code, metadata and lightweight map previews. The authoritative Frost Climatology dataset is archived as *Fine-resolution frost climatology maps for south-central Brazil, 2000–2026*, version 1.0.0, on Zenodo: [https://doi.org/10.5281/zenodo.21918677](https://doi.org/10.5281/zenodo.21918677). The Zenodo record contains the analytical GeoTIFFs and supporting documentation under the Creative Commons Attribution 4.0 International licence.
 
 ANADEM must be cited as Laipelt et al. (2024), DOI [10.3390/rs16132321](https://doi.org/10.3390/rs16132321). Third-party datasets retain their original terms and are not relicensed here.
 
