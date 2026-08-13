@@ -40,7 +40,7 @@
         <p data-i18n="hero_text">Explore scientific map collections connecting climate, terrain and environmental decision support.</p>
       </div>
       <div class="study-meta" aria-label="Portal summary">
-        <span><strong>3</strong> <span data-i18n="collections_count">map collections</span></span>
+        <span><strong>5</strong> <span data-i18n="collections_count">map collections</span></span>
         <span><strong>EN / PT</strong> <span data-i18n="languages">languages</span></span>
         <span><strong>Open</strong> <span data-i18n="research_data">research data</span></span>
       </div>
@@ -78,6 +78,24 @@
           <h3 data-i18n="bioclimate_collection">Bioclimatic Variables</h3>
           <p data-i18n="bioclimate_collection_text">Global BIO1–BIO19 temperature and precipitation summaries for 1981–2025.</p>
           <a href="bioclimate.html" data-i18n="open_collection">Open collection</a>
+        </article>
+
+        <article class="collection-card collection-heat is-active" data-href="heat.html">
+          <div class="collection-topline"><span class="collection-number">04</span><span class="collection-status" data-i18n="preview_available">Preview available</span></div>
+          <div class="collection-symbol" aria-hidden="true"><i data-lucide="thermometer-sun"></i></div>
+          <p class="collection-type" data-i18n="heat_type">Thermal climatology</p>
+          <h3 data-i18n="heat_collection">Heat Maps</h3>
+          <p data-i18n="heat_collection_text">Monthly P95 maximum-temperature maps for 2000–2025.</p>
+          <a href="heat.html" data-i18n="open_collection">Open collection</a>
+        </article>
+
+        <article class="collection-card collection-provenance is-active" data-href="provenances.html">
+          <div class="collection-topline"><span class="collection-number">05</span><span class="collection-status" data-i18n="preview_available">Preview available</span></div>
+          <div class="collection-symbol" aria-hidden="true"><i data-lucide="map-pin"></i></div>
+          <p class="collection-type" data-i18n="provenance_type">Genetic resources</p>
+          <h3 data-i18n="provenance_collection">Camcore Tested Provenances</h3>
+          <p data-i18n="provenance_collection_text">Species catalogues and mapped origins represented in Camcore provenance testing.</p>
+          <a href="provenances.html" data-i18n="open_collection">Open collection</a>
         </article>
       </div>
     </section>
@@ -131,6 +149,7 @@
             <p class="analysis-hint" data-i18n="analysis_hint">Click the map to inspect a value, or draw an area to summarize it.</p>
             <div class="analysis-actions">
               <button id="draw-rectangle" type="button" data-i18n="draw_rectangle">Rectangle</button>
+              <button id="draw-circle" type="button" data-i18n="draw_circle">Circle</button>
               <button id="draw-polygon" type="button" data-i18n="draw_polygon">Polygon</button>
               <button id="clear-selection" type="button" data-i18n="clear_selection">Clear</button>
             </div>
@@ -173,8 +192,10 @@
   <script>lucide.createIcons({attrs:{'stroke-width':1.6}});</script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="circle-selection.js?v=20260813circle1"></script>
   <script src="layers.generated.js?v=20260812portal"></script>
   <script src="analysis-manifest.generated.js?v=20260812portal"></script>
-  <script src="app.js?v=20260812bio1"></script>
+  <script src="portal-circle-i18n.js?v=20260813circle1"></script>
+  <script src="app.js?v=20260813collections1"></script>
 </body>
 </html>

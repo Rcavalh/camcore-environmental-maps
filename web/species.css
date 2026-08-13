@@ -9,7 +9,7 @@
 .species-map-stage.map-fullscreen .species-legend,.species-map-stage.map-fullscreen .species-preview-badge{bottom:28px}
 .species-download{display:flex;margin:18px 0 0}
 .species-layer-panel .analysis-panel{margin-top:22px}
-.species-layer-panel .analysis-actions{grid-template-columns:1fr 1fr auto}
+.species-layer-panel .analysis-actions{grid-template-columns:1fr 1fr}
 .species-layer-panel .selection-results canvas{background:var(--surface-2)}
 @media(max-width:760px){.species-map-stage.map-fullscreen .place-search{width:calc(100% - 72px)}}
 .species-download[aria-disabled="true"]{pointer-events:none;opacity:.6}

@@ -38,7 +38,7 @@
       <div class="species-summary" aria-label="Collection summary">
         <span><strong id="species-count">48</strong><span data-i18n="species">species</span></span>
         <span><strong>4</strong><span data-i18n="analytical_layers">analytical layers</span></span>
-        <span><strong>1981–2025</strong><span data-i18n="climate_period">climate period</span></span>
+        <span><strong>45</strong><span data-i18n="years">years</span></span>
       </div>
     </section>
 
@@ -96,6 +96,7 @@
             <p class="analysis-hint" data-i18n="analysis_hint">Click the map to inspect a value, or draw an area to summarize it.</p>
             <div class="analysis-actions">
               <button id="species-draw-rectangle" type="button" data-i18n="draw_rectangle">Rectangle</button>
+              <button id="species-draw-circle" type="button" data-i18n="draw_circle">Circle</button>
               <button id="species-draw-polygon" type="button" data-i18n="draw_polygon">Polygon</button>
               <button id="species-clear-selection" type="button" data-i18n="clear_selection">Clear</button>
             </div>
@@ -123,7 +124,9 @@
   <footer><strong>Camcore Environmental Map Collections</strong><p data-i18n="footer">Research maps and decision support</p></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="circle-selection.js?v=20260813circle1"></script>
   <script src="species.generated.js?v=20260813pine1"></script>
-  <script src="species.js?v=20260813pine1"></script>
+  <script src="species-circle-i18n.js?v=20260813circle1"></script>
+  <script src="species.js?v=20260813collections1"></script>
 </body>
 </html>

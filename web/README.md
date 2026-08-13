@@ -1,8 +1,8 @@
 # Web map
 
-This bilingual static portal presents frost-occurrence probability, expected frost days,
-seasonal minimum temperature, HAND and elevation. The layer menu is organized into four
-compact groups:
+This bilingual static portal presents five map collections: frost climatology, species
+suitability, bioclimatic variables, monthly heat maps and Camcore tested provenances.
+The frost layer menu is organized into four compact groups:
 
 - complete period (2000–2025): probability, expected frost days, mean seasonal minimum
   temperature and the lower-tail P25 seasonal minimum temperature;
@@ -21,7 +21,7 @@ python src/portal/build_web_layers.py
 python src/portal/build_analysis_grids.py --width 2048
 ```
 
-The portal supports point-value inspection, rectangle and polygon selection,
+The raster collections support point-value inspection, rectangle, circle and polygon selection,
 area summaries, histograms, and CSV/GeoJSON export. These interactive summaries
 use quantized numerical web grids aligned with the map previews. Native-resolution
 analysis and analytical clipping must use the downloadable GeoTIFFs.
@@ -37,3 +37,10 @@ python -m http.server 8000 --directory web
 ```
 
 Then open `http://localhost:8000`. The analytical GeoTIFFs are not embedded in the website; the PNGs are visualization derivatives only.
+
+Additional collection builders:
+
+```bash
+python src/portal/build_heat_previews.py --web web
+python src/portal/build_provenance_catalog.py --source CamcoreProvs.csv --web web
+```
