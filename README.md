@@ -46,7 +46,7 @@ The production workflow estimates three endpoints:
 2. expected frost days per eligible season;
 3. seasonal minimum temperature, including P25 cold-tail summaries.
 
-The model uses a versioned, reduced predictor contract organized into spatial, terrain/HAND, ERA5-Land and MODIS blocks. Complete-period products summarize 2000–2025; additional outputs represent five-year periods and ENSO classes.
+The model uses a versioned, reduced predictor contract organized into spatial, terrain/HAND, ERA5-Land and MODIS blocks. The portal presents complete-period products and ENSO classes.
 
 ### Run the analysis
 
@@ -85,7 +85,7 @@ O fluxo de produção estima três respostas:
 2. número esperado de dias de geada por estação elegível;
 3. temperatura mínima sazonal, incluindo resumos P25 da cauda fria.
 
-O modelo utiliza um contrato reduzido e versionado de preditores espaciais, terreno/HAND, ERA5-Land e MODIS. Os produtos do período completo resumem 2000–2025, com resultados adicionais para períodos de cinco anos e classes ENSO.
+O modelo utiliza um contrato reduzido e versionado de preditores espaciais, terreno/HAND, ERA5-Land e MODIS. O portal apresenta produtos do período completo e classes ENSO.
 
 ### Como executar
 

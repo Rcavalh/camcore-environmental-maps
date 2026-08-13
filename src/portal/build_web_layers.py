@@ -142,27 +142,6 @@ def build_layer_specs() -> list[dict]:
             max_width=6000, analysis_width=2048,
         ))
 
-    periods = ["2000_2005", "2006_2010", "2011_2015", "2016_2020", "2021_2025"]
-    for period in periods:
-        label = period.replace("_", "–")
-        folder = MODEL_ROOT / "five_year_periods" / period
-        candidates = [
-            ("probability", folder / f"frost_probability_{period}.tif"),
-            ("frost_days", folder / f"expected_frost_days_{period}.tif"),
-            ("tmin_p25", folder / f"seasonal_minimum_temperature_p25_{period}.tif"),
-        ]
-        for endpoint, source in candidates:
-            if not source.is_file():
-                continue
-            specs.append(model_spec(
-                layer_id=f"period_{period}_{endpoint}", endpoint=endpoint, source=source,
-                output=f"period_{period}_{endpoint}.png", group="periods", scenario=period,
-                scenario_label=label, scenario_label_pt=label,
-                subtitle=f"Five-year climate window · {label}",
-                subtitle_pt=f"Janela climática de cinco anos · {label}",
-                max_width=3000, analysis_width=1200,
-            ))
-
     enso_defs = [
         ("el_nino", "El Niño", "El Niño"),
         ("la_nina", "La Niña", "La Niña"),

@@ -6,7 +6,6 @@ The frost layer menu is organized into four compact groups:
 
 - complete period (2000–2025): probability, expected frost days, mean seasonal minimum
   temperature and the lower-tail P25 seasonal minimum temperature;
-- five-year periods: only the products selected for publication, nested by period;
 - ENSO phases: probability, expected frost days and P25 seasonal minimum temperature for
   El Niño, La Niña and neutral seasons;
 - terrain: HAND and ANADEM elevation.

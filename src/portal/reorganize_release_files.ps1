@@ -46,17 +46,6 @@ $moves = @(
     @("RF_BALANCED_EXPECTED_FROST_DAYS_ALL_2000_2025_ANADEM30M.tif", "dryad_dataset\data\model_outputs\complete_period\FROST_DAYS_MEAN_2000_2025.tif"),
     @("RF_BALANCED_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ALL_2000_2025_ANADEM30M.tif", "dryad_dataset\data\model_outputs\complete_period\TMIN_P25_2000_2025.tif"),
 
-    @("backup\RF_BALANCED_FROST_PROBABILITY_PERIOD_2000_2005_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2000_2005\frost_probability_2000_2005.tif"),
-    @("backup\RF_BALANCED_EXPECTED_FROST_DAYS_PERIOD_2000_2005_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2000_2005\expected_frost_days_2000_2005.tif"),
-    @("RF_BALANCED_SEASONAL_MINIMUM_TEMPERATURE_C_P25_PERIOD_2000_2005_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2000_2005\seasonal_minimum_temperature_p25_2000_2005.tif"),
-    @("backup\RF_BALANCED_EXPECTED_FROST_DAYS_PERIOD_2006_2010_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2006_2010\expected_frost_days_2006_2010.tif"),
-    @("RF_BALANCED_SEASONAL_MINIMUM_TEMPERATURE_C_P25_PERIOD_2006_2010_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2006_2010\seasonal_minimum_temperature_p25_2006_2010.tif"),
-    @("backup\RF_BALANCED_EXPECTED_FROST_DAYS_PERIOD_2011_2015_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2011_2015\expected_frost_days_2011_2015.tif"),
-    @("RF_BALANCED_SEASONAL_MINIMUM_TEMPERATURE_C_P25_PERIOD_2011_2015_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2011_2015\seasonal_minimum_temperature_p25_2011_2015.tif"),
-    @("backup\RF_BALANCED_EXPECTED_FROST_DAYS_PERIOD_2016_2020_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2016_2020\expected_frost_days_2016_2020.tif"),
-    @("RF_BALANCED_SEASONAL_MINIMUM_TEMPERATURE_C_P25_PERIOD_2016_2020_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2016_2020\seasonal_minimum_temperature_p25_2016_2020.tif"),
-    @("backup\RF_BALANCED_EXPECTED_FROST_DAYS_PERIOD_2021_2025_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2021_2025\expected_frost_days_2021_2025.tif"),
-    @("RF_BALANCED_SEASONAL_MINIMUM_TEMPERATURE_C_P25_PERIOD_2021_2025_ANADEM30M.tif", "dryad_dataset\data\model_outputs\five_year_periods\2021_2025\seasonal_minimum_temperature_p25_2021_2025.tif"),
 
     @("backup\RF_BALANCED_FROST_PROBABILITY_ENSO_EL_NINO_ANADEM30M.tif", "dryad_dataset\data\model_outputs\enso\el_nino\frost_probability_enso_el_nino.tif"),
     @("RF_BALANCED_EXPECTED_FROST_DAYS_ENSO_EL_NINO_ANADEM30M.tif", "dryad_dataset\data\model_outputs\enso\el_nino\expected_frost_days_enso_el_nino.tif"),
