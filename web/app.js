@@ -34,6 +34,25 @@ Object.assign(translations.pt,{
 Object.assign(translations.en,{basemap_map:'Map',basemap_satellite:'Satellite',fullscreen_map:'Full screen map',exit_fullscreen:'Exit full screen'});
 Object.assign(translations.pt,{basemap_map:'Mapa',basemap_satellite:'Satélite',fullscreen_map:'Mapa em tela cheia',exit_fullscreen:'Sair da tela cheia'});
 
+Object.assign(translations.en,{
+  zenodo_doi:'Zenodo dataset · DOI 10.5281/zenodo.21918677',
+  download_zenodo_file:'Download GeoTIFF from Zenodo',
+  open_zenodo_repository:'Open Zenodo repository',
+  open_anadem_source:'Open ANADEM source',
+  zenodo_file_note:'Archived analytical GeoTIFF (2000–2026).',
+  zenodo_repository_note:'This displayed scenario is not included as a separate file in the current Zenodo record.',
+  anadem_source_note:'ANADEM is distributed by its original data provider.'
+});
+Object.assign(translations.pt,{
+  zenodo_doi:'Conjunto de dados no Zenodo · DOI 10.5281/zenodo.21918677',
+  download_zenodo_file:'Baixar GeoTIFF pelo Zenodo',
+  open_zenodo_repository:'Abrir repositório no Zenodo',
+  open_anadem_source:'Abrir fonte do ANADEM',
+  zenodo_file_note:'GeoTIFF analítico arquivado (2000–2026).',
+  zenodo_repository_note:'Este cenário exibido não está incluído como arquivo separado no registro atual do Zenodo.',
+  anadem_source_note:'O ANADEM é distribuído por seu provedor de dados original.'
+});
+
 Object.assign(translations.en,{heat_type:'Thermal climatology',heat_collection:'Heat Maps',heat_collection_text:'Monthly P95 maximum-temperature maps for 2000–2025.',provenance_type:'Genetic resources',provenance_collection:'Camcore Tested Provenances',provenance_collection_text:'Species catalogues and mapped origins represented in Camcore provenance testing.'});
 Object.assign(translations.pt,{heat_type:'Climatologia térmica',heat_collection:'Mapas de Calor',heat_collection_text:'Mapas mensais do percentil 95 da temperatura máxima para 2000–2025.',provenance_type:'Recursos genéticos',provenance_collection:'Procedências Testadas pela Camcore',provenance_collection_text:'Catálogos de espécies e origens geográficas representadas nos testes de procedências da Camcore.'});
 
@@ -51,6 +70,19 @@ const places=[
 ];
 
 const palettes={RdYlBu:'linear-gradient(90deg,#a50026,#f46d43,#ffffbf,#74add1,#313695)',RdYlBu_r:'linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026)',viridis:'linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725)',gist_earth:'linear-gradient(90deg,#17336b,#478d82,#a9b26f,#c49a6c,#f5f2ed)'};
+const ZENODO_RECORD='https://doi.org/10.5281/zenodo.21918677';
+const ZENODO_FILES={
+  frost_probability:'https://zenodo.org/records/21918677/files/FROST_PROBABILITY_MEAN_2000_2026.tif',
+  expected_frost_days:'https://zenodo.org/records/21918677/files/FROST_DAYS_MEAN_2000_2026.tif',
+  seasonal_tmin:'https://zenodo.org/records/21918677/files/TMIN_MEAN_2000_2026.tif',
+  seasonal_tmin_p25:'https://zenodo.org/records/21918677/files/TMIN_P25_2000_2026.tif',
+  hand:'https://zenodo.org/records/21918677/files/HAND_2000M.tif'
+};
+function downloadContract(layer){
+  if(ZENODO_FILES[layer.id])return{href:ZENODO_FILES[layer.id],label:'download_zenodo_file',note:'zenodo_file_note',kind:'file'};
+  if(layer.id==='anadem')return{href:layer.download,label:'open_anadem_source',note:'anadem_source_note',kind:'source'};
+  return{href:ZENODO_RECORD,label:'open_zenodo_repository',note:'zenodo_repository_note',kind:'repository'}
+}
 const state={catalog:window.FROST_LAYERS||[],overlay:null,marker:null,active:null,opacity:.88,lang:localStorage.getItem('frost-lang')||'en',basemapType:localStorage.getItem('frost-basemap')||'map',analysisCache:{},analysisPromises:{},selectionLayer:null,selectionSamples:[],selectionStats:null,drawing:false};
 const initialTheme=localStorage.getItem('frost-theme')||'dark';
 document.documentElement.dataset.theme=initialTheme;
@@ -115,7 +147,10 @@ function activate(id,fit=false){
   document.getElementById('layer-grid').textContent=`${layer.nativeWidth.toLocaleString()} × ${layer.nativeHeight.toLocaleString()}`;
   document.getElementById('layer-coverage').textContent=`${layer.validPercent.toFixed(1)}% ${translations[state.lang].valid_cells}`;
   document.getElementById('layer-status').textContent=words[2];
-  const download=document.getElementById('layer-download');const external=layer.download.startsWith('http');download.href=layer.download;download.target=external?'_blank':'';download.rel=external?'noreferrer':'';download.toggleAttribute('download',!external);
+  const download=document.getElementById('layer-download'),contract=downloadContract(layer),downloadLabel=download.querySelector('[data-download-label]'),downloadNote=document.getElementById('layer-download-note');
+  download.href=contract.href;download.target='_blank';download.rel='noopener noreferrer';download.removeAttribute('download');download.dataset.kind=contract.kind;
+  if(downloadLabel)downloadLabel.textContent=translations[state.lang][contract.label];
+  if(downloadNote)downloadNote.textContent=translations[state.lang][contract.note];
   document.getElementById('legend').innerHTML=`<div class="legend-title">${words[0]} · ${layer.units}</div><div class="legend-ramp" style="background:${palettes[layer.palette]}"></div><div class="legend-labels"><span>${fmt(layer.displayMin)}</span><span>${fmt(layer.displayMax)}</span></div>`;
   if(state.selectionLayer)analyzeSelection(state.selectionLayer)
 }

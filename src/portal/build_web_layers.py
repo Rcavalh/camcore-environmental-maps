@@ -34,6 +34,14 @@ ROOT = Path(__file__).resolve().parents[2]
 PORTAL_ROOT = ROOT.parent
 WEB = ROOT / "web"
 MODEL_ROOT = PORTAL_ROOT / "dryad_dataset" / "data" / "model_outputs"
+ZENODO_RECORD = "https://doi.org/10.5281/zenodo.21918677"
+ZENODO_FILES = {
+    "frost_probability": "https://zenodo.org/records/21918677/files/FROST_PROBABILITY_MEAN_2000_2026.tif",
+    "expected_frost_days": "https://zenodo.org/records/21918677/files/FROST_DAYS_MEAN_2000_2026.tif",
+    "seasonal_tmin": "https://zenodo.org/records/21918677/files/TMIN_MEAN_2000_2026.tif",
+    "seasonal_tmin_p25": "https://zenodo.org/records/21918677/files/TMIN_P25_2000_2026.tif",
+    "hand": "https://zenodo.org/records/21918677/files/HAND_2000M.tif",
+}
 
 
 ENDPOINTS = {
@@ -88,7 +96,6 @@ def model_spec(
     analysis_width: int,
 ) -> dict:
     metadata = ENDPOINTS[endpoint]
-    relative = source.relative_to(PORTAL_ROOT).as_posix()
     return {
         "id": layer_id,
         "endpoint": endpoint,
@@ -102,7 +109,9 @@ def model_spec(
         "units": metadata["units"],
         "status": "complete five-state analytical surface",
         "statusPt": "superfície analítica completa para os cinco estados",
-        "download": f"../../{relative}",
+        # Only complete-period files are deposited in the current Zenodo record.
+        # Other displayed scenarios link to the record landing page in the portal.
+        "download": ZENODO_FILES.get(layer_id, ZENODO_RECORD),
         "group": group,
         "scenario": scenario,
         "scenarioLabel": scenario_label,
@@ -186,7 +195,7 @@ def build_layer_specs() -> list[dict]:
             "source": PORTAL_ROOT / "00_HAND" / "anadem_rs_pr_sc_sp_ms_30m_HAND_flowpath_within_2000m_filled_zero.tif",
             "output": "hand_2000m.png", "cmap": "viridis", "percentiles": [1.0, 99.0],
             "units": "m", "status": "derived terrain layer", "statusPt": "camada derivada do terreno",
-            "download": "../../dryad_dataset/data/derived_terrain/HAND_2000M.tif",
+            "download": ZENODO_FILES["hand"],
             "group": "terrain", "scenario": "hand", "scenarioLabel": "HAND", "scenarioLabelPt": "HAND",
             "max_width": 6000, "analysis_width": 2048,
         },

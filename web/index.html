@@ -59,7 +59,10 @@
           <p class="collection-type" data-i18n="frost_type">Climate hazard</p>
           <h3 data-i18n="frost_collection">Frost Climatology</h3>
           <p data-i18n="frost_collection_text">Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.</p>
-          <a href="#maps" data-i18n="open_collection">Open collection</a>
+          <div class="collection-links">
+            <a href="#maps" data-i18n="open_collection">Open collection</a>
+            <a class="collection-doi" href="https://doi.org/10.5281/zenodo.21918677" target="_blank" rel="noopener noreferrer" data-i18n="zenodo_doi">Zenodo dataset · DOI 10.5281/zenodo.21918677</a>
+          </div>
         </article>
 
         <article class="collection-card collection-species is-active" data-href="species.html">
@@ -142,7 +145,8 @@
               <div><dt data-i18n="coverage">Coverage</dt><dd id="layer-coverage">—</dd></div>
             </dl>
             <p id="layer-status" class="layer-status"></p>
-            <a id="layer-download" class="download-button" href="#"><span data-i18n="download_geotiff">Download GeoTIFF</span><span aria-hidden="true">↓</span></a>
+            <a id="layer-download" class="download-button" href="#"><span data-download-label>Download GeoTIFF from Zenodo</span><span aria-hidden="true">↗</span></a>
+            <p id="layer-download-note" class="download-note"></p>
           </div>
           <section class="analysis-panel" aria-labelledby="analysis-heading">
             <p id="analysis-heading" class="panel-label" data-i18n="analysis_tools">Inspect and analyze</p>
@@ -199,6 +203,6 @@
   <script src="layers.generated.js?v=20260812portal"></script>
   <script src="analysis-manifest.generated.js?v=20260812portal"></script>
   <script src="portal-circle-i18n.js?v=20260813circle1"></script>
-  <script src="app.js?v=20260813collections1"></script>
+  <script src="app.js?v=20260813zenodo2"></script>
 </body>
 </html>
