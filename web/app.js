@@ -8,7 +8,7 @@ Object.assign(translations.pt,{analysis_tools:'Inspecionar e analisar',analysis_
 
 Object.assign(translations.en,{
   brand:'Environmental Maps',nav_collections:'Collections',nav_maps:'Map explorer',nav_methods:'Methods & data',theme:'Theme',
-  domain:'Camcore geospatial portal',hero_title:'Environmental maps for research and decision support.',hero_text:'Explore scientific map collections connecting climate, terrain and environmental decision support.',
+  domain:'Camcore geospatial portal',hero_title:'Environmental maps for science and informed decisions.',hero_text:'Explore scientific map collections connecting climate, terrain and environmental decision support.',
   collections_count:'map collections',languages:'languages',research_data:'research data',collections_kicker:'Map collections',collections_title:'Choose a research theme',
   collections_text:'Each collection has its own scientific scope, map catalogue and visual identity. New collections can be added without changing the existing portal.',
   available_now:'Available now',preview_available:'Preview available',reserved:'Reserved',frost_type:'Climate hazard',decision_support:'Decision support',environmental_context:'Environmental context',
@@ -20,7 +20,7 @@ Object.assign(translations.en,{
 });
 Object.assign(translations.pt,{
   brand:'Mapas Ambientais',nav_collections:'Coleções',nav_maps:'Explorador de mapas',nav_methods:'Métodos e dados',theme:'Tema',
-  domain:'Portal geoespacial Camcore',hero_title:'Mapas ambientais para pesquisa e apoio à decisão.',hero_text:'Explore coleções científicas que conectam clima, terreno e apoio à decisão ambiental.',
+  domain:'Portal geoespacial Camcore',hero_title:'Mapas ambientais para ciência e decisões bem fundamentadas.',hero_text:'Explore coleções científicas que conectam clima, terreno e apoio à decisão ambiental.',
   collections_count:'coleções de mapas',languages:'idiomas',research_data:'dados científicos',collections_kicker:'Coleções de mapas',collections_title:'Escolha um tema de pesquisa',
   collections_text:'Cada coleção possui escopo científico, catálogo de mapas e identidade visual próprios. Novas coleções podem ser adicionadas sem alterar o restante do portal.',
   available_now:'Disponível agora',preview_available:'Prévia disponível',reserved:'Reservada',frost_type:'Risco climático',decision_support:'Apoio à decisão',environmental_context:'Contexto ambiental',
