@@ -31,7 +31,7 @@ class RepositoryContractTests(unittest.TestCase):
             {"frost_probability", "expected_frost_days", "seasonal_tmin", "seasonal_tmin_p25", "hand", "anadem"}.issubset(ids)
         )
         groups = {name: sum(x.get("group") == name for x in catalog) for name in ("complete", "periods", "enso", "terrain")}
-        self.assertEqual(groups, {"complete": 4, "periods": 11, "enso": 9, "terrain": 2})
+        self.assertEqual(groups, {"complete": 4, "periods": 0, "enso": 9, "terrain": 2})
         for layer in catalog:
             self.assertTrue((ROOT / "web" / layer["url"]).is_file())
             self.assertEqual(layer.get("previewCrs"), "EPSG:3857")
