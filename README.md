@@ -1,6 +1,7 @@
 # Camcore Environmental Maps
 
 [![Frost Climatology dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21918677.svg)](https://doi.org/10.5281/zenodo.21918677)
+[![Species Suitability dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21939047.svg)](https://doi.org/10.5281/zenodo.21939047)
 
 <img src="web/assets/images/CAMCORE_LOGO_TRANSPARENT.png" alt="Camcore — Global partners for the future of our forests" width="420">
 
@@ -33,6 +34,8 @@ This repository supports a bilingual portal for Camcore environmental map collec
 The Species Suitability collection includes 38 Eucalyptus, 4 Corymbia and 10 Pinus species, with four analytical products per species where available. It supports location search, pixel inspection, rectangle/polygon summaries, CSV/GeoJSON export and full-screen mode. High-density browser previews improve visual rendering but do not alter the native 2.5 arc-minute analytical resolution.
 
 The Species Suitability layers summarize the 1981–2025 climate period and extend the analytical framework described by Cavalheiro et al. (2026). **Any use, reproduction or adaptation of these maps should cite:** Cavalheiro, R., Aguiar, A.M., Vatsavai, R.R. *et al.* A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions. *Tree Genetics & Genomes* **22**, 16 (2026). [https://doi.org/10.1007/s11295-026-01741-0](https://doi.org/10.1007/s11295-026-01741-0). Collection-specific interpretation and distribution guidance are provided in [`docs/SPECIES_SUITABILITY.md`](docs/SPECIES_SUITABILITY.md).
+
+The analytical Species Suitability dataset is archived on Zenodo under DOI [10.5281/zenodo.21939047](https://doi.org/10.5281/zenodo.21939047).
 
 Future datasets should receive their own catalogue, methods and provenance rather than being mixed into the frost-climatology collection.
 

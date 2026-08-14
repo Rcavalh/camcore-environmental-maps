@@ -36,6 +36,7 @@ Object.assign(translations.pt,{basemap_map:'Mapa',basemap_satellite:'Satélite',
 
 Object.assign(translations.en,{
   zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21918677',
+  species_zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21939047',
   download_zenodo_file:'Download GeoTIFF from Zenodo',
   open_zenodo_repository:'Open Zenodo repository',
   open_anadem_source:'Open ANADEM source',
@@ -45,6 +46,7 @@ Object.assign(translations.en,{
 });
 Object.assign(translations.pt,{
   zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21918677',
+  species_zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21939047',
   download_zenodo_file:'Baixar GeoTIFF pelo Zenodo',
   open_zenodo_repository:'Abrir repositório no Zenodo',
   open_anadem_source:'Abrir fonte do ANADEM',

@@ -21,6 +21,8 @@ Cavalheiro, R., Aguiar, A.M., Vatsavai, R.R. *et al.* A new environmental-based 
 
 ## Web visualization and analytical downloads
 
+The authoritative analytical dataset is archived on Zenodo as *Global Eucalyptus and Pinus climate-suitability maps at 2.5 arc-minute resolution* under DOI [10.5281/zenodo.21939047](https://doi.org/10.5281/zenodo.21939047) and the Creative Commons Attribution 4.0 International licence.
+
 The portal includes 38 Eucalyptus, 4 Corymbia and 10 Pinus species, presented as three distinct taxonomic groups. It uses Web Mercator WebP previews generated at one-half of the source grid width, together with a numerical inspection grid, so that the complete catalogue remains responsive in a static website. These derivatives are visualization products and do not change the native 2.5-arc-minute analytical resolution of the source GeoTIFFs. Original-resolution analysis should use the downloadable GeoTIFF products.
 
 The high- and low-elevation *Pinus tecunumanii* source variants are retained in the research archive but are not presented as separate species in the public catalogue; the portal exposes the species-level product.
@@ -28,7 +30,7 @@ The high- and low-elevation *Pinus tecunumanii* source variants are retained in 
 The production architecture separates responsibilities:
 
 - **GitHub Pages:** application code, documentation, catalogues and optimized visualization assets.
-- **Persistent data repository:** full-resolution GeoTIFFs, checksums, manifests and versioned data documentation.
-- **Portal links:** each map record links to its corresponding analytical download once the persistent dataset identifier is finalized.
+- **Zenodo:** full-resolution analytical files and versioned data documentation under DOI 10.5281/zenodo.21939047.
+- **Portal links:** the collection card and Species Suitability page link directly to the archived dataset.
 
 This separation prevents large binary rasters from making the Git repository difficult to clone and keeps the web portal below GitHub Pages deployment limits.
