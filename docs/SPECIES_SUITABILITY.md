@@ -13,7 +13,9 @@ Four analytical layers are presented where available:
 
 Suitability values range from 0 to 1. They describe climatic similarity to observed natural ranges and must not be interpreted as probabilities of survival, productivity forecasts or physiological limits. Deployment decisions should also consider field trials, soils, pests, silviculture, genetic material and local operational knowledge.
 
-## Published methods reference
+## Citation for map use
+
+When using, reproducing or adapting any Species Suitability map or derived value, cite the published methods article:
 
 Cavalheiro, R., Aguiar, A.M., Vatsavai, R.R. *et al.* A new environmental-based tool to support forest breeders in selecting species adapted to current and near-term climate conditions. *Tree Genetics & Genomes* **22**, 16 (2026). https://doi.org/10.1007/s11295-026-01741-0.
 
