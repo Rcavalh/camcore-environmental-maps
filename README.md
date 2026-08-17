@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://doi.org/10.5281/zenodo.21918677"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21918677.svg" alt="Frost Climatology dataset DOI"></a>
+  <a href="https://doi.org/10.5281/zenodo.21981334"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21981334.svg" alt="Frost Climatology dataset DOI"></a>
   <a href="https://doi.org/10.5281/zenodo.21939047"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.21939047.svg" alt="Species Suitability dataset DOI"></a>
 </p>
 
@@ -62,7 +62,7 @@ Public documentation uses **preflight validation** for input/dependency checks, 
 
 The repository contains code, metadata, the model-ready station matrix and lightweight web products. Authoritative analytical GeoTIFFs are archived on Zenodo:
 
-- Frost Climatology: [10.5281/zenodo.21918677](https://doi.org/10.5281/zenodo.21918677)
+- Frost Climatology: [10.5281/zenodo.21981334](https://doi.org/10.5281/zenodo.21981334)
 - Species Suitability: [10.5281/zenodo.21939047](https://doi.org/10.5281/zenodo.21939047)
 
 Third-party datasets retain their original licences and distribution terms. ANADEM should be cited as Laipelt et al. (2024), *Remote Sensing* **16**, 2321, [10.3390/rs16132321](https://doi.org/10.3390/rs16132321).

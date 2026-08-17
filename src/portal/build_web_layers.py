@@ -39,13 +39,18 @@ MODEL_ROOT = PORTAL_ROOT / "dryad_dataset" / "data" / "model_outputs"
 V2_ROOT = PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
 WATER_MASK_PATH = ROOT / "data" / "masks" / "lagoa_dos_patos_osm_relation_2709093.geojson"
 WATER_MASK_ID = "OpenStreetMap relation 2709093 (Lagoa dos Patos)"
-ZENODO_RECORD = "https://doi.org/10.5281/zenodo.21918677"
+HAND15_SOURCE = Path(os.environ.get(
+    "FROST_HAND15_RASTER",
+    r"Z:\ENVIROMICS\Camcore26\dados_empresas\Klabin\figura\ANADEM\STATE_RASTER_FINAL"
+    r"\anadem_rs_pr_sc_sp_ms_30m_HAND_flowpath_within_15000m_filled_zero.tif",
+))
+ZENODO_RECORD = "https://doi.org/10.5281/zenodo.21981334"
 ZENODO_FILES = {
-    "frost_probability": "https://zenodo.org/records/21918677/files/FROST_PROBABILITY_MEAN_2000_2026.tif",
-    "expected_frost_days": "https://zenodo.org/records/21918677/files/FROST_DAYS_MEAN_2000_2026.tif",
-    "seasonal_tmin": "https://zenodo.org/records/21918677/files/TMIN_MEAN_2000_2026.tif",
-    "seasonal_tmin_p25": "https://zenodo.org/records/21918677/files/TMIN_P25_2000_2026.tif",
-    "hand": "https://zenodo.org/records/21918677/files/HAND_2000M.tif",
+    "frost_probability": "https://zenodo.org/records/21981334/files/FROST_PROBABILITY_MEAN_2000_2026.tif",
+    "expected_frost_days": "https://zenodo.org/records/21981334/files/EXPECTED_FROST_DAYS_MEAN_2000_2026.tif",
+    "seasonal_tmin": "https://zenodo.org/records/21981334/files/SEASONAL_TMIN_MEAN_2000_2026_C.tif",
+    "seasonal_tmin_p25": "https://zenodo.org/records/21981334/files/SEASONAL_TMIN_P25_2000_2026_C.tif",
+    "hand_15km": "https://zenodo.org/records/21981334/files/HAND_15000M.tif",
 }
 
 
@@ -211,15 +216,27 @@ def build_layer_specs() -> list[dict]:
 
     specs.extend([
         {
-            "id": "hand", "endpoint": "hand", "title": "Height above nearest drainage",
-            "titlePt": "Altura acima da drenagem mais próxima",
+            "id": "hand", "endpoint": "hand", "title": "Drainage-relative elevation (HAND) — 2 km",
+            "titlePt": "Elevação relativa à drenagem (HAND) — 2 km",
             "subtitle": "HAND · 2-km flow-path search", "subtitlePt": "HAND · busca de fluxo de 2 km",
             "source": PORTAL_ROOT / "00_HAND" / "anadem_rs_pr_sc_sp_ms_30m_HAND_flowpath_within_2000m_filled_zero.tif",
             "output": "hand_2000m.png", "cmap": "viridis", "percentiles": [1.0, 99.0],
             "units": "m", "status": "derived terrain layer", "statusPt": "camada derivada do terreno",
-            "download": ZENODO_FILES["hand"],
+            "download": ZENODO_RECORD,
             "group": "terrain", "scenario": "hand", "scenarioLabel": "HAND", "scenarioLabelPt": "HAND",
             "max_width": 6000, "analysis_width": 2048,
+        },
+        {
+            "id": "hand_15km", "endpoint": "hand", "title": "Drainage-relative elevation (HAND) — 15 km",
+            "titlePt": "Elevação relativa à drenagem (HAND) — 15 km",
+            "subtitle": "HAND · 15-km flow-path search", "subtitlePt": "HAND · busca de fluxo de 15 km",
+            "source": HAND15_SOURCE,
+            "output": "hand_15km.png", "cmap": "viridis", "percentiles": [1.0, 99.0],
+            "units": "m", "status": "terrain predictor used by the version 2.0 models",
+            "statusPt": "preditor de terreno utilizado nos modelos v2.0",
+            "download": ZENODO_FILES["hand_15km"],
+            "group": "terrain", "scenario": "hand_15km", "scenarioLabel": "HAND · 15 km",
+            "scenarioLabelPt": "HAND · 15 km", "max_width": 6000, "analysis_width": 2048,
         },
         {
             "id": "anadem", "endpoint": "elevation", "title": "Terrain elevation",

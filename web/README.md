@@ -8,7 +8,7 @@ The frost layer menu is organized into three compact groups:
   temperature and the lower-tail P25 seasonal minimum temperature;
 - ENSO phases: probability and P25 seasonal minimum temperature for
   El Niño, La Niña and neutral seasons;
-- terrain: HAND and ANADEM elevation.
+- terrain: HAND derived with 2-km and 15-km flow-path limits, plus ANADEM elevation.
 
 It includes dark and light themes, an offline list of key cities, and online fallback
 geocoding for other Brazilian locations.
@@ -40,7 +40,7 @@ python -m http.server 8000 --directory web
 
 Then open `http://localhost:8000`. The analytical GeoTIFFs are not embedded in the website; the PNGs are visualization derivatives only.
 
-The authoritative 2000–2026 Frost Climatology GeoTIFF collection and supporting metadata are archived on Zenodo: [https://doi.org/10.5281/zenodo.21918677](https://doi.org/10.5281/zenodo.21918677).
+The authoritative 2000–2026 Frost Climatology GeoTIFF collection and supporting metadata are archived on Zenodo: [https://doi.org/10.5281/zenodo.21981334](https://doi.org/10.5281/zenodo.21981334).
 
 Additional collection builders:
 

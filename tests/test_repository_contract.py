@@ -28,10 +28,10 @@ class RepositoryContractTests(unittest.TestCase):
         catalog = json.loads((ROOT / "web" / "layers.json").read_text(encoding="utf-8"))
         ids = {x["id"] for x in catalog}
         self.assertTrue(
-            {"frost_probability", "expected_frost_days", "seasonal_tmin", "seasonal_tmin_p25", "hand", "anadem"}.issubset(ids)
+            {"frost_probability", "expected_frost_days", "seasonal_tmin", "seasonal_tmin_p25", "hand", "hand_15km", "anadem"}.issubset(ids)
         )
         groups = {name: sum(x.get("group") == name for x in catalog) for name in ("complete", "periods", "enso", "terrain")}
-        self.assertEqual(groups, {"complete": 4, "periods": 0, "enso": 6, "terrain": 2})
+        self.assertEqual(groups, {"complete": 4, "periods": 0, "enso": 6, "terrain": 3})
         self.assertNotIn("frost_probability_v2", ids)
         self.assertNotIn("seasonal_tmin_p25_v2", ids)
         for layer in catalog:

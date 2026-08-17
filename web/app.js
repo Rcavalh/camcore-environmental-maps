@@ -15,7 +15,7 @@ Object.assign(translations.en,{
   frost_collection:'Frost Climatology',species_collection:'Species Suitability',bioclimate_collection:'Bioclimatic Variables',
   frost_collection_text:'Occurrence probability, expected frost days, seasonal minimum temperature and terrain context.',species_collection_text:'Analyses based on the natural ranges of the species.',bioclimate_collection_text:'Global BIO1–BIO19 temperature and precipitation summaries for 1981–2024.',empty_collection:'Collection space reserved for future datasets.',open_collection:'Open collection',
   interactive_title:'Explore the frost-climatology layers',about_kicker:'Data access',about_title:'Selected analytical maps are available for download.',
-  about_text:'The complete 2000–2026 frost-climatology collection and its analytical GeoTIFFs are archived on Zenodo under DOI 10.5281/zenodo.21918677.',
+  about_text:'The complete 2000–2026 frost-climatology collection and its analytical GeoTIFFs are archived on Zenodo under DOI 10.5281/zenodo.21981334.',
   read_methods:'Methods & data',open_dataset:'Open Zenodo dataset',footer_brand:'Camcore Environmental Map Collections',footer_text:'Research maps and decision support'
 });
 Object.assign(translations.pt,{
@@ -27,7 +27,7 @@ Object.assign(translations.pt,{
   frost_collection:'Climatologia de Geadas',species_collection:'Adequabilidade de Espécies',bioclimate_collection:'Variáveis Bioclimáticas',
   frost_collection_text:'Probabilidade de ocorrência, dias esperados de geada, temperatura mínima sazonal e contexto do terreno.',species_collection_text:'Análises baseadas nas distribuições naturais das espécies.',bioclimate_collection_text:'Sínteses globais BIO1–BIO19 de temperatura e precipitação para 1981–2024.',empty_collection:'Espaço reservado para conjuntos de dados futuros.',open_collection:'Abrir coleção',
   interactive_title:'Explore as camadas de climatologia de geadas',about_kicker:'Acesso aos dados',about_title:'Mapas analíticos selecionados estão disponíveis para download.',
-  about_text:'A coleção completa de climatologia de geadas de 2000–2026 e seus GeoTIFFs analíticos estão arquivados no Zenodo sob o DOI 10.5281/zenodo.21918677.',
+  about_text:'A coleção completa de climatologia de geadas de 2000–2026 e seus GeoTIFFs analíticos estão arquivados no Zenodo sob o DOI 10.5281/zenodo.21981334.',
   read_methods:'Métodos e dados',open_dataset:'Abrir conjunto de dados no Zenodo',footer_brand:'Coleções de Mapas Ambientais Camcore',footer_text:'Mapas científicos e apoio à decisão'
 });
 
@@ -35,7 +35,7 @@ Object.assign(translations.en,{basemap_map:'Map',basemap_satellite:'Satellite',f
 Object.assign(translations.pt,{basemap_map:'Mapa',basemap_satellite:'Satélite',fullscreen_map:'Mapa em tela cheia',exit_fullscreen:'Sair da tela cheia'});
 
 Object.assign(translations.en,{
-  zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21918677',
+  zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21981334',
   species_zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21939047',
   download_zenodo_file:'Download GeoTIFF from Zenodo',
   open_zenodo_repository:'Open Zenodo repository',
@@ -45,7 +45,7 @@ Object.assign(translations.en,{
   anadem_source_note:'ANADEM is distributed by its original data provider.'
 });
 Object.assign(translations.pt,{
-  zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21918677',
+  zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21981334',
   species_zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21939047',
   download_zenodo_file:'Baixar GeoTIFF pelo Zenodo',
   open_zenodo_repository:'Abrir repositório no Zenodo',
@@ -72,13 +72,13 @@ const places=[
 ];
 
 const palettes={RdYlBu:'linear-gradient(90deg,#a50026,#f46d43,#ffffbf,#74add1,#313695)',RdYlBu_r:'linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026)',viridis:'linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725)',gist_earth:'linear-gradient(90deg,#17336b,#478d82,#a9b26f,#c49a6c,#f5f2ed)'};
-const ZENODO_RECORD='https://doi.org/10.5281/zenodo.21918677';
+const ZENODO_RECORD='https://doi.org/10.5281/zenodo.21981334';
 const ZENODO_FILES={
-  frost_probability:'https://zenodo.org/records/21918677/files/FROST_PROBABILITY_MEAN_2000_2026.tif',
-  expected_frost_days:'https://zenodo.org/records/21918677/files/FROST_DAYS_MEAN_2000_2026.tif',
-  seasonal_tmin:'https://zenodo.org/records/21918677/files/TMIN_MEAN_2000_2026.tif',
-  seasonal_tmin_p25:'https://zenodo.org/records/21918677/files/TMIN_P25_2000_2026.tif',
-  hand:'https://zenodo.org/records/21918677/files/HAND_2000M.tif'
+  frost_probability:'https://zenodo.org/records/21981334/files/FROST_PROBABILITY_MEAN_2000_2026.tif',
+  expected_frost_days:'https://zenodo.org/records/21981334/files/EXPECTED_FROST_DAYS_MEAN_2000_2026.tif',
+  seasonal_tmin:'https://zenodo.org/records/21981334/files/SEASONAL_TMIN_MEAN_2000_2026_C.tif',
+  seasonal_tmin_p25:'https://zenodo.org/records/21981334/files/SEASONAL_TMIN_P25_2000_2026_C.tif',
+  hand_15km:'https://zenodo.org/records/21981334/files/HAND_15000M.tif'
 };
 function downloadContract(layer){
   if(ZENODO_FILES[layer.id])return{href:ZENODO_FILES[layer.id],label:'download_zenodo_file',note:'zenodo_file_note',kind:'file'};
