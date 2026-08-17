@@ -142,6 +142,56 @@ def build_layer_specs() -> list[dict]:
             max_width=6000, analysis_width=2048,
         ))
 
+    experimental_v2 = model_spec(
+        layer_id="frost_probability_v2",
+        endpoint="probability",
+        source=(
+            PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
+            / "RF_DIRECT_GRIDS_FROST_PROBABILITY_MEAN_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif"
+        ),
+        output="frost_probability_2000_2026_v2.png",
+        group="complete",
+        scenario="2000_2026_v2",
+        scenario_label="Experimental v2.0",
+        scenario_label_pt="Experimental v2.0",
+        subtitle="Experimental comparison layer · 2000–2026 · v2.0",
+        subtitle_pt="Camada experimental para comparação · 2000–2026 · v2.0",
+        max_width=6000,
+        analysis_width=2048,
+    )
+    experimental_v2.update({
+        "title": "Frost-occurrence probability — v2.0",
+        "titlePt": "Probabilidade de ocorrência de geada — v2.0",
+        "status": "experimental v2.0 comparison layer; direct ERA5-Land and MODIS source grids",
+        "statusPt": "camada experimental v2.0; grades-fonte diretas do ERA5-Land e MODIS",
+    })
+    specs.insert(1, experimental_v2)
+
+    experimental_tmin_p25_v2 = model_spec(
+        layer_id="seasonal_tmin_p25_v2",
+        endpoint="tmin_p25",
+        source=(
+            PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
+            / "RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif"
+        ),
+        output="seasonal_minimum_temperature_p25_2000_2026_v2.png",
+        group="complete",
+        scenario="2000_2026_v2",
+        scenario_label="Experimental v2.0",
+        scenario_label_pt="Experimental v2.0",
+        subtitle="Experimental P25 comparison layer · 2000–2026 · v2.0",
+        subtitle_pt="Camada experimental P25 para comparação · 2000–2026 · v2.0",
+        max_width=6000,
+        analysis_width=2048,
+    )
+    experimental_tmin_p25_v2.update({
+        "title": "Seasonal minimum temperature — P25 v2.0",
+        "titlePt": "Temperatura mínima sazonal — P25 v2.0",
+        "status": "experimental v2.0 P25 comparison layer; direct ERA5-Land and MODIS source grids",
+        "statusPt": "camada experimental P25 v2.0; grades-fonte diretas do ERA5-Land e MODIS",
+    })
+    specs.insert(2, experimental_tmin_p25_v2)
+
     enso_defs = [
         ("el_nino", "El Niño", "El Niño"),
         ("la_nina", "La Niña", "La Niña"),

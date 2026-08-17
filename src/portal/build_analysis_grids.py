@@ -29,6 +29,17 @@ def main() -> int:
         default=2048,
         help="Width of each numeric analysis grid used in the browser.",
     )
+    parser.add_argument(
+        "--layer-id",
+        action="append",
+        default=[],
+        help="Build only the named layer. Repeat to select multiple layers.",
+    )
+    parser.add_argument(
+        "--preserve-existing",
+        action="store_true",
+        help="Keep existing manifest entries when building selected layers.",
+    )
     args = parser.parse_args()
 
     catalog = {
@@ -38,8 +49,22 @@ def main() -> int:
     output_dir = WEB / "assets" / "analysis"
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    manifest: dict[str, dict] = {}
-    for spec in LAYER_SPECS:
+    available_specs = {spec["id"]: spec for spec in LAYER_SPECS}
+    unknown = sorted(set(args.layer_id) - set(available_specs))
+    if unknown:
+        raise SystemExit(f"Unknown layer id(s): {', '.join(unknown)}")
+    selected_specs = (
+        [available_specs[layer_id] for layer_id in args.layer_id]
+        if args.layer_id
+        else LAYER_SPECS
+    )
+
+    manifest_path = WEB / "analysis-manifest.json"
+    if args.preserve_existing and manifest_path.exists():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    else:
+        manifest: dict[str, dict] = {}
+    for spec in selected_specs:
         layer = catalog[spec["id"]]
         preview = WEB / "assets" / "layers" / spec["output"]
         with Image.open(preview) as image:
