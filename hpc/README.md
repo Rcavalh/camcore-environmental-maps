@@ -1,5 +1,7 @@
 # Hazel/LSF workflow archive
 
+The current production submission package is [`v2_2_hand15_direct_grids`](v2_2_hand15_direct_grids/README_START_HERE.md). It uses the refitted HAND15 Random Forest, direct annual climate grids for 2000-2026, 96 shards and no station IDW. Other scripts in this directory document earlier runs and are retained for provenance.
+
 These scripts record the exact submission pattern used for the five-state native-grid Random Forest production run. They are retained for provenance and adaptation, not as a universal one-command deployment.
 
 Before reuse:

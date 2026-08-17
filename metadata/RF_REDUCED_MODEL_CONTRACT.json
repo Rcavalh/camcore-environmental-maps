@@ -1,5 +1,5 @@
 {
-  "status": "RF_BLOCK_BALANCED_ALL_ENDPOINTS_OK",
+  "status": "RF_HAND15_2000_2026_PRODUCTION_OK",
   "feature_count": 115,
   "feature_blocks": {
     "Terrain/HAND/space/time": 19,
@@ -11,6 +11,13 @@
     "frost_days",
     "seasonal_tmin_c"
   ],
+  "climate_prediction_period": [2000, 2026],
+  "observed_response_period": [2001, 2026],
+  "event_window": "15 May to 15 August",
+  "hand_flowpath_radius_m": 15000,
+  "terrain_context_radius_m": 2000,
+  "climate_projection": "direct annual ERA5-Land and MODIS grids; no station IDW",
+  "post_prediction_smoothing": false,
   "feature_manifest": "FINAL_BLOCK_BALANCED_FEATURES.csv",
-  "note": "Portable metadata copy; machine-specific source paths removed."
+  "note": "Portable metadata copy of article v2.2 HAND15; machine-specific source paths removed."
 }

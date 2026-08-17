@@ -71,9 +71,17 @@ def main(args: argparse.Namespace) -> int:
         reference = first_raster_dir / raster_name
         with rasterio.open(reference) as ref:
             profile = ref.profile.copy()
+            # BIGTIFF is a creation option and is not preserved when reading
+            # ``Dataset.profile`` from a shard. The five-state 30 m rasters can
+            # exceed the classic TIFF 4 GiB limit during the merge.
+            profile.update(BIGTIFF="YES")
             tags = ref.tags()
             width, height = ref.width, ref.height
         destination = final_dir / raster_name
+        # A failed classic-TIFF merge can leave a truncated output behind.
+        # Recreate only that derived destination; shard rasters remain intact.
+        if destination.exists():
+            destination.unlink()
         with rasterio.open(destination, "w", **profile) as dst:
             dst.update_tags(**tags, merged_shards=args.shard_count, merged_at=datetime.now(timezone.utc).isoformat())
             written: set[str] = set()
@@ -97,8 +105,9 @@ def main(args: argparse.Namespace) -> int:
             flush=True,
         )
 
+    final_marker = os.environ.get("FROST_MERGE_MARKER", "FULL_NATIVE_BALANCED_RF_MERGE_OK")
     status = {
-        "status": "FULL_NATIVE_BALANCED_RF_MERGE_OK",
+        "status": final_marker,
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "shards": args.shard_count,
         "tile_size": args.tile_size,
@@ -107,7 +116,7 @@ def main(args: argparse.Namespace) -> int:
         "output": str(final_dir),
     }
     (OUT / "MERGE_STATUS.json").write_text(json.dumps(status, indent=2), encoding="utf-8")
-    (OUT / "FULL_NATIVE_BALANCED_RF_MERGE_OK").write_text("OK\n", encoding="utf-8")
+    (OUT / final_marker).write_text("OK\n", encoding="utf-8")
     print(json.dumps(status, indent=2), flush=True)
     return 0
 

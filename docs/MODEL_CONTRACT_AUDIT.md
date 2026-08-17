@@ -2,7 +2,7 @@
 
 ## Verified production contract
 
-The frozen `RF_BLOCK_BALANCED_ALL_ENDPOINTS` bundle reports **115 predictors**:
+The final `RF_HAND15_ALL_ENDPOINTS_2000_2026` bundle reports **115 predictors**:
 
 | Block | Predictors |
 |---|---:|
@@ -11,7 +11,7 @@ The frozen `RF_BLOCK_BALANCED_ALL_ENDPOINTS` bundle reports **115 predictors**:
 | MODIS | 32 |
 | **Total** | **115** |
 
-The authoritative names are stored in `metadata/FINAL_BLOCK_BALANCED_FEATURES.csv`; the summary is stored in `metadata/RF_REDUCED_MODEL_CONTRACT.json`.
+The authoritative names are stored in `metadata/FINAL_BLOCK_BALANCED_FEATURES.csv`; the summary is stored in `metadata/RF_REDUCED_MODEL_CONTRACT.json`. The model uses 15 km HAND flow-path support, while the remaining local terrain summaries retain their 2 km neighbourhoods.
 
 ## Manuscript implication
 

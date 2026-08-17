@@ -1,0 +1,28 @@
+year,roni_mjj,roni_jja,roni_jas,frost_season_roni_mean,enso_phase,classification_status,source
+2000,-0.5,-0.4,-0.4,-0.4333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2001,-0.1,0.0,0.0,-0.0333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2002,0.7,0.9,1.1,0.9,El Nino,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2003,-0.3,0.0,0.2,-0.0333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2004,0.5,0.7,0.8,0.6666666666666666,El Nino,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2005,0.0,-0.1,-0.1,-0.0666666666666666,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2006,0.0,0.1,0.3,0.1333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2007,-0.5,-0.6,-0.8,-0.6333333333333334,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2008,-0.5,-0.3,-0.2,-0.3333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2009,0.1,0.3,0.4,0.2666666666666666,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2010,-1.0,-1.3,-1.5,-1.2666666666666666,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2011,-0.3,-0.4,-0.5,-0.3999999999999999,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2012,0.0,0.3,0.4,0.2333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2013,-0.4,-0.4,-0.3,-0.3666666666666667,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2014,0.0,-0.1,-0.1,-0.0666666666666666,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2015,1.0,1.3,1.6,1.3,El Nino,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2016,-0.6,-0.9,-1.0,-0.8333333333333334,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2017,0.1,-0.2,-0.5,-0.1999999999999999,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2018,0.0,0.1,0.2,0.1,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2019,0.2,0.0,-0.1,0.0333333333333333,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2020,-0.7,-0.8,-0.8,-0.7666666667,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2021,-0.6,-0.6,-0.8,-0.6666666667,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2022,-0.9,-0.9,-0.9,-0.9,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2023,0.3,0.5,0.8,0.5333333333,El Nino,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2024,-0.4,-0.5,-0.6,-0.5,La Nina,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2025,-0.4,-0.4,-0.6,-0.4666666667,Neutral,final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/
+2026,1.0,,,1.0,El Nino,provisional_MJJ_only_do_not_treat_as_final,https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso/roni/

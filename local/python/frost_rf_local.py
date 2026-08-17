@@ -30,7 +30,7 @@ from sklearn.metrics import (
     recall_score,
     roc_auc_score,
 )
-from sklearn.model_selection import GroupKFold, KFold, cross_val_predict
+from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.pipeline import Pipeline
 
 
@@ -67,22 +67,52 @@ def load_features(path: Path) -> list[str]:
     return features
 
 
-def estimator(kind: str, trees: int, jobs: int, seed: int) -> Pipeline:
-    common = dict(n_estimators=trees, min_samples_leaf=4, max_features=0.45,
-                  n_jobs=jobs, random_state=seed)
+def estimator(
+    kind: str,
+    classifier_trees: int,
+    regressor_trees: int,
+    jobs: int,
+    seed: int,
+) -> Pipeline:
     if kind == "classifier":
-        model = RandomForestClassifier(class_weight="balanced_subsample", **common)
+        model = RandomForestClassifier(
+            n_estimators=classifier_trees,
+            max_depth=18,
+            min_samples_leaf=5,
+            max_features="sqrt",
+            class_weight="balanced_subsample",
+            n_jobs=jobs,
+            random_state=seed,
+        )
     elif kind == "poisson_regressor":
-        model = RandomForestRegressor(criterion="poisson", **common)
+        model = RandomForestRegressor(
+            n_estimators=regressor_trees,
+            criterion="poisson",
+            min_samples_leaf=4,
+            max_features=0.45,
+            n_jobs=jobs,
+            random_state=seed,
+        )
     else:
-        model = RandomForestRegressor(criterion="squared_error", **common)
+        model = RandomForestRegressor(
+            n_estimators=regressor_trees,
+            criterion="squared_error",
+            min_samples_leaf=4,
+            max_features=0.45,
+            n_jobs=jobs,
+            random_state=seed,
+        )
     return Pipeline([("imputer", SimpleImputer(strategy="median")), ("model", model)])
 
 
-def split_strategy(frame: pd.DataFrame, group_column: str | None, folds: int, seed: int):
-    if group_column and group_column in frame and frame[group_column].nunique() >= folds:
-        return GroupKFold(n_splits=folds), frame[group_column].astype(str).to_numpy(), "grouped"
-    return KFold(n_splits=folds, shuffle=True, random_state=seed), None, "random"
+def station_groups(frame: pd.DataFrame, group_columns: list[str], folds: int) -> np.ndarray:
+    missing = [column for column in group_columns if column not in frame]
+    if missing:
+        raise ValueError(f"Missing grouping columns: {missing}")
+    groups = frame[group_columns].astype(str).agg("__".join, axis=1).to_numpy()
+    if np.unique(groups).size < folds:
+        raise ValueError("Fewer unique station groups than requested folds")
+    return groups
 
 
 def classification_metrics(y: np.ndarray, probability: np.ndarray) -> dict:
@@ -124,8 +154,16 @@ def train(args: argparse.Namespace) -> int:
         work = table.loc[table[target].notna()].reset_index(drop=True)
         x = work[features]
         y = work[target].to_numpy()
-        cv, groups, validation = split_strategy(work, args.group_column, args.folds, args.seed)
-        pipe = estimator(spec["kind"], args.trees, args.jobs, args.seed + index)
+        groups = station_groups(work, args.group_columns, args.folds)
+        cv = GroupKFold(n_splits=args.folds)
+        validation = "station_grouped:" + "+".join(args.group_columns)
+        pipe = estimator(
+            spec["kind"],
+            args.classifier_trees,
+            args.regressor_trees,
+            args.jobs,
+            args.seed + index,
+        )
         method = "predict_proba" if spec["kind"] == "classifier" else "predict"
         cv_prediction = cross_val_predict(pipe, x, y, cv=cv, groups=groups, method=method,
                                           n_jobs=1)
@@ -147,6 +185,14 @@ def train(args: argparse.Namespace) -> int:
         "models": models,
         "training_rows": len(table),
         "random_seed": args.seed,
+        "group_columns": args.group_columns,
+        "hyperparameters": {
+            "classifier_trees": args.classifier_trees,
+            "regressor_trees": args.regressor_trees,
+            "classifier_max_depth": 18,
+            "classifier_min_samples_leaf": 5,
+            "regressor_min_samples_leaf": 4,
+        },
     }
     joblib.dump(bundle, args.output / "frost_rf_three_endpoints.joblib", compress=3)
     pd.DataFrame(metrics).to_csv(args.output / "validation_metrics.csv", index=False)
@@ -180,8 +226,9 @@ def parser() -> argparse.ArgumentParser:
     p.add_argument("--features", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--prediction", type=Path)
-    p.add_argument("--group-column", default="station_id")
-    p.add_argument("--trees", type=int, default=700)
+    p.add_argument("--group-columns", nargs="+", default=["state", "station_id"])
+    p.add_argument("--classifier-trees", type=int, default=900)
+    p.add_argument("--regressor-trees", type=int, default=700)
     p.add_argument("--folds", type=int, default=5)
     p.add_argument("--jobs", type=int, default=-1)
     p.add_argument("--seed", type=int, default=20260807)

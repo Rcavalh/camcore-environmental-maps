@@ -1,40 +1,38 @@
-# Random Forest model input — version 2.0
+# Final Random Forest HAND15 model input — version 2.0
 
-`RF_MODEL_INPUT_V2_2001_2026.csv` is the official version 2.0 Random Forest
-model-input matrix extracted from the `V2 Model Input` worksheet of
-`RF_MODEL_INPUT_COMPLETE_V1_V2.xlsx`. The version 1 worksheet is not included
-in this repository.
+`RF_MODEL_INPUT_HAND15_V2_2001_2026.csv` is the canonical model-input matrix
+consumed by the final Random Forest HAND15 production bundle used in the HPC
+article-v2.2 mapping workflow.
 
 ## Contents
 
-- 2,693 eligible station-season records;
-- 219 INMET stations;
+- 2,693 eligible station-season records from 219 INMET stations;
 - observed response years 2001–2026 within the 2000–2026 climate-mapping
   period;
 - four identifiers, three observed responses and 115 ordered predictors;
-- 19 terrain/HAND/space/time, 64 ERA5-Land and 32 MODIS predictors.
+- 19 spatial/terrain/HAND/time, 64 ERA5-Land and 32 MODIS predictors;
+- HAND calculated with a maximum 15,000-m downstream flow-path search.
 
-The three response columns are `frost_any`, `frost_days` and
+The response columns are `frost_any`, `frost_days` and
 `observed_season_tmin_c`. Company-damage observations are not included.
 
-## Important processing distinction
+## Canonical and raw matrices
 
-This public table is the complete **post-imputation production-bundle input**.
-Consequently, its 115 predictor columns contain no blank cells. This does not
-mean that every raw satellite retrieval was observed. In the source audit,
-83.1775% of selected raw MODIS cells were observed and no station-season was
-missing the complete selected MODIS block. Missing raw predictor values were
-replaced by the frozen full-data median imputer used to fit the production
-bundle.
+- `RF_MODEL_INPUT_HAND15_V2_2001_2026.csv` contains the exact post-imputation
+  float32 predictor matrix passed to the final production models. It is the
+  appropriate file for reproducing the final all-data model refit.
+- `RF_MODEL_INPUT_HAND15_V2_2001_2026_RAW.csv` preserves missing predictor
+  values. It is the appropriate starting point for station-grouped
+  cross-validation, because the median imputer must be fitted independently
+  using only the training stations in each fold.
 
-For station-grouped cross-validation, the imputer was not transferred from
-the full dataset: the imputer and Random Forest were refitted separately using
-the training stations in each fold. This separation prevents validation data
-from contributing to fold-wise imputation.
+The raw matrix contains 20,731 missing predictor cells; the canonical matrix
+contains none after application of the stored production median imputer.
 
-## Integrity
+## Integrity and HPC identity
 
-`RF_MODEL_INPUT_V2_PROVENANCE.json` records the source workbook checksum, CSV
-checksum, dimensions, model-bundle checksum and the verified SHA-256 digest of
-the ordered float32 predictor matrix. The latter exactly matches the value
-reported in the source workbook's `Audit Summary` worksheet.
+`RF_MODEL_INPUT_HAND15_V2_PROVENANCE.json` records dimensions, ordered
+predictors, missingness, SHA-256 checksums and the hashes of the production
+model and training script. The model and script hashes were verified against
+the copies stored in
+`HPC_ARTICLE_V2_2_HAND15_2000_2026_INCREMENTAL_20260815.zip`.

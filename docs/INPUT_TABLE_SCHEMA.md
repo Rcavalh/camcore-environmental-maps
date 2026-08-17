@@ -6,13 +6,14 @@ The local Python and R workflows operate on a prepared station-year table. Each 
 
 | Column | Type | Description |
 |---|---|---|
-| `station_id` | string | Stable station identifier used for grouped validation |
+| `state` | string | State code; combined with `station_id` for grouped validation |
+| `station_id` | string | Stable station identifier; all years from a station remain in the same fold |
 | `year` | integer | Frost-season year; also present in the feature manifest |
 | `frost_any` | 0/1 | Whether at least one observed frost occurred in the eligible season |
 | `frost_days` | non-negative numeric | Observed number of frost days in the eligible season |
 | `observed_season_tmin_c` | numeric | Observed seasonal minimum temperature in degrees Celsius |
 
-Optional descriptive columns such as station name and state are preserved in output tables but not used unless included in the versioned feature manifest.
+Optional descriptive columns such as station name are preserved in output tables. Scientific validation uses the composite key `state + station_id`.
 
 ## Predictors
 
@@ -22,4 +23,4 @@ Every column listed in `metadata/FINAL_BLOCK_BALANCED_FEATURES.csv` is required.
 
 A tabular prediction matrix must contain the same predictor columns but does not require endpoint columns. Native-grid raster prediction requires one aligned `<feature>.tif` per predictor, with identical CRS, extent, transform and shape.
 
-The public repository should not contain restricted station observations. Deposit a de-identified or access-controlled table only when its source terms allow redistribution.
+The included public matrix contains INMET-derived station-season responses and public environmental covariates. It excludes company damage observations and other restricted data.

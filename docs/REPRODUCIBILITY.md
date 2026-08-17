@@ -1,40 +1,65 @@
 # Reproducibility guide
 
-## 1. Choose an execution path
+## 1. Current production version
 
-### Local Python — recommended exact portable workflow
+Use the **v2.2 HAND15 direct-grid** contract for the published frost maps. Older scripts remain in the repository only to preserve analytical provenance.
 
-Use `local/python/frost_rf_local.py` to train and spatially validate the three endpoints from a prepared station-year matrix. Use `local/python/predict_covariate_stack.py` when every model feature is available as an aligned GeoTIFF.
+Key invariants are:
 
-### Local R — independent reference implementation
+- climate mapping period: 2000-2026;
+- observed response period: 2001-2026;
+- frost-season window: 15 May-15 August;
+- 115 ordered predictors;
+- HAND downstream flow-path support: 15 km;
+- other local terrain summaries: 2 km;
+- direct annual ERA5-Land/MODIS grids, with no station IDW;
+- no post-prediction smoothing.
 
-Use `local/R/frost_rf_local.R` and `local/R/predict_covariate_stack.R`. This workflow follows the same endpoint and predictor contract using `ranger` and `terra`. It is methodologically equivalent, but numerical results are not bitwise identical to scikit-learn.
+## 2. Refit the three Random Forest endpoints locally
 
-### HPC Python — production native-grid workflow
+Create the Python environment and run:
 
-The `hpc/` directory contains the LSF job-array and merge scripts used for the five-state run. The exact historical analysis scripts are retained under `src/pipeline/`. Configure machine paths through environment variables and `config/source_roots.example.json`; never commit private absolute paths.
+```bash
+python local/python/frost_rf_local.py \
+  --training data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv \
+  --features metadata/FINAL_BLOCK_BALANCED_FEATURES.csv \
+  --output outputs/local_rf_hand15
+```
 
-## 2. Validation stages
+The command groups validation by `state + station_id` by default. The local implementation refits the frozen 115-feature production contract. The exact historical feature-selection and validation implementation is preserved in `src/pipeline/63_validate_train_hand15_rf_tabpfn_2000_2026.py`.
 
-1. **Preflight validation:** verifies packages, input presence, raster readability, model contract and checksums.
-2. **Reduced-scale integration check:** processes a small, spatially distributed sample and confirms that all three endpoints can be exported.
-3. **Scientific validation:** reports held-out grouped or spatial cross-validation metrics.
-4. **Production prediction:** processes every native-grid tile.
-5. **Merge and audit:** combines completed shards and verifies CRS, transform, NoData, range, coverage and checksum.
+## 3. Reproduce direct-grid maps
 
-The historical implementation uses `smoke` in some filenames and completion markers. This is preserved for traceability; manuscripts and user-facing documentation should use the stage names above.
+The map-production implementation is preserved in `src/pipeline/60_hpc_predict_direct_climate_sc_lages_four_endpoints.py`. It requires:
 
-## 3. Predictor contract
+1. the ANADEM mosaic and aligned 15 km HAND raster;
+2. the fitted Random Forest bundle;
+3. four annual stack types (ERA5 continuous/count and MODIS continuous/count) for each state group and year;
+4. the frozen ENSO-year table when ENSO products are requested.
 
-`metadata/FINAL_BLOCK_BALANCED_FEATURES.csv` is the machine-readable source of truth. Do not manually infer predictor lists from prose. A run must stop if any required predictor is missing or duplicated.
+The production script aligns continuous stacks bilinearly and count/discrete stacks by nearest neighbour, predicts 512 x 512 tiles, writes persistent shard outputs and never uses station IDW. The LSF submission pattern and merge checks are documented in `hpc/README.md`.
 
-## 4. Randomness and parallelism
+The GRASS workflow that derives the 15 km HAND layer is documented and preserved in [`src/hand15`](../src/hand15/README.md).
 
-- Preserve the documented random seed.
-- Record software versions and the feature-manifest checksum.
-- The same implementation and input snapshot should be used for formal comparison.
-- Different Random Forest engines, thread counts or library versions may produce small numerical differences.
+## 4. Validation stages
 
-## 5. Completion contract
+1. **Preflight validation:** verify packages, input presence, raster readability, model contract and checksums.
+2. **Reduced-scale integration check:** process a small spatial sample and confirm export of every endpoint.
+3. **Scientific validation:** calculate held-out station-grouped cross-validation metrics.
+4. **Production prediction:** process every native-grid tile.
+5. **Merge and audit:** combine completed shards and verify CRS, transform, NoData, value range, coverage and checksums.
 
-A run is not complete merely because a scheduler reports `DONE`. Completion requires endpoint files, final markers, raster audits and checksums. Development previews and reduced-scale integration outputs are excluded from the scientific deposit.
+Historical filenames may contain `smoke`; public documentation uses “reduced-scale integration check” so it is not confused with scientific validation.
+
+## 5. Data and feature contracts
+
+- [`data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv`](../data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv): exact post-imputation matrix used for the final all-data production refit; 2,693 station-season rows, identifiers, three responses and 115 ordered predictors.
+- [`data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026_RAW.csv`](../data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026_RAW.csv): pre-imputation companion required for fold-wise imputation during grouped validation.
+- [`metadata/FINAL_BLOCK_BALANCED_FEATURES.csv`](../metadata/FINAL_BLOCK_BALANCED_FEATURES.csv): ordered predictor list and scientific block.
+- [`data/model_matrix/RF_MODEL_INPUT_HAND15_V2_PROVENANCE.json`](../data/model_matrix/RF_MODEL_INPUT_HAND15_V2_PROVENANCE.json): dimensions, period, checksums, missingness and HPC model/script identity audit.
+
+Missing predictor cells in the raw companion are intentional. Do not pre-impute that raw matrix before grouped validation: the imputer must be fitted independently from each set of training folds. The canonical matrix is already imputed and is intended only to reproduce the final all-data production refit.
+
+## 6. Completion contract
+
+A scheduler status of `DONE` is insufficient. Completion requires all endpoint files, final markers, raster audits and checksums. Development previews and reduced-scale outputs are excluded from the scientific deposit.

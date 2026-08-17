@@ -17,21 +17,20 @@ Use `--quick-check N` to run a reduced-scale integration check before the comple
 python -m venv .venv
 python -m pip install -r local/python/requirements.txt
 python local/python/frost_rf_local.py \
-  --training data/station_year_model_matrix.parquet \
+  --training data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv \
   --features metadata/FINAL_BLOCK_BALANCED_FEATURES.csv \
   --output outputs/local_python \
-  --group-column station_id \
   --quick-check 10000
 ```
 
-Remove `--quick-check 10000` for the complete training run. Add `--prediction data/prediction_matrix.parquet` to generate tabular predictions. When a directory contains one aligned GeoTIFF per predictor, use `predict_covariate_stack.py` to export the three analytical rasters.
+The Python workflow groups folds by `state + station_id` by default and uses the final 900-tree classifier and 700-tree regressors. Remove `--quick-check 10000` for the complete training run. Add `--prediction data/prediction_matrix.parquet` to generate tabular predictions. The final production maps used the direct annual climate-grid script documented in `docs/REPRODUCIBILITY.md`; the simpler `predict_covariate_stack.py` applies when one aligned GeoTIFF already exists per predictor.
 
 ### R
 
 ```bash
 Rscript local/R/install_packages.R
 Rscript local/R/frost_rf_local.R \
-  --training=data/station_year_model_matrix.csv \
+  --training=data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv \
   --features=metadata/FINAL_BLOCK_BALANCED_FEATURES.csv \
   --output=outputs/local_R \
   --group_column=station_id \

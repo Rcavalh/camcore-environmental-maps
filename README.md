@@ -49,7 +49,9 @@ The production workflow estimates three endpoints:
 2. expected frost days per eligible season;
 3. seasonal minimum temperature, including P25 cold-tail summaries.
 
-The model uses a versioned, reduced predictor contract organized into spatial, terrain/HAND, ERA5-Land and MODIS blocks. The portal presents complete-period products and ENSO classes.
+The production model uses 115 ordered predictors and 15 km HAND flow-path support. ERA5-Land and MODIS are transferred through their annual source grids rather than station IDW, and predictions are not spatially smoothed. The portal presents complete-period 2000-2026 products and ENSO classes.
+
+The canonical Random Forest HAND15 matrix is available at [`data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv`](data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv), with a raw pre-imputation companion for leakage-free grouped validation. It contains the three observed responses and exactly the 115 ordered predictors used by the final production model; company damage observations are excluded.
 
 ### Run the analysis
 
@@ -88,7 +90,9 @@ O fluxo de produção estima três respostas:
 2. número esperado de dias de geada por estação elegível;
 3. temperatura mínima sazonal, incluindo resumos P25 da cauda fria.
 
-O modelo utiliza um contrato reduzido e versionado de preditores espaciais, terreno/HAND, ERA5-Land e MODIS. O portal apresenta produtos do período completo e classes ENSO.
+O modelo de produção utiliza 115 preditores ordenados e HAND com suporte de fluxo de 15 km. ERA5-Land e MODIS são transferidos por suas grades anuais de origem, sem IDW entre estações, e as predições não recebem suavização espacial. O portal apresenta produtos do período completo 2000-2026 e classes ENSO.
+
+A matriz final do Random Forest HAND15 está em [`data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv`](data/model_matrix/RF_MODEL_INPUT_HAND15_V2_2001_2026.csv), acompanhada da versão bruta anterior à imputação para validação agrupada sem vazamento. Ela contém as três respostas observadas e os 115 preditores efetivamente usados; dados de danos empresariais não fazem parte desses arquivos.
 
 ### Como executar
 
@@ -107,11 +111,13 @@ Comece por [`local/README.md`](local/README.md) e [`docs/REPRODUCIBILITY.md`](do
 
 ```text
 config/         portable path templates
+data/           public model-ready matrix and lightweight supporting data
 docs/           methods, provenance and reproducibility
 hpc/            LSF production workflow
 local/python/   portable Python implementation
 local/R/        portable R implementation
 metadata/       feature manifests and scenario definitions
+src/hand15/     GRASS/R workflow for the 15 km HAND layer
 src/pipeline/   frozen production scripts
 web/            bilingual GitHub Pages portal
 ```
