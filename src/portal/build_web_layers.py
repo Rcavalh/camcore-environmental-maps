@@ -25,8 +25,10 @@ if (_RASTERIO_PROJ / "proj.db").is_file():
 
 import rasterio
 from rasterio.enums import Resampling
+from rasterio.features import geometry_mask
+from rasterio.transform import Affine
 from rasterio.vrt import WarpedVRT
-from rasterio.warp import transform_bounds
+from rasterio.warp import transform_bounds, transform_geom
 from PIL import Image
 
 
@@ -34,6 +36,9 @@ ROOT = Path(__file__).resolve().parents[2]
 PORTAL_ROOT = ROOT.parent
 WEB = ROOT / "web"
 MODEL_ROOT = PORTAL_ROOT / "dryad_dataset" / "data" / "model_outputs"
+V2_ROOT = PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
+WATER_MASK_PATH = ROOT / "data" / "masks" / "lagoa_dos_patos_osm_relation_2709093.geojson"
+WATER_MASK_ID = "OpenStreetMap relation 2709093 (Lagoa dos Patos)"
 ZENODO_RECORD = "https://doi.org/10.5281/zenodo.21918677"
 ZENODO_FILES = {
     "frost_probability": "https://zenodo.org/records/21918677/files/FROST_PROBABILITY_MEAN_2000_2026.tif",
@@ -78,6 +83,20 @@ ENDPOINTS = {
         "filename": "seasonal_minimum_temperature_p25",
     },
 }
+
+
+def load_water_geometry_3857() -> dict:
+    """Load the static Lagoa dos Patos polygon and project it to web-map CRS."""
+    payload = json.loads(WATER_MASK_PATH.read_text(encoding="utf-8"))
+    features = payload.get("features", [])
+    if len(features) != 1:
+        raise RuntimeError(f"Expected one water-mask feature in {WATER_MASK_PATH}")
+    return transform_geom(
+        "EPSG:4326", "EPSG:3857", features[0]["geometry"], precision=-1
+    )
+
+
+WATER_GEOMETRY_3857 = load_water_geometry_3857()
 
 
 def model_spec(
@@ -125,72 +144,37 @@ def model_spec(
 
 def build_layer_specs() -> list[dict]:
     specs: list[dict] = []
-    complete = MODEL_ROOT / "complete_period"
     complete_defs = [
-        ("frost_probability", "probability", "FROST_PROBABILITY_MEAN_2000_2025.tif", "frost_probability_2000_2025.png"),
-        ("expected_frost_days", "frost_days", "FROST_DAYS_MEAN_2000_2025.tif", "expected_frost_days_2000_2025.png"),
-        ("seasonal_tmin", "tmin_mean", "TMIN_MEAN_2000_2025.tif", "seasonal_minimum_temperature_2000_2025.png"),
-        ("seasonal_tmin_p25", "tmin_p25", "TMIN_P25_2000_2025.tif", "seasonal_minimum_temperature_p25_2000_2025.png"),
+        (
+            "frost_probability", "probability",
+            "RF_DIRECT_GRIDS_FROST_PROBABILITY_MEAN_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif",
+            "frost_probability_2000_2026_v2.png",
+        ),
+        (
+            "expected_frost_days", "frost_days",
+            "RF_DIRECT_GRIDS_EXPECTED_FROST_DAYS_MEAN_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif",
+            "expected_frost_days_2000_2026_v2.png",
+        ),
+        (
+            "seasonal_tmin", "tmin_mean",
+            "RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_MEAN_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif",
+            "seasonal_minimum_temperature_mean_2000_2026_v2.png",
+        ),
+        (
+            "seasonal_tmin_p25", "tmin_p25",
+            "RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif",
+            "seasonal_minimum_temperature_p25_2000_2026_v2.png",
+        ),
     ]
     for layer_id, endpoint, filename, output in complete_defs:
         specs.append(model_spec(
-            layer_id=layer_id, endpoint=endpoint, source=complete / filename,
-            output=output, group="complete", scenario="2000_2025",
-            scenario_label="2000–2025", scenario_label_pt="2000–2025",
-            subtitle="Complete-period climatology · 2000–2025",
-            subtitle_pt="Climatologia do período completo · 2000–2025",
+            layer_id=layer_id, endpoint=endpoint, source=V2_ROOT / filename,
+            output=output, group="complete", scenario="2000_2026_v2",
+            scenario_label="2000–2026 · v2.0", scenario_label_pt="2000–2026 · v2.0",
+            subtitle="Version 2.0 complete-period climatology · 2000–2026",
+            subtitle_pt="Climatologia v2.0 do período completo · 2000–2026",
             max_width=6000, analysis_width=2048,
         ))
-
-    experimental_v2 = model_spec(
-        layer_id="frost_probability_v2",
-        endpoint="probability",
-        source=(
-            PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
-            / "RF_DIRECT_GRIDS_FROST_PROBABILITY_MEAN_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif"
-        ),
-        output="frost_probability_2000_2026_v2.png",
-        group="complete",
-        scenario="2000_2026_v2",
-        scenario_label="Experimental v2.0",
-        scenario_label_pt="Experimental v2.0",
-        subtitle="Experimental comparison layer · 2000–2026 · v2.0",
-        subtitle_pt="Camada experimental para comparação · 2000–2026 · v2.0",
-        max_width=6000,
-        analysis_width=2048,
-    )
-    experimental_v2.update({
-        "title": "Frost-occurrence probability — v2.0",
-        "titlePt": "Probabilidade de ocorrência de geada — v2.0",
-        "status": "experimental v2.0 comparison layer; direct ERA5-Land and MODIS source grids",
-        "statusPt": "camada experimental v2.0; grades-fonte diretas do ERA5-Land e MODIS",
-    })
-    specs.insert(1, experimental_v2)
-
-    experimental_tmin_p25_v2 = model_spec(
-        layer_id="seasonal_tmin_p25_v2",
-        endpoint="tmin_p25",
-        source=(
-            PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
-            / "RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif"
-        ),
-        output="seasonal_minimum_temperature_p25_2000_2026_v2.png",
-        group="complete",
-        scenario="2000_2026_v2",
-        scenario_label="Experimental v2.0",
-        scenario_label_pt="Experimental v2.0",
-        subtitle="Experimental P25 comparison layer · 2000–2026 · v2.0",
-        subtitle_pt="Camada experimental P25 para comparação · 2000–2026 · v2.0",
-        max_width=6000,
-        analysis_width=2048,
-    )
-    experimental_tmin_p25_v2.update({
-        "title": "Seasonal minimum temperature — P25 v2.0",
-        "titlePt": "Temperatura mínima sazonal — P25 v2.0",
-        "status": "experimental v2.0 P25 comparison layer; direct ERA5-Land and MODIS source grids",
-        "statusPt": "camada experimental P25 v2.0; grades-fonte diretas do ERA5-Land e MODIS",
-    })
-    specs.insert(2, experimental_tmin_p25_v2)
 
     enso_defs = [
         ("el_nino", "El Niño", "El Niño"),
@@ -198,12 +182,17 @@ def build_layer_specs() -> list[dict]:
         ("neutral", "Neutral", "Neutro"),
     ]
     for scenario, label, label_pt in enso_defs:
-        folder = MODEL_ROOT / "enso" / scenario
         candidates = [
-            ("probability", folder / f"frost_probability_enso_{scenario}.tif"),
-            ("frost_days", folder / f"expected_frost_days_enso_{scenario}.tif"),
-            ("tmin_p25", folder / f"seasonal_minimum_temperature_p25_enso_{scenario}.tif"),
+            (
+                "probability",
+                V2_ROOT / f"RF_DIRECT_GRIDS_FROST_PROBABILITY_MEAN_ENSO_{scenario.upper()}_FIVE_STATES_HAND15_ANADEM30M.tif",
+            ),
+            (
+                "tmin_p25",
+                V2_ROOT / f"RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ENSO_{scenario.upper()}_FIVE_STATES_HAND15_ANADEM30M.tif",
+            ),
         ]
+        # Source filenames use EL_NINO and LA_NINA, matching the upper-case IDs above.
         for endpoint, source in candidates:
             if not source.is_file():
                 continue
@@ -213,8 +202,12 @@ def build_layer_specs() -> list[dict]:
                 scenario_label=label, scenario_label_pt=label_pt,
                 subtitle=f"ENSO-conditioned climatology · {label}",
                 subtitle_pt=f"Climatologia condicionada ao ENSO · {label_pt}",
-                max_width=3000, analysis_width=1200,
+                max_width=6000, analysis_width=2048,
             ))
+
+    for spec in specs:
+        spec["status"] = "version 2.0 complete five-state analytical surface"
+        spec["statusPt"] = "superfície analítica v2.0 completa para os cinco estados"
 
     specs.extend([
         {
@@ -265,6 +258,9 @@ def rgba_from_raster(spec: dict, max_width: int) -> tuple[np.ndarray, dict]:
             out_width = max(1, int(round(web.width * scale)))
             out_height = max(1, int(round(web.height * scale)))
             data = web.read(1, out_shape=(out_height, out_width), masked=True)
+            preview_transform = web.transform * Affine.scale(
+                web.width / out_width, web.height / out_height
+            )
             west, south, east, north = transform_bounds(
                 web.crs, "EPSG:4326", *web.bounds, densify_pts=21
             )
@@ -272,6 +268,18 @@ def rgba_from_raster(spec: dict, max_width: int) -> tuple[np.ndarray, dict]:
         valid = np.isfinite(values)
         if src.nodata is not None and np.isfinite(src.nodata):
             valid &= values != src.nodata
+
+        # The analytical surfaces cover the complete rectangular raster domain.
+        # Explicitly remove the lake so no frost/terrain value is shown over water.
+        water = geometry_mask(
+            [WATER_GEOMETRY_3857],
+            out_shape=values.shape,
+            transform=preview_transform,
+            invert=True,
+            all_touched=False,
+        )
+        masked_water_cells = int(np.count_nonzero(valid & water))
+        valid &= ~water
 
         finite = values[valid]
         if finite.size == 0:
@@ -295,6 +303,8 @@ def rgba_from_raster(spec: dict, max_width: int) -> tuple[np.ndarray, dict]:
             "nativeResolution": list(src.res),
             "displayMin": round(float(vmin), 4), "displayMax": round(float(vmax), 4),
             "validPercent": round(float(valid.mean() * 100), 3),
+            "waterMask": WATER_MASK_ID,
+            "waterMaskedCells": masked_water_cells,
         }
         return rgba, metadata
 
@@ -332,12 +342,15 @@ def main() -> int:
             output.is_file() and cached is not None and cached.get("palette") == spec["cmap"]
             and cached.get("previewWidth") == expected_width
             and cached.get("previewCrs") == "EPSG:3857"
+            and cached.get("waterMask") == WATER_MASK_ID
             and output.stat().st_mtime >= spec["source"].stat().st_mtime
+            and output.stat().st_mtime >= WATER_MASK_PATH.stat().st_mtime
         )
         if can_reuse:
             metadata[spec["id"]] = {key: cached[key] for key in (
                 "bounds", "nativeWidth", "nativeHeight", "previewWidth", "previewHeight",
-                "crs", "previewCrs", "nativeResolution", "displayMin", "displayMax", "validPercent"
+                "crs", "previewCrs", "nativeResolution", "displayMin", "displayMax", "validPercent",
+                "waterMask", "waterMaskedCells"
             )}
             print(f"WEB_LAYER_REUSED={output}")
         else:

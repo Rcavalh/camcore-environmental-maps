@@ -31,10 +31,17 @@ class RepositoryContractTests(unittest.TestCase):
             {"frost_probability", "expected_frost_days", "seasonal_tmin", "seasonal_tmin_p25", "hand", "anadem"}.issubset(ids)
         )
         groups = {name: sum(x.get("group") == name for x in catalog) for name in ("complete", "periods", "enso", "terrain")}
-        self.assertEqual(groups, {"complete": 6, "periods": 0, "enso": 9, "terrain": 2})
+        self.assertEqual(groups, {"complete": 4, "periods": 0, "enso": 6, "terrain": 2})
+        self.assertNotIn("frost_probability_v2", ids)
+        self.assertNotIn("seasonal_tmin_p25_v2", ids)
         for layer in catalog:
             self.assertTrue((ROOT / "web" / layer["url"]).is_file())
             self.assertEqual(layer.get("previewCrs"), "EPSG:3857")
+            self.assertEqual(
+                layer.get("waterMask"),
+                "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+            )
+            self.assertGreater(layer.get("waterMaskedCells", 0), 0)
         generated = (ROOT / "web" / "layers.generated.js").read_text(encoding="utf-8")
         self.assertIn("window.FROST_LAYERS", generated)
         self.assertNotIn("window.FROST_LAYERS = [];", generated)

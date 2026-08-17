@@ -4,59 +4,18 @@ window.FROST_LAYERS = [
     "endpoint": "probability",
     "title": "Frost-occurrence probability",
     "titlePt": "Probabilidade de ocorrência de geada",
-    "subtitle": "Complete-period climatology · 2000–2025",
-    "subtitlePt": "Climatologia do período completo · 2000–2025",
-    "url": "assets/layers/frost_probability_2000_2025.png",
-    "units": "probability",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
-    "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/complete_period/FROST_PROBABILITY_MEAN_2000_2025.tif",
-    "group": "complete",
-    "scenario": "2000_2025",
-    "scenarioLabel": "2000–2025",
-    "scenarioLabelPt": "2000–2025",
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 6000,
-    "previewHeight": 7908,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": 0.0,
-    "displayMax": 1.0,
-    "validPercent": 44.894
-  },
-  {
-    "id": "frost_probability_v2",
-    "endpoint": "probability",
-    "title": "Frost-occurrence probability — v2.0",
-    "titlePt": "Probabilidade de ocorrência de geada — v2.0",
-    "subtitle": "Experimental comparison layer · 2000–2026 · v2.0",
-    "subtitlePt": "Camada experimental para comparação · 2000–2026 · v2.0",
+    "subtitle": "Version 2.0 complete-period climatology · 2000–2026",
+    "subtitlePt": "Climatologia v2.0 do período completo · 2000–2026",
     "url": "assets/layers/frost_probability_2000_2026_v2.png",
     "units": "probability",
-    "status": "experimental v2.0 comparison layer; direct ERA5-Land and MODIS source grids",
-    "statusPt": "camada experimental v2.0; grades-fonte diretas do ERA5-Land e MODIS",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu",
-    "download": "https://doi.org/10.5281/zenodo.21918677",
+    "download": "https://zenodo.org/records/21918677/files/FROST_PROBABILITY_MEAN_2000_2026.tif",
     "group": "complete",
     "scenario": "2000_2026_v2",
-    "scenarioLabel": "Experimental v2.0",
-    "scenarioLabelPt": "Experimental v2.0",
+    "scenarioLabel": "2000–2026 · v2.0",
+    "scenarioLabelPt": "2000–2026 · v2.0",
     "bounds": [
       [
         -33.75117713328006,
@@ -79,25 +38,27 @@ window.FROST_LAYERS = [
     ],
     "displayMin": 0.0,
     "displayMax": 1.0,
-    "validPercent": 44.894
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "expected_frost_days",
     "endpoint": "frost_days",
     "title": "Expected frost days per season",
     "titlePt": "Dias esperados de geada por temporada",
-    "subtitle": "Complete-period climatology · 2000–2025",
-    "subtitlePt": "Climatologia do período completo · 2000–2025",
-    "url": "assets/layers/expected_frost_days_2000_2025.png",
+    "subtitle": "Version 2.0 complete-period climatology · 2000–2026",
+    "subtitlePt": "Climatologia v2.0 do período completo · 2000–2026",
+    "url": "assets/layers/expected_frost_days_2000_2026_v2.png",
     "units": "days season⁻¹",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/complete_period/FROST_DAYS_MEAN_2000_2025.tif",
+    "download": "https://zenodo.org/records/21918677/files/FROST_DAYS_MEAN_2000_2026.tif",
     "group": "complete",
-    "scenario": "2000_2025",
-    "scenarioLabel": "2000–2025",
-    "scenarioLabelPt": "2000–2025",
+    "scenario": "2000_2026_v2",
+    "scenarioLabel": "2000–2026 · v2.0",
+    "scenarioLabelPt": "2000–2026 · v2.0",
     "bounds": [
       [
         -33.75117713328006,
@@ -118,27 +79,29 @@ window.FROST_LAYERS = [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": 0.1018,
-    "displayMax": 17.7173,
-    "validPercent": 44.894
+    "displayMin": 0.1479,
+    "displayMax": 14.6631,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "seasonal_tmin",
     "endpoint": "tmin_mean",
     "title": "Seasonal minimum temperature — mean",
     "titlePt": "Temperatura mínima sazonal — média",
-    "subtitle": "Complete-period climatology · 2000–2025",
-    "subtitlePt": "Climatologia do período completo · 2000–2025",
-    "url": "assets/layers/seasonal_minimum_temperature_2000_2025.png",
+    "subtitle": "Version 2.0 complete-period climatology · 2000–2026",
+    "subtitlePt": "Climatologia v2.0 do período completo · 2000–2026",
+    "url": "assets/layers/seasonal_minimum_temperature_mean_2000_2026_v2.png",
     "units": "°C",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu_r",
-    "download": "../../dryad_dataset/data/model_outputs/complete_period/TMIN_MEAN_2000_2025.tif",
+    "download": "https://zenodo.org/records/21918677/files/TMIN_MEAN_2000_2026.tif",
     "group": "complete",
-    "scenario": "2000_2025",
-    "scenarioLabel": "2000–2025",
-    "scenarioLabelPt": "2000–2025",
+    "scenario": "2000_2026_v2",
+    "scenarioLabel": "2000–2026 · v2.0",
+    "scenarioLabelPt": "2000–2026 · v2.0",
     "bounds": [
       [
         -33.75117713328006,
@@ -159,68 +122,29 @@ window.FROST_LAYERS = [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": -3.6259,
-    "displayMax": 8.4603,
-    "validPercent": 44.894
+    "displayMin": -3.7335,
+    "displayMax": 8.4979,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "seasonal_tmin_p25",
     "endpoint": "tmin_p25",
     "title": "Seasonal minimum temperature — P25",
     "titlePt": "Temperatura mínima sazonal — P25",
-    "subtitle": "Complete-period climatology · 2000–2025",
-    "subtitlePt": "Climatologia do período completo · 2000–2025",
-    "url": "assets/layers/seasonal_minimum_temperature_p25_2000_2025.png",
-    "units": "°C",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
-    "palette": "RdYlBu_r",
-    "download": "../../dryad_dataset/data/model_outputs/complete_period/TMIN_P25_2000_2025.tif",
-    "group": "complete",
-    "scenario": "2000_2025",
-    "scenarioLabel": "2000–2025",
-    "scenarioLabelPt": "2000–2025",
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 6000,
-    "previewHeight": 7908,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": -4.185,
-    "displayMax": 7.2258,
-    "validPercent": 44.894
-  },
-  {
-    "id": "seasonal_tmin_p25_v2",
-    "endpoint": "tmin_p25",
-    "title": "Seasonal minimum temperature — P25 v2.0",
-    "titlePt": "Temperatura mínima sazonal — P25 v2.0",
-    "subtitle": "Experimental P25 comparison layer · 2000–2026 · v2.0",
-    "subtitlePt": "Camada experimental P25 para comparação · 2000–2026 · v2.0",
+    "subtitle": "Version 2.0 complete-period climatology · 2000–2026",
+    "subtitlePt": "Climatologia v2.0 do período completo · 2000–2026",
     "url": "assets/layers/seasonal_minimum_temperature_p25_2000_2026_v2.png",
     "units": "°C",
-    "status": "experimental v2.0 P25 comparison layer; direct ERA5-Land and MODIS source grids",
-    "statusPt": "camada experimental P25 v2.0; grades-fonte diretas do ERA5-Land e MODIS",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu_r",
-    "download": "https://doi.org/10.5281/zenodo.21918677",
+    "download": "https://zenodo.org/records/21918677/files/TMIN_P25_2000_2026.tif",
     "group": "complete",
     "scenario": "2000_2026_v2",
-    "scenarioLabel": "Experimental v2.0",
-    "scenarioLabelPt": "Experimental v2.0",
+    "scenarioLabel": "2000–2026 · v2.0",
+    "scenarioLabelPt": "2000–2026 · v2.0",
     "bounds": [
       [
         -33.75117713328006,
@@ -241,9 +165,11 @@ window.FROST_LAYERS = [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": -4.1767,
-    "displayMax": 7.3163,
-    "validPercent": 44.894
+    "displayMin": -4.1785,
+    "displayMax": 7.3204,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "enso_el_nino_probability",
@@ -254,10 +180,10 @@ window.FROST_LAYERS = [
     "subtitlePt": "Climatologia condicionada ao ENSO · El Niño",
     "url": "assets/layers/enso_el_nino_probability.png",
     "units": "probability",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/enso/el_nino/frost_probability_enso_el_nino.tif",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
     "group": "enso",
     "scenario": "el_nino",
     "scenarioLabel": "El Niño",
@@ -274,8 +200,8 @@ window.FROST_LAYERS = [
     ],
     "nativeWidth": 51977,
     "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
     "crs": "EPSG:4674",
     "previewCrs": "EPSG:3857",
     "nativeResolution": [
@@ -284,48 +210,9 @@ window.FROST_LAYERS = [
     ],
     "displayMin": 0.0,
     "displayMax": 1.0,
-    "validPercent": 44.894
-  },
-  {
-    "id": "enso_el_nino_frost_days",
-    "endpoint": "frost_days",
-    "title": "Expected frost days per season",
-    "titlePt": "Dias esperados de geada por temporada",
-    "subtitle": "ENSO-conditioned climatology · El Niño",
-    "subtitlePt": "Climatologia condicionada ao ENSO · El Niño",
-    "url": "assets/layers/enso_el_nino_frost_days.png",
-    "units": "days season⁻¹",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
-    "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/enso/el_nino/expected_frost_days_enso_el_nino.tif",
-    "group": "enso",
-    "scenario": "el_nino",
-    "scenarioLabel": "El Niño",
-    "scenarioLabelPt": "El Niño",
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": 0.0332,
-    "displayMax": 14.2826,
-    "validPercent": 44.894
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "enso_el_nino_tmin_p25",
@@ -336,10 +223,10 @@ window.FROST_LAYERS = [
     "subtitlePt": "Climatologia condicionada ao ENSO · El Niño",
     "url": "assets/layers/enso_el_nino_tmin_p25.png",
     "units": "°C",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu_r",
-    "download": "../../dryad_dataset/data/model_outputs/enso/el_nino/seasonal_minimum_temperature_p25_enso_el_nino.tif",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
     "group": "enso",
     "scenario": "el_nino",
     "scenarioLabel": "El Niño",
@@ -356,17 +243,19 @@ window.FROST_LAYERS = [
     ],
     "nativeWidth": 51977,
     "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
     "crs": "EPSG:4674",
     "previewCrs": "EPSG:3857",
     "nativeResolution": [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": -3.5533,
-    "displayMax": 9.399,
-    "validPercent": 44.894
+    "displayMin": -3.926,
+    "displayMax": 9.4578,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "enso_la_nina_probability",
@@ -377,10 +266,10 @@ window.FROST_LAYERS = [
     "subtitlePt": "Climatologia condicionada ao ENSO · La Niña",
     "url": "assets/layers/enso_la_nina_probability.png",
     "units": "probability",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/enso/la_nina/frost_probability_enso_la_nina.tif",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
     "group": "enso",
     "scenario": "la_nina",
     "scenarioLabel": "La Niña",
@@ -397,8 +286,8 @@ window.FROST_LAYERS = [
     ],
     "nativeWidth": 51977,
     "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
     "crs": "EPSG:4674",
     "previewCrs": "EPSG:3857",
     "nativeResolution": [
@@ -407,48 +296,9 @@ window.FROST_LAYERS = [
     ],
     "displayMin": 0.0,
     "displayMax": 1.0,
-    "validPercent": 44.894
-  },
-  {
-    "id": "enso_la_nina_frost_days",
-    "endpoint": "frost_days",
-    "title": "Expected frost days per season",
-    "titlePt": "Dias esperados de geada por temporada",
-    "subtitle": "ENSO-conditioned climatology · La Niña",
-    "subtitlePt": "Climatologia condicionada ao ENSO · La Niña",
-    "url": "assets/layers/enso_la_nina_frost_days.png",
-    "units": "days season⁻¹",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
-    "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/enso/la_nina/expected_frost_days_enso_la_nina.tif",
-    "group": "enso",
-    "scenario": "la_nina",
-    "scenarioLabel": "La Niña",
-    "scenarioLabelPt": "La Niña",
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": 0.1101,
-    "displayMax": 20.4597,
-    "validPercent": 44.894
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "enso_la_nina_tmin_p25",
@@ -459,10 +309,10 @@ window.FROST_LAYERS = [
     "subtitlePt": "Climatologia condicionada ao ENSO · La Niña",
     "url": "assets/layers/enso_la_nina_tmin_p25.png",
     "units": "°C",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu_r",
-    "download": "../../dryad_dataset/data/model_outputs/enso/la_nina/seasonal_minimum_temperature_p25_enso_la_nina.tif",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
     "group": "enso",
     "scenario": "la_nina",
     "scenarioLabel": "La Niña",
@@ -479,17 +329,19 @@ window.FROST_LAYERS = [
     ],
     "nativeWidth": 51977,
     "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
     "crs": "EPSG:4674",
     "previewCrs": "EPSG:3857",
     "nativeResolution": [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": -4.579,
-    "displayMax": 7.4105,
-    "validPercent": 44.894
+    "displayMin": -4.2474,
+    "displayMax": 7.1245,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "enso_neutral_probability",
@@ -500,10 +352,10 @@ window.FROST_LAYERS = [
     "subtitlePt": "Climatologia condicionada ao ENSO · Neutro",
     "url": "assets/layers/enso_neutral_probability.png",
     "units": "probability",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/enso/neutral/frost_probability_enso_neutral.tif",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
     "group": "enso",
     "scenario": "neutral",
     "scenarioLabel": "Neutral",
@@ -520,8 +372,8 @@ window.FROST_LAYERS = [
     ],
     "nativeWidth": 51977,
     "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
     "crs": "EPSG:4674",
     "previewCrs": "EPSG:3857",
     "nativeResolution": [
@@ -530,48 +382,9 @@ window.FROST_LAYERS = [
     ],
     "displayMin": 0.0,
     "displayMax": 1.0,
-    "validPercent": 44.894
-  },
-  {
-    "id": "enso_neutral_frost_days",
-    "endpoint": "frost_days",
-    "title": "Expected frost days per season",
-    "titlePt": "Dias esperados de geada por temporada",
-    "subtitle": "ENSO-conditioned climatology · Neutral",
-    "subtitlePt": "Climatologia condicionada ao ENSO · Neutro",
-    "url": "assets/layers/enso_neutral_frost_days.png",
-    "units": "days season⁻¹",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
-    "palette": "RdYlBu",
-    "download": "../../dryad_dataset/data/model_outputs/enso/neutral/expected_frost_days_enso_neutral.tif",
-    "group": "enso",
-    "scenario": "neutral",
-    "scenarioLabel": "Neutral",
-    "scenarioLabelPt": "Neutro",
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": 0.1002,
-    "displayMax": 17.2125,
-    "validPercent": 44.894
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "enso_neutral_tmin_p25",
@@ -582,10 +395,10 @@ window.FROST_LAYERS = [
     "subtitlePt": "Climatologia condicionada ao ENSO · Neutro",
     "url": "assets/layers/enso_neutral_tmin_p25.png",
     "units": "°C",
-    "status": "complete five-state analytical surface",
-    "statusPt": "superfície analítica completa para os cinco estados",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
     "palette": "RdYlBu_r",
-    "download": "../../dryad_dataset/data/model_outputs/enso/neutral/seasonal_minimum_temperature_p25_enso_neutral.tif",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
     "group": "enso",
     "scenario": "neutral",
     "scenarioLabel": "Neutral",
@@ -602,17 +415,19 @@ window.FROST_LAYERS = [
     ],
     "nativeWidth": 51977,
     "nativeHeight": 61541,
-    "previewWidth": 3000,
-    "previewHeight": 3954,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
     "crs": "EPSG:4674",
     "previewCrs": "EPSG:3857",
     "nativeResolution": [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": -4.1522,
-    "displayMax": 6.9897,
-    "validPercent": 44.894
+    "displayMin": -4.1913,
+    "displayMax": 7.2236,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "hand",
@@ -626,7 +441,7 @@ window.FROST_LAYERS = [
     "status": "derived terrain layer",
     "statusPt": "camada derivada do terreno",
     "palette": "viridis",
-    "download": "../../dryad_dataset/data/derived_terrain/HAND_2000M.tif",
+    "download": "https://zenodo.org/records/21918677/files/HAND_2000M.tif",
     "group": "terrain",
     "scenario": "hand",
     "scenarioLabel": "HAND",
@@ -652,8 +467,10 @@ window.FROST_LAYERS = [
       0.000269494585235859
     ],
     "displayMin": 0.0,
-    "displayMax": 215.5445,
-    "validPercent": 44.894
+    "displayMax": 216.1474,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
   },
   {
     "id": "anadem",
@@ -692,8 +509,10 @@ window.FROST_LAYERS = [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": 0.0,
-    "displayMax": 1255.9495,
-    "validPercent": 44.937
+    "displayMin": 0.5,
+    "displayMax": 1257.0453,
+    "validPercent": 44.537,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189895
   }
 ];

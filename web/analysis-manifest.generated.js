@@ -29,64 +29,43 @@ window.FROST_ANALYSIS_MANIFEST = {
   },
   "enso_el_nino_probability": {
     "url": "assets/analysis/enso_el_nino_probability.generated.js",
-    "width": 1200,
-    "height": 1582,
-    "sourceWidth": 51977,
-    "sourceHeight": 61541
-  },
-  "enso_el_nino_frost_days": {
-    "url": "assets/analysis/enso_el_nino_frost_days.generated.js",
-    "width": 1200,
-    "height": 1582,
+    "width": 2048,
+    "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
   "enso_el_nino_tmin_p25": {
     "url": "assets/analysis/enso_el_nino_tmin_p25.generated.js",
-    "width": 1200,
-    "height": 1582,
+    "width": 2048,
+    "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
   "enso_la_nina_probability": {
     "url": "assets/analysis/enso_la_nina_probability.generated.js",
-    "width": 1200,
-    "height": 1582,
-    "sourceWidth": 51977,
-    "sourceHeight": 61541
-  },
-  "enso_la_nina_frost_days": {
-    "url": "assets/analysis/enso_la_nina_frost_days.generated.js",
-    "width": 1200,
-    "height": 1582,
+    "width": 2048,
+    "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
   "enso_la_nina_tmin_p25": {
     "url": "assets/analysis/enso_la_nina_tmin_p25.generated.js",
-    "width": 1200,
-    "height": 1582,
+    "width": 2048,
+    "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
   "enso_neutral_probability": {
     "url": "assets/analysis/enso_neutral_probability.generated.js",
-    "width": 1200,
-    "height": 1582,
-    "sourceWidth": 51977,
-    "sourceHeight": 61541
-  },
-  "enso_neutral_frost_days": {
-    "url": "assets/analysis/enso_neutral_frost_days.generated.js",
-    "width": 1200,
-    "height": 1582,
+    "width": 2048,
+    "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
   "enso_neutral_tmin_p25": {
     "url": "assets/analysis/enso_neutral_tmin_p25.generated.js",
-    "width": 1200,
-    "height": 1582,
+    "width": 2048,
+    "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
@@ -99,20 +78,6 @@ window.FROST_ANALYSIS_MANIFEST = {
   },
   "anadem": {
     "url": "assets/analysis/anadem.generated.js",
-    "width": 2048,
-    "height": 2699,
-    "sourceWidth": 51977,
-    "sourceHeight": 61541
-  },
-  "frost_probability_v2": {
-    "url": "assets/analysis/frost_probability_v2.generated.js",
-    "width": 2048,
-    "height": 2699,
-    "sourceWidth": 51977,
-    "sourceHeight": 61541
-  },
-  "seasonal_tmin_p25_v2": {
-    "url": "assets/analysis/seasonal_tmin_p25_v2.generated.js",
     "width": 2048,
     "height": 2699,
     "sourceWidth": 51977,
