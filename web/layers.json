@@ -432,8 +432,8 @@
   {
     "id": "hand",
     "endpoint": "hand",
-    "title": "Height above nearest drainage",
-    "titlePt": "Altura acima da drenagem mais próxima",
+    "title": "Drainage-relative elevation (HAND) — 2 km",
+    "titlePt": "Elevação relativa à drenagem (HAND) — 2 km",
     "subtitle": "HAND · 2-km flow-path search",
     "subtitlePt": "HAND · busca de fluxo de 2 km",
     "url": "assets/layers/hand_2000m.png",
@@ -468,6 +468,49 @@
     ],
     "displayMin": 0.0,
     "displayMax": 216.1474,
+    "validPercent": 44.494,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 189891
+  },
+  {
+    "id": "hand_15km",
+    "endpoint": "hand",
+    "title": "Drainage-relative elevation (HAND) — 15 km",
+    "titlePt": "Elevação relativa à drenagem (HAND) — 15 km",
+    "subtitle": "HAND · 15-km flow-path search",
+    "subtitlePt": "HAND · busca de fluxo de 15 km",
+    "url": "assets/layers/hand_15km.png",
+    "units": "m",
+    "status": "terrain predictor used by the version 2.0 models",
+    "statusPt": "preditor de terreno utilizado nos modelos v2.0",
+    "palette": "viridis",
+    "download": "https://doi.org/10.5281/zenodo.21918677",
+    "group": "terrain",
+    "scenario": "hand_15km",
+    "scenarioLabel": "HAND · 15 km",
+    "scenarioLabelPt": "HAND · 15 km",
+    "bounds": [
+      [
+        -33.75117713314765,
+        -58.16878925555555
+      ],
+      [
+        -17.166266090277773,
+        -44.161129100726626
+      ]
+    ],
+    "nativeWidth": 51977,
+    "nativeHeight": 61541,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
+    "crs": "EPSG:4674",
+    "previewCrs": "EPSG:3857",
+    "nativeResolution": [
+      0.00026949458523321205,
+      0.000269494585235859
+    ],
+    "displayMin": 0.0,
+    "displayMax": 249.4923,
     "validPercent": 44.494,
     "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
     "waterMaskedCells": 189891

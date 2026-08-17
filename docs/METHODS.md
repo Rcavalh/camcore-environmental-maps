@@ -4,7 +4,7 @@
 
 ![Reproducible analytical workflow for frost climatology](images/FROST_CLIMATOLOGY_ANALYTICAL_WORKFLOW.png)
 
-The diagram summarizes the Frost Climatology collection from weather-station responses and environmental predictors through station-grouped validation, interpretation and spatial deployment. It is maintained with the collection methods rather than on the repository homepage.
+The diagram summarizes the Frost Climatology collection from weather-station responses and environmental predictors through station-grouped validation, interpretation and spatial deployment. A compact version is also displayed on the repository homepage.
 
 ## Production contract
 

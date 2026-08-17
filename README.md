@@ -23,7 +23,15 @@ Reproducible code, metadata and lightweight previews for Camcore environmental m
 - **[Heat Maps](docs/HEAT_MAPS.md)** - monthly P95 maximum-temperature climatologies.
 - **[Camcore Tested Provenances](docs/TESTED_PROVENANCES.md)** - mapped origins represented in Camcore provenance testing.
 
-The complete Frost Climatology workflow diagram is kept with the [collection methods](docs/METHODS.md#workflow-overview) so that the repository homepage remains compact.
+## Frost Climatology workflow
+
+<p align="center">
+  <a href="docs/METHODS.md#workflow-overview">
+    <img src="docs/images/FROST_CLIMATOLOGY_ANALYTICAL_WORKFLOW.png" alt="Reproducible analytical workflow for Frost Climatology" width="760">
+  </a>
+</p>
+
+<p align="center"><sub>Weather-station observations, environmental predictors, Random Forest modelling and spatial map products. Select the diagram for the complete methods.</sub></p>
 
 ## Frost Climatology production contract
 

@@ -76,6 +76,13 @@ window.FROST_ANALYSIS_MANIFEST = {
     "sourceWidth": 51977,
     "sourceHeight": 61541
   },
+  "hand_15km": {
+    "url": "assets/analysis/hand_15km.generated.js",
+    "width": 2048,
+    "height": 2699,
+    "sourceWidth": 51977,
+    "sourceHeight": 61541
+  },
   "anadem": {
     "url": "assets/analysis/anadem.generated.js",
     "width": 2048,
