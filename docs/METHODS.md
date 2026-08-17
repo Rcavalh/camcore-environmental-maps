@@ -1,5 +1,11 @@
 # Model and data-product methods
 
+## Workflow overview
+
+![Reproducible analytical workflow for frost climatology](images/FROST_CLIMATOLOGY_ANALYTICAL_WORKFLOW.png)
+
+The diagram summarizes the Frost Climatology collection from weather-station responses and environmental predictors through station-grouped validation, interpretation and spatial deployment. It is maintained with the collection methods rather than on the repository homepage.
+
 ## Production contract
 
 The current production workflow is **article version 2.2 (HAND15 direct grids)**. It covers Rio Grande do Sul, Santa Catarina, Parana, Sao Paulo and Mato Grosso do Sul on the native approximately 30 m ANADEM grid. Climate maps summarize 2000-2026. The available INMET response table contains 2,693 eligible station-seasons from 219 stations in 2001-2026; no response label was fabricated for 2000.
