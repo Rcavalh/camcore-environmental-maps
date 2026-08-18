@@ -55,6 +55,25 @@ Object.assign(translations.pt,{
   anadem_source_note:'O ANADEM é distribuído por seu provedor de dados original.'
 });
 
+Object.assign(translations.en,{
+  frost_publication:'Publication and data',
+  frost_citation_title:'How to cite this collection',
+  frost_citation_instruction:'When using, reproducing or adapting any Frost Climatology map, cite the Zenodo dataset below.',
+  frost_open_dataset:'Open dataset',
+  frost_copy_citation:'Copy citation',
+  frost_citation_copied:'Citation copied',
+  frost_citation_error:'Select and copy the citation above'
+});
+Object.assign(translations.pt,{
+  frost_publication:'Publicação e dados',
+  frost_citation_title:'Como citar esta coleção',
+  frost_citation_instruction:'Ao usar, reproduzir ou adaptar qualquer mapa de Climatologia de Geadas, cite o conjunto de dados do Zenodo abaixo.',
+  frost_open_dataset:'Abrir conjunto de dados',
+  frost_copy_citation:'Copiar citação',
+  frost_citation_copied:'Citação copiada',
+  frost_citation_error:'Selecione e copie a citação acima'
+});
+
 Object.assign(translations.en,{heat_type:'Thermal climatology',heat_collection:'Heat Maps',heat_collection_text:'Monthly P95 maximum-temperature maps for 2000–2025.',provenance_type:'Genetic resources',provenance_collection:'Camcore Tested Provenances',provenance_collection_text:'Species catalogues and mapped origins represented in Camcore provenance testing.'});
 Object.assign(translations.pt,{heat_type:'Climatologia térmica',heat_collection:'Mapas de Calor',heat_collection_text:'Mapas mensais do percentil 95 da temperatura máxima para 2000–2025.',provenance_type:'Recursos genéticos',provenance_collection:'Procedências Testadas pela Camcore',provenance_collection_text:'Catálogos de espécies e origens geográficas representadas nos testes de procedências da Camcore.'});
 
@@ -291,3 +310,11 @@ const collectionRail=document.querySelector('.collection-grid');
 const scrollCollections=direction=>collectionRail?.scrollBy({left:direction*Math.min(collectionRail.clientWidth*.86,460),behavior:'smooth'});
 document.getElementById('collections-previous')?.addEventListener('click',()=>scrollCollections(-1));
 document.getElementById('collections-next')?.addEventListener('click',()=>scrollCollections(1));
+
+const frostCitation='Cavalheiro, R. (2026). Fine-resolution frost climatology maps for south-central Brazil, 2000–2026 (Version 1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21981334';
+document.getElementById('copy-frost-citation')?.addEventListener('click',async()=>{
+  const status=document.getElementById('frost-citation-copy-status');
+  try{await navigator.clipboard.writeText(frostCitation);status.textContent=translations[state.lang].frost_citation_copied}
+  catch(_error){status.textContent=translations[state.lang].frost_citation_error}
+  setTimeout(()=>{status.textContent=''},3000)
+});

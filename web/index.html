@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
-  <link rel="stylesheet" href="styles.css?v=20260812brand1">
+  <link rel="stylesheet" href="styles.css?v=20260818frostcitation1">
 </head>
 <body>
   <header class="site-header">
@@ -116,6 +116,22 @@
         <p data-i18n="interactive_text">Search for a city, switch layers and inspect local patterns. Downloads retain the analytical GeoTIFF values.</p>
       </div>
 
+      <aside class="frost-citation" aria-labelledby="frost-citation-title">
+        <div class="citation-heading">
+          <p class="kicker" data-i18n="frost_publication">Publication and data</p>
+          <h2 id="frost-citation-title" data-i18n="frost_citation_title">How to cite this collection</h2>
+        </div>
+        <div class="citation-content">
+          <p class="citation-instruction" data-i18n="frost_citation_instruction">When using, reproducing or adapting any Frost Climatology map, cite the Zenodo dataset below.</p>
+          <p id="frost-citation-text" class="citation-reference">Cavalheiro, R. (2026). <em>Fine-resolution frost climatology maps for south-central Brazil, 2000–2026</em> (Version 1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.21981334</p>
+          <div class="citation-actions">
+            <a href="https://doi.org/10.5281/zenodo.21981334" target="_blank" rel="noopener noreferrer" data-i18n="frost_open_dataset">Open dataset</a>
+            <button id="copy-frost-citation" type="button" data-i18n="frost_copy_citation">Copy citation</button>
+            <span id="frost-citation-copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </div>
+      </aside>
+
       <div class="map-card">
         <div class="map-stage">
           <form id="place-search" class="place-search" role="search">
@@ -206,6 +222,6 @@
   <script src="layers.generated.js?v=20260817hand15workflow2"></script>
   <script src="analysis-manifest.generated.js?v=20260817hand15workflow2"></script>
   <script src="portal-circle-i18n.js?v=20260813circle1"></script>
-  <script src="app.js?v=20260817zenodo2"></script>
+  <script src="app.js?v=20260818frostcitation1"></script>
 </body>
 </html>
