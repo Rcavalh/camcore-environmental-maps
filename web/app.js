@@ -112,14 +112,13 @@ const map=L.map('map',{zoomControl:false,preferCanvas:true,minZoom:4,maxZoom:11}
 L.control.zoom({position:'topright'}).addTo(map);
 L.control.scale({imperial:false,position:'bottomleft'}).addTo(map);
 map.createPane('labelsPane');map.getPane('labelsPane').style.zIndex=650;map.getPane('labelsPane').style.pointerEvents='none';
-const cartographicBase=L.tileLayer('',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18});
-const cartographicLabels=L.tileLayer('',{pane:'labelsPane',attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:18});
+const cartographicBase=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap contributors',maxZoom:19});
 const satelliteBase=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{attribution:'Tiles &copy; Esri',maxZoom:18});
 const satelliteLabels=L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{pane:'labelsPane',attribution:'Labels &copy; Esri',maxZoom:18});
 function updateBasemap(){
-  [cartographicBase,cartographicLabels,satelliteBase,satelliteLabels].forEach(layer=>{if(map.hasLayer(layer))map.removeLayer(layer)});
+  [cartographicBase,satelliteBase,satelliteLabels].forEach(layer=>{if(map.hasLayer(layer))map.removeLayer(layer)});
   if(state.basemapType==='satellite'){satelliteBase.addTo(map);satelliteLabels.addTo(map)}
-  else{const dark=document.documentElement.dataset.theme==='dark';cartographicBase.setUrl(`https://{s}.basemaps.cartocdn.com/${dark?'dark_nolabels':'light_nolabels'}/{z}/{x}/{y}{r}.png`);cartographicLabels.setUrl(`https://{s}.basemaps.cartocdn.com/${dark?'dark_only_labels':'light_only_labels'}/{z}/{x}/{y}{r}.png`);cartographicBase.addTo(map);cartographicLabels.addTo(map)}
+  else{cartographicBase.addTo(map)}
   document.querySelectorAll('.basemap-option').forEach(button=>button.classList.toggle('active',button.dataset.basemap===state.basemapType));
 }
 const MapTools=L.Control.extend({options:{position:'topright'},onAdd(){const container=L.DomUtil.create('div','leaflet-bar map-tools-control');container.innerHTML='<button class="basemap-option" data-basemap="map" type="button">Map</button><button class="basemap-option" data-basemap="satellite" type="button">Satellite</button><button class="fullscreen-map" type="button" aria-pressed="false" aria-label="Full screen map" title="Full screen map">&#x26F6;</button>';L.DomEvent.disableClickPropagation(container);L.DomEvent.disableScrollPropagation(container);container.querySelectorAll('.basemap-option').forEach(button=>button.addEventListener('click',()=>{state.basemapType=button.dataset.basemap;localStorage.setItem('frost-basemap',state.basemapType);updateBasemap()}));container.querySelector('.fullscreen-map').addEventListener('click',toggleMapFullscreen);return container}});
