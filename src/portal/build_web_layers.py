@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import os
 import sys
@@ -18,7 +19,12 @@ import numpy as np
 # Prefer Rasterio's bundled and version-matched PROJ database before GDAL is
 # imported. Some Windows GIS installations set PROJ_LIB globally to an older
 # PostGIS database, which breaks reprojection in Python environments.
-_RASTERIO_PROJ = Path(sys.prefix) / "Lib" / "site-packages" / "rasterio" / "proj_data"
+_RASTERIO_SPEC = importlib.util.find_spec("rasterio")
+_RASTERIO_PROJ = (
+    Path(next(iter(_RASTERIO_SPEC.submodule_search_locations))) / "proj_data"
+    if _RASTERIO_SPEC and _RASTERIO_SPEC.submodule_search_locations
+    else Path(sys.prefix) / "Lib" / "site-packages" / "rasterio" / "proj_data"
+)
 if (_RASTERIO_PROJ / "proj.db").is_file():
     os.environ["PROJ_LIB"] = str(_RASTERIO_PROJ)
     os.environ["PROJ_DATA"] = str(_RASTERIO_PROJ)
@@ -35,8 +41,9 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[2]
 PORTAL_ROOT = ROOT.parent
 WEB = ROOT / "web"
-MODEL_ROOT = PORTAL_ROOT / "dryad_dataset" / "data" / "model_outputs"
-V2_ROOT = PORTAL_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
+SOURCE_ROOT = Path(os.environ.get("FROST_SOURCE_ROOT", str(PORTAL_ROOT)))
+MODEL_ROOT = SOURCE_ROOT / "dryad_dataset" / "data" / "model_outputs"
+V2_ROOT = SOURCE_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
 WATER_MASK_PATH = ROOT / "data" / "masks" / "lagoa_dos_patos_osm_relation_2709093.geojson"
 WATER_MASK_ID = "OpenStreetMap relation 2709093 (Lagoa dos Patos)"
 HAND15_SOURCE = Path(os.environ.get(
@@ -53,6 +60,14 @@ ZENODO_FILES = {
     "hand_15km": "https://zenodo.org/records/21981334/files/HAND_15000M.tif",
 }
 
+FROST_PROBABILITY_CLASSES = [
+    {"value": 1, "label": "Very low", "labelPt": "Muito baixa", "interval": "0.00 ≤ p < 0.20", "color": "#d73027"},
+    {"value": 2, "label": "Low", "labelPt": "Baixa", "interval": "0.20 ≤ p < 0.40", "color": "#fdae61"},
+    {"value": 3, "label": "Moderate", "labelPt": "Moderada", "interval": "0.40 ≤ p < 0.60", "color": "#ffffbf"},
+    {"value": 4, "label": "High", "labelPt": "Alta", "interval": "0.60 ≤ p < 0.80", "color": "#abd9e9"},
+    {"value": 5, "label": "Very high", "labelPt": "Muito alta", "interval": "p ≥ 0.80", "color": "#4575b4"},
+]
+
 
 ENDPOINTS = {
     "probability": {
@@ -62,6 +77,14 @@ ENDPOINTS = {
         "fixed_range": [0.0, 1.0],
         "units": "probability",
         "filename": "frost_probability",
+    },
+    "probability_classes": {
+        "title": "Frost-occurrence probability classes",
+        "titlePt": "Classes de probabilidade de ocorrência de geada",
+        "cmap": "frost_classes",
+        "fixed_range": [1.0, 5.0],
+        "units": "class",
+        "filename": "frost_probability_classes",
     },
     "frost_days": {
         "title": "Expected frost days per season",
@@ -181,6 +204,19 @@ def build_layer_specs() -> list[dict]:
             max_width=6000, analysis_width=2048,
         ))
 
+    class_spec = model_spec(
+        layer_id="frost_probability_classes", endpoint="probability_classes",
+        source=V2_ROOT / "Frost Probability Classes" / "FROST_PROBABILITY_CLASSES_V2.0_2000_2026_ANADEM30M.tif",
+        output="frost_probability_classes_2000_2026_v2.png", group="classes",
+        scenario="probability_classes_2000_2026_v2",
+        scenario_label="Probability classes", scenario_label_pt="Classes de probabilidade",
+        subtitle="Five probability classes · 2000–2026 · v2.0",
+        subtitle_pt="Cinco classes de probabilidade · 2000–2026 · v2.0",
+        max_width=6000, analysis_width=2048,
+    )
+    class_spec["classes"] = FROST_PROBABILITY_CLASSES
+    specs.append(class_spec)
+
     enso_defs = [
         ("el_nino", "El Niño", "El Niño"),
         ("la_nina", "La Niña", "La Niña"),
@@ -219,7 +255,7 @@ def build_layer_specs() -> list[dict]:
             "id": "hand", "endpoint": "hand", "title": "Drainage-relative elevation (HAND) — 2 km",
             "titlePt": "Elevação relativa à drenagem (HAND) — 2 km",
             "subtitle": "HAND · 2-km flow-path search", "subtitlePt": "HAND · busca de fluxo de 2 km",
-            "source": PORTAL_ROOT / "00_HAND" / "anadem_rs_pr_sc_sp_ms_30m_HAND_flowpath_within_2000m_filled_zero.tif",
+            "source": SOURCE_ROOT / "00_HAND" / "anadem_rs_pr_sc_sp_ms_30m_HAND_flowpath_within_2000m_filled_zero.tif",
             "output": "hand_2000m.png", "cmap": "viridis", "percentiles": [1.0, 99.0],
             "units": "m", "status": "derived terrain layer", "statusPt": "camada derivada do terreno",
             "download": ZENODO_RECORD,
@@ -242,7 +278,7 @@ def build_layer_specs() -> list[dict]:
             "id": "anadem", "endpoint": "elevation", "title": "Terrain elevation",
             "titlePt": "Elevação do terreno",
             "subtitle": "ANADEM v1 digital terrain model", "subtitlePt": "Modelo digital de terreno ANADEM v1",
-            "source": PORTAL_ROOT / "00_ANADEM_DEM" / "ANADEM_v1_30m_RS_PR_SC_SP_MS_recortado.tif",
+            "source": SOURCE_ROOT / "00_ANADEM_DEM" / "ANADEM_v1_30m_RS_PR_SC_SP_MS_recortado.tif",
             "output": "anadem_elevation.png", "cmap": "viridis", "percentiles": [0.5, 99.5],
             "units": "m a.s.l.", "status": "third-party source layer; cite Laipelt et al. (2024)",
             "statusPt": "camada de terceiros; cite Laipelt et al. (2024)",
@@ -265,10 +301,11 @@ def rgba_from_raster(spec: dict, max_width: int) -> tuple[np.ndarray, dict]:
         # Leaflet displays image overlays in Web Mercator. Reprojecting the preview
         # before creating the PNG prevents the north-south displacement produced by
         # stretching a regular latitude/longitude raster over a Mercator basemap.
+        categorical = bool(spec.get("classes"))
         with WarpedVRT(
             src,
             crs="EPSG:3857",
-            resampling=Resampling.bilinear,
+            resampling=Resampling.nearest if categorical else Resampling.bilinear,
             nodata=src.nodata,
         ) as web:
             scale = min(1.0, max_width / web.width)
@@ -281,7 +318,7 @@ def rgba_from_raster(spec: dict, max_width: int) -> tuple[np.ndarray, dict]:
             west, south, east, north = transform_bounds(
                 web.crs, "EPSG:4326", *web.bounds, densify_pts=21
             )
-        values = np.asarray(data.filled(np.nan), dtype="float32")
+        values = np.asarray(np.ma.filled(data.astype("float32"), np.nan), dtype="float32")
         valid = np.isfinite(values)
         if src.nodata is not None and np.isfinite(src.nodata):
             valid &= values != src.nodata
@@ -308,8 +345,18 @@ def rgba_from_raster(spec: dict, max_width: int) -> tuple[np.ndarray, dict]:
         if not np.isfinite(vmin) or not np.isfinite(vmax) or vmax <= vmin:
             raise RuntimeError(f"Invalid display range for {spec['source']}: {vmin}, {vmax}")
 
-        normalized = np.clip((values - vmin) / (vmax - vmin), 0, 1)
-        rgba = plt.get_cmap(spec["cmap"])(np.nan_to_num(normalized, nan=0.0), bytes=True)
+        if categorical:
+            rgba = np.zeros((*values.shape, 4), dtype="uint8")
+            class_valid = np.zeros(values.shape, dtype=bool)
+            for item in spec["classes"]:
+                selected = valid & np.isclose(values, item["value"], atol=0.01)
+                color = item["color"].lstrip("#")
+                rgba[selected, :3] = [int(color[index:index + 2], 16) for index in (0, 2, 4)]
+                class_valid |= selected
+            valid &= class_valid
+        else:
+            normalized = np.clip((values - vmin) / (vmax - vmin), 0, 1)
+            rgba = plt.get_cmap(spec["cmap"])(np.nan_to_num(normalized, nan=0.0), bytes=True)
         rgba[..., 3] = np.where(valid, 238, 0).astype("uint8")
         metadata = {
             "bounds": [[south, west], [north, east]],
@@ -391,6 +438,7 @@ def main() -> int:
             "status": spec["status"], "statusPt": spec["statusPt"], "palette": spec["cmap"],
             "download": spec["download"], "group": spec["group"], "scenario": spec["scenario"],
             "scenarioLabel": spec["scenarioLabel"], "scenarioLabelPt": spec["scenarioLabelPt"],
+            "classes": spec.get("classes", []),
             **meta,
         })
         print(f"WEB_LAYER_OK={spec['id']} ({meta['previewWidth']}x{meta['previewHeight']})")

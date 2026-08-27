@@ -3,8 +3,8 @@ const translations={
   pt:{brand:'Mapas de Risco de Geada',nav_maps:'Mapas',nav_methods:'Métodos',theme:'Tema',domain:'Sul do Brasil · domínio de cinco estados',hero_title:'Mapas de Risco de Geada',hero_text:'Explore a ocorrência de geada, o HAND e a elevação do terreno no Paraná, Santa Catarina, Rio Grande do Sul, São Paulo e Mato Grosso do Sul.',states:'estados',terrain_grid:'grade do terreno',climate_period:'período climático',interactive_kicker:'Mapa interativo',interactive_title:'Explore as camadas mapeadas',interactive_text:'Busque uma cidade, alterne as camadas e examine padrões locais. Os downloads preservam os valores analíticos dos GeoTIFFs.',search_label:'Buscar cidade ou região',search_placeholder:'Buscar cidade ou região…',search_button:'Buscar',place_not_found:'Local não encontrado. Tente informar a cidade e o estado.',place_found:'Exibindo',preview_badge:'Prévia do mapa',choose_layer:'Escolha uma camada',opacity:'Opacidade',selected_layer:'Camada selecionada',display_range:'Intervalo visual',native_grid:'Grade nativa',coverage:'Cobertura',download_geotiff:'Baixar GeoTIFF',about_kicker:'Sobre',about_title:'Mapas científicos para avaliação regional de geada',about_text:'O portal apresenta resultados dos modelos e o contexto do terreno. É um produto de pesquisa, não uma previsão meteorológica operacional.',read_methods:'Ler os métodos',valid_cells:'células válidas'}
 };
 
-Object.assign(translations.en,{analysis_tools:'Inspect and analyze',analysis_hint:'Click the map to inspect a value, or draw an area to summarize it.',draw_rectangle:'Rectangle',draw_polygon:'Polygon',clear_selection:'Clear',no_selection:'No area selected.',selected_area:'Selected area',sampled_cells:'Sampled cells',minimum:'Minimum',mean:'Mean',median:'Median',maximum:'Maximum',analysis_note:'Statistics use a numerical web grid; download the GeoTIFF for native-resolution analysis.',loading_values:'Loading numerical values…',no_valid_values:'No valid values in this selection.',point_value:'Map value',coordinates:'Coordinates',group_complete:'Complete period',group_enso:'ENSO phases',group_terrain:'Terrain'});
-Object.assign(translations.pt,{analysis_tools:'Inspecionar e analisar',analysis_hint:'Clique no mapa para consultar um valor ou desenhe uma área para resumi-la.',draw_rectangle:'Retângulo',draw_polygon:'Polígono',clear_selection:'Limpar',no_selection:'Nenhuma área selecionada.',selected_area:'Área selecionada',sampled_cells:'Células amostradas',minimum:'Mínimo',mean:'Média',median:'Mediana',maximum:'Máximo',analysis_note:'As estatísticas usam uma grade numérica web; baixe o GeoTIFF para análises na resolução nativa.',loading_values:'Carregando valores numéricos…',no_valid_values:'Não há valores válidos nesta seleção.',point_value:'Valor do mapa',coordinates:'Coordenadas',group_complete:'Período completo',group_enso:'Fases do ENSO',group_terrain:'Terreno'});
+Object.assign(translations.en,{analysis_tools:'Inspect and analyze',analysis_hint:'Click the map to inspect a value, or draw an area to summarize it.',draw_rectangle:'Rectangle',draw_polygon:'Polygon',clear_selection:'Clear',no_selection:'No area selected.',selected_area:'Selected area',sampled_cells:'Sampled cells',minimum:'Minimum',mean:'Mean',median:'Median',maximum:'Maximum',analysis_note:'Statistics use a numerical web grid; download the GeoTIFF for native-resolution analysis.',loading_values:'Loading numerical values…',no_valid_values:'No valid values in this selection.',point_value:'Map value',coordinates:'Coordinates',group_complete:'Complete period',group_classes:'Probability classes',group_enso:'ENSO phases',group_terrain:'Terrain',classes:'classes'});
+Object.assign(translations.pt,{analysis_tools:'Inspecionar e analisar',analysis_hint:'Clique no mapa para consultar um valor ou desenhe uma área para resumi-la.',draw_rectangle:'Retângulo',draw_polygon:'Polígono',clear_selection:'Limpar',no_selection:'Nenhuma área selecionada.',selected_area:'Área selecionada',sampled_cells:'Células amostradas',minimum:'Mínimo',mean:'Média',median:'Mediana',maximum:'Máximo',analysis_note:'As estatísticas usam uma grade numérica web; baixe o GeoTIFF para análises na resolução nativa.',loading_values:'Carregando valores numéricos…',no_valid_values:'Não há valores válidos nesta seleção.',point_value:'Valor do mapa',coordinates:'Coordenadas',group_complete:'Período completo',group_classes:'Classes de probabilidade',group_enso:'Fases do ENSO',group_terrain:'Terreno',classes:'classes'});
 
 Object.assign(translations.en,{
   brand:'Environmental Maps',nav_collections:'Collections',nav_maps:'Map explorer',nav_methods:'Methods & data',theme:'Theme',
@@ -90,7 +90,7 @@ const places=[
   ['Campo Grande, MS',-20.4697,-54.6201],['Dourados, MS',-22.2218,-54.8064]
 ];
 
-const palettes={RdYlBu:'linear-gradient(90deg,#a50026,#f46d43,#ffffbf,#74add1,#313695)',RdYlBu_r:'linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026)',viridis:'linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725)',gist_earth:'linear-gradient(90deg,#17336b,#478d82,#a9b26f,#c49a6c,#f5f2ed)'};
+const palettes={RdYlBu:'linear-gradient(90deg,#a50026,#f46d43,#ffffbf,#74add1,#313695)',RdYlBu_r:'linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026)',frost_classes:'linear-gradient(90deg,#d73027 0 20%,#fdae61 20% 40%,#ffffbf 40% 60%,#abd9e9 60% 80%,#4575b4 80% 100%)',viridis:'linear-gradient(90deg,#440154,#3b528b,#21918c,#5ec962,#fde725)',gist_earth:'linear-gradient(90deg,#17336b,#478d82,#a9b26f,#c49a6c,#f5f2ed)'};
 const ZENODO_RECORD='https://doi.org/10.5281/zenodo.21981334';
 const ZENODO_FILES={
   frost_probability:'https://zenodo.org/records/21981334/files/FROST_PROBABILITY_MEAN_2000_2026.tif',
@@ -129,6 +129,8 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.qu
 updateBasemap();
 
 function fmt(value){return Math.abs(value)>=100?Math.round(value).toLocaleString():Number(value).toFixed(2)}
+function classItem(layer,value){return layer.classes?.find(item=>Math.round(value)===item.value)}
+function formattedLayerValue(layer,value){const item=classItem(layer,value);return item?(state.lang==='pt'?(item.labelPt||item.label):item.label):fmt(value)}
 function localizedLayer(layer){
   const legacy=layerText[state.lang][layer.id];
   if(state.lang==='pt'&&(layer.titlePt||layer.subtitlePt||layer.statusPt))return[layer.titlePt||layer.title,layer.subtitlePt||layer.subtitle,layer.statusPt||layer.status];
@@ -143,7 +145,7 @@ function renderLanguage(){
 }
 function renderLayerButtons(){
   const list=document.getElementById('layer-list');list.innerHTML='';
-  const order=['complete','enso','terrain'];
+  const order=['complete','classes','enso','terrain'];
   const makeButton=layer=>{const words=localizedLayer(layer);const button=document.createElement('button');button.className='layer-button';button.type='button';button.dataset.id=layer.id;button.innerHTML=`<strong>${words[0]}</strong><small>${words[1]}</small>`;button.addEventListener('click',()=>activate(layer.id,false));return button};
   order.forEach(group=>{
     const layers=state.catalog.filter(layer=>(layer.group||'complete')===group);if(!layers.length)return;
@@ -163,7 +165,7 @@ function activate(id,fit=false){
   document.querySelectorAll('.layer-button').forEach(button=>button.classList.toggle('active',button.dataset.id===id));
   const words=localizedLayer(layer);
   document.getElementById('layer-title').textContent=words[0];document.getElementById('layer-subtitle').textContent=words[1];
-  document.getElementById('layer-range').textContent=`${fmt(layer.displayMin)}–${fmt(layer.displayMax)} ${layer.units}`;
+  document.getElementById('layer-range').textContent=layer.classes?.length?`${layer.classes.length} ${translations[state.lang].classes}`:`${fmt(layer.displayMin)}–${fmt(layer.displayMax)} ${layer.units}`;
   document.getElementById('layer-grid').textContent=`${layer.nativeWidth.toLocaleString()} × ${layer.nativeHeight.toLocaleString()}`;
   document.getElementById('layer-coverage').textContent=`${layer.validPercent.toFixed(1)}% ${translations[state.lang].valid_cells}`;
   document.getElementById('layer-status').textContent=words[2];
@@ -171,7 +173,9 @@ function activate(id,fit=false){
   download.href=contract.href;download.target='_blank';download.rel='noopener noreferrer';download.removeAttribute('download');download.dataset.kind=contract.kind;
   if(downloadLabel)downloadLabel.textContent=translations[state.lang][contract.label];
   if(downloadNote)downloadNote.textContent=translations[state.lang][contract.note];
-  document.getElementById('legend').innerHTML=`<div class="legend-title">${words[0]} · ${layer.units}</div><div class="legend-ramp" style="background:${palettes[layer.palette]}"></div><div class="legend-labels"><span>${fmt(layer.displayMin)}</span><span>${fmt(layer.displayMax)}</span></div>`;
+  document.getElementById('legend').innerHTML=layer.classes?.length
+    ?`<div class="legend-title">${words[0]}</div><div class="class-legend">${layer.classes.map(item=>`<div><span style="background:${item.color}"></span><strong>${state.lang==='pt'?(item.labelPt||item.label):item.label}</strong><small>${item.interval}</small></div>`).join('')}</div>`
+    :`<div class="legend-title">${words[0]} · ${layer.units}</div><div class="legend-ramp" style="background:${palettes[layer.palette]}"></div><div class="legend-labels"><span>${fmt(layer.displayMin)}</span><span>${fmt(layer.displayMax)}</span></div>`;
   if(state.selectionLayer)analyzeSelection(state.selectionLayer)
 }
 
@@ -277,7 +281,7 @@ map.on('draw:drawstart',()=>{state.drawing=true});map.on('draw:drawstop',()=>{se
 map.on('draw:created',event=>{analysisLayers.clearLayers();state.selectionLayer=event.layer;analysisLayers.addLayer(event.layer);analyzeSelection(event.layer)});
 map.on('click',async event=>{
   if(state.drawing||!state.active)return;analysisMessage(translations[state.lang].loading_values);
-  try{const grid=await loadAnalysisGrid(state.active.id),sample=samplePoint(grid,event.latlng.lat,event.latlng.lng),words=localizedLayer(state.active);const value=sample?`${fmt(sample.value)} ${state.active.units}`:translations[state.lang].no_valid_values;
+  try{const grid=await loadAnalysisGrid(state.active.id),sample=samplePoint(grid,event.latlng.lat,event.latlng.lng),words=localizedLayer(state.active);const value=sample?(state.active.classes?.length?formattedLayerValue(state.active,sample.value):`${fmt(sample.value)} ${state.active.units}`):translations[state.lang].no_valid_values;
     L.popup({className:'map-value-popup'}).setLatLng(event.latlng).setContent(`<strong>${translations[state.lang].point_value}: ${value}</strong><span>${words[0]}</span><span>${translations[state.lang].coordinates}: ${event.latlng.lat.toFixed(5)}, ${event.latlng.lng.toFixed(5)}</span>`).openOn(map)
   }catch(error){analysisMessage(error.message);return}analysisMessage('')
 });

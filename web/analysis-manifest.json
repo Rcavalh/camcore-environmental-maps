@@ -89,5 +89,12 @@
     "height": 2699,
     "sourceWidth": 51977,
     "sourceHeight": 61541
+  },
+  "frost_probability_classes": {
+    "url": "assets/analysis/frost_probability_classes.generated.js",
+    "width": 2048,
+    "height": 2699,
+    "sourceWidth": 51977,
+    "sourceHeight": 61541
   }
 }

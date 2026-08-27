@@ -16,6 +16,7 @@ window.FROST_LAYERS = [
     "scenario": "2000_2026_v2",
     "scenarioLabel": "2000–2026 · v2.0",
     "scenarioLabelPt": "2000–2026 · v2.0",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -59,6 +60,7 @@ window.FROST_LAYERS = [
     "scenario": "2000_2026_v2",
     "scenarioLabel": "2000–2026 · v2.0",
     "scenarioLabelPt": "2000–2026 · v2.0",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -102,6 +104,7 @@ window.FROST_LAYERS = [
     "scenario": "2000_2026_v2",
     "scenarioLabel": "2000–2026 · v2.0",
     "scenarioLabelPt": "2000–2026 · v2.0",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -145,6 +148,7 @@ window.FROST_LAYERS = [
     "scenario": "2000_2026_v2",
     "scenarioLabel": "2000–2026 · v2.0",
     "scenarioLabelPt": "2000–2026 · v2.0",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -172,6 +176,86 @@ window.FROST_LAYERS = [
     "waterMaskedCells": 189891
   },
   {
+    "id": "frost_probability_classes",
+    "endpoint": "probability_classes",
+    "title": "Frost-occurrence probability classes",
+    "titlePt": "Classes de probabilidade de ocorrência de geada",
+    "subtitle": "Five probability classes · 2000–2026 · v2.0",
+    "subtitlePt": "Cinco classes de probabilidade · 2000–2026 · v2.0",
+    "url": "assets/layers/frost_probability_classes_2000_2026_v2.png",
+    "units": "class",
+    "status": "version 2.0 complete five-state analytical surface",
+    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
+    "palette": "frost_classes",
+    "download": "https://doi.org/10.5281/zenodo.21981334",
+    "group": "classes",
+    "scenario": "probability_classes_2000_2026_v2",
+    "scenarioLabel": "Probability classes",
+    "scenarioLabelPt": "Classes de probabilidade",
+    "classes": [
+      {
+        "value": 1,
+        "label": "Very low",
+        "labelPt": "Muito baixa",
+        "interval": "0.00 ≤ p < 0.20",
+        "color": "#d73027"
+      },
+      {
+        "value": 2,
+        "label": "Low",
+        "labelPt": "Baixa",
+        "interval": "0.20 ≤ p < 0.40",
+        "color": "#fdae61"
+      },
+      {
+        "value": 3,
+        "label": "Moderate",
+        "labelPt": "Moderada",
+        "interval": "0.40 ≤ p < 0.60",
+        "color": "#ffffbf"
+      },
+      {
+        "value": 4,
+        "label": "High",
+        "labelPt": "Alta",
+        "interval": "0.60 ≤ p < 0.80",
+        "color": "#abd9e9"
+      },
+      {
+        "value": 5,
+        "label": "Very high",
+        "labelPt": "Muito alta",
+        "interval": "p ≥ 0.80",
+        "color": "#4575b4"
+      }
+    ],
+    "bounds": [
+      [
+        -33.75117713328006,
+        -58.16878925565761
+      ],
+      [
+        -17.16626609035636,
+        -44.16112910077027
+      ]
+    ],
+    "nativeWidth": 51977,
+    "nativeHeight": 61541,
+    "previewWidth": 6000,
+    "previewHeight": 7908,
+    "crs": "GEOGCS[\"SIRGAS 2000\",DATUM[\"unnamed\",SPHEROID[\"unnamed\",6378137,298.257222101004]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST]]",
+    "previewCrs": "EPSG:3857",
+    "nativeResolution": [
+      0.0002694945852359,
+      0.0002694945852359
+    ],
+    "displayMin": 1.0,
+    "displayMax": 5.0,
+    "validPercent": 43.732,
+    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
+    "waterMaskedCells": 671
+  },
+  {
     "id": "enso_el_nino_probability",
     "endpoint": "probability",
     "title": "Frost-occurrence probability",
@@ -188,6 +272,7 @@ window.FROST_LAYERS = [
     "scenario": "el_nino",
     "scenarioLabel": "El Niño",
     "scenarioLabelPt": "El Niño",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -231,6 +316,7 @@ window.FROST_LAYERS = [
     "scenario": "el_nino",
     "scenarioLabel": "El Niño",
     "scenarioLabelPt": "El Niño",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -274,6 +360,7 @@ window.FROST_LAYERS = [
     "scenario": "la_nina",
     "scenarioLabel": "La Niña",
     "scenarioLabelPt": "La Niña",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -317,6 +404,7 @@ window.FROST_LAYERS = [
     "scenario": "la_nina",
     "scenarioLabel": "La Niña",
     "scenarioLabelPt": "La Niña",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -360,6 +448,7 @@ window.FROST_LAYERS = [
     "scenario": "neutral",
     "scenarioLabel": "Neutral",
     "scenarioLabelPt": "Neutro",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -403,6 +492,7 @@ window.FROST_LAYERS = [
     "scenario": "neutral",
     "scenarioLabel": "Neutral",
     "scenarioLabelPt": "Neutro",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,
@@ -446,6 +536,7 @@ window.FROST_LAYERS = [
     "scenario": "hand",
     "scenarioLabel": "HAND",
     "scenarioLabelPt": "HAND",
+    "classes": [],
     "bounds": [
       [
         -33.75117713314765,
@@ -489,6 +580,7 @@ window.FROST_LAYERS = [
     "scenario": "hand_15km",
     "scenarioLabel": "HAND · 15 km",
     "scenarioLabelPt": "HAND · 15 km",
+    "classes": [],
     "bounds": [
       [
         -33.75117713314765,
@@ -532,6 +624,7 @@ window.FROST_LAYERS = [
     "scenario": "elevation",
     "scenarioLabel": "Elevation",
     "scenarioLabelPt": "Elevação",
+    "classes": [],
     "bounds": [
       [
         -33.75117713328006,

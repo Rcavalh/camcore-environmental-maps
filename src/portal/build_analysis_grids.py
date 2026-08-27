@@ -81,23 +81,34 @@ def main() -> int:
             | (rgba[..., 1].astype("uint32") << 8)
             | rgba[..., 2].astype("uint32")
         )
-        palette = plt.get_cmap(spec["cmap"])(np.linspace(0, 1, 256), bytes=True)[:, :3]
-        palette_packed = (
-            (palette[:, 0].astype("uint32") << 16)
-            | (palette[:, 1].astype("uint32") << 8)
-            | palette[:, 2].astype("uint32")
-        )
-        lookup = {int(color): index for index, color in enumerate(palette_packed)}
-        palette_index = np.zeros((height, width), dtype="uint16")
-        for color in np.unique(packed[valid]):
-            if int(color) not in lookup:
-                raise RuntimeError(f"Unexpected preview color {int(color)} in {preview}")
-            palette_index[packed == color] = lookup[int(color)]
-
         minimum = float(layer["displayMin"])
         maximum = float(layer["displayMax"])
         encoded = np.full((height, width), NODATA, dtype="<u2")
-        encoded[valid] = np.rint(palette_index[valid] / 255 * MAX_VALUE).astype("<u2")
+        if spec.get("classes"):
+            class_values = np.full((height, width), np.nan, dtype="float32")
+            for item in spec["classes"]:
+                color = item["color"].lstrip("#")
+                rgb = [int(color[index:index + 2], 16) for index in (0, 2, 4)]
+                color_code = (rgb[0] << 16) | (rgb[1] << 8) | rgb[2]
+                class_values[valid & (packed == color_code)] = item["value"]
+            class_valid = valid & np.isfinite(class_values)
+            encoded[class_valid] = np.rint(
+                (class_values[class_valid] - minimum) / (maximum - minimum) * MAX_VALUE
+            ).astype("<u2")
+        else:
+            palette = plt.get_cmap(spec["cmap"])(np.linspace(0, 1, 256), bytes=True)[:, :3]
+            palette_packed = (
+                (palette[:, 0].astype("uint32") << 16)
+                | (palette[:, 1].astype("uint32") << 8)
+                | palette[:, 2].astype("uint32")
+            )
+            lookup = {int(color): index for index, color in enumerate(palette_packed)}
+            palette_index = np.zeros((height, width), dtype="uint16")
+            for color in np.unique(packed[valid]):
+                if int(color) not in lookup:
+                    raise RuntimeError(f"Unexpected preview color {int(color)} in {preview}")
+                palette_index[packed == color] = lookup[int(color)]
+            encoded[valid] = np.rint(palette_index[valid] / 255 * MAX_VALUE).astype("<u2")
         payload = base64.b64encode(encoded.tobytes(order="C")).decode("ascii")
 
         filename = f"{spec['id']}.generated.js"
