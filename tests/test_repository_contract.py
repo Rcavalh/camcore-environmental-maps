@@ -33,6 +33,9 @@ class RepositoryContractTests(unittest.TestCase):
         groups = {name: sum(x.get("group") == name for x in catalog) for name in ("complete", "periods", "enso", "terrain", "classes")}
         self.assertEqual(groups, {"complete": 4, "periods": 0, "enso": 3, "terrain": 3, "classes": 1})
         self.assertFalse(any("p25" in layer_id.lower() or "species" in layer_id.lower() for layer_id in ids))
+        species_page = (ROOT / "web" / "species.html").read_text(encoding="utf-8")
+        self.assertIn('url=./index.html', species_page)
+        self.assertNotIn('id="species-map"', species_page)
         self.assertNotIn("frost_probability_v2", ids)
         self.assertNotIn("seasonal_tmin_p25_v2", ids)
         for layer in catalog:
