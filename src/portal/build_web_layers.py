@@ -44,6 +44,7 @@ WEB = ROOT / "web"
 SOURCE_ROOT = Path(os.environ.get("FROST_SOURCE_ROOT", str(PORTAL_ROOT)))
 MODEL_ROOT = SOURCE_ROOT / "dryad_dataset" / "data" / "model_outputs"
 V2_ROOT = SOURCE_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.0"
+P05_ROOT = SOURCE_ROOT / "Zenodo" / "01_Frost_Risk_Maps" / "rasters" / "v2.2_P05_sensitivity_2000_2026"
 WATER_MASK_PATH = ROOT / "data" / "masks" / "lagoa_dos_patos_osm_relation_2709093.geojson"
 WATER_MASK_ID = "OpenStreetMap relation 2709093 (Lagoa dos Patos)"
 HAND15_SOURCE = Path(os.environ.get(
@@ -56,7 +57,6 @@ ZENODO_FILES = {
     "frost_probability": "https://zenodo.org/records/21981334/files/FROST_PROBABILITY_MEAN_2000_2026.tif",
     "expected_frost_days": "https://zenodo.org/records/21981334/files/EXPECTED_FROST_DAYS_MEAN_2000_2026.tif",
     "seasonal_tmin": "https://zenodo.org/records/21981334/files/SEASONAL_TMIN_MEAN_2000_2026_C.tif",
-    "seasonal_tmin_p25": "https://zenodo.org/records/21981334/files/SEASONAL_TMIN_P25_2000_2026_C.tif",
     "hand_15km": "https://zenodo.org/records/21981334/files/HAND_15000M.tif",
 }
 
@@ -102,13 +102,13 @@ ENDPOINTS = {
         "units": "°C",
         "filename": "seasonal_minimum_temperature_mean",
     },
-    "tmin_p25": {
-        "title": "Seasonal minimum temperature — P25",
-        "titlePt": "Temperatura mínima sazonal — P25",
+    "tmin_p05": {
+        "title": "Seasonal minimum temperature — P05",
+        "titlePt": "Temperatura mínima sazonal — P05",
         "cmap": "RdYlBu_r",
         "percentiles": [0.5, 99.5],
         "units": "°C",
-        "filename": "seasonal_minimum_temperature_p25",
+        "filename": "seasonal_minimum_temperature_p05",
     },
 }
 
@@ -158,7 +158,7 @@ def model_spec(
         "statusPt": "superfície analítica completa para os cinco estados",
         # Only complete-period files are deposited in the current Zenodo record.
         # Other displayed scenarios link to the record landing page in the portal.
-        "download": ZENODO_FILES.get(layer_id, ZENODO_RECORD),
+        "download": ZENODO_FILES.get(layer_id, None if layer_id == "seasonal_tmin_p05" else ZENODO_RECORD),
         "group": group,
         "scenario": scenario,
         "scenarioLabel": scenario_label,
@@ -189,14 +189,15 @@ def build_layer_specs() -> list[dict]:
             "seasonal_minimum_temperature_mean_2000_2026_v2.png",
         ),
         (
-            "seasonal_tmin_p25", "tmin_p25",
-            "RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif",
-            "seasonal_minimum_temperature_p25_2000_2026_v2.png",
+            "seasonal_tmin_p05", "tmin_p05",
+            "RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P05_ALL_2000_2026_FIVE_STATES_HAND15_ANADEM30M.tif",
+            "seasonal_minimum_temperature_p05_2000_2026_v2_2.png",
         ),
     ]
     for layer_id, endpoint, filename, output in complete_defs:
         specs.append(model_spec(
-            layer_id=layer_id, endpoint=endpoint, source=V2_ROOT / filename,
+            layer_id=layer_id, endpoint=endpoint,
+            source=(P05_ROOT if endpoint == "tmin_p05" else V2_ROOT) / filename,
             output=output, group="complete", scenario="2000_2026_v2",
             scenario_label="2000–2026 · v2.0", scenario_label_pt="2000–2026 · v2.0",
             subtitle="Version 2.0 complete-period climatology · 2000–2026",
@@ -223,16 +224,10 @@ def build_layer_specs() -> list[dict]:
         ("neutral", "Neutral", "Neutro"),
     ]
     for scenario, label, label_pt in enso_defs:
-        candidates = [
-            (
-                "probability",
-                V2_ROOT / f"RF_DIRECT_GRIDS_FROST_PROBABILITY_MEAN_ENSO_{scenario.upper()}_FIVE_STATES_HAND15_ANADEM30M.tif",
-            ),
-            (
-                "tmin_p25",
-                V2_ROOT / f"RF_DIRECT_GRIDS_SEASONAL_MINIMUM_TEMPERATURE_C_P25_ENSO_{scenario.upper()}_FIVE_STATES_HAND15_ANADEM30M.tif",
-            ),
-        ]
+        candidates = [(
+            "probability",
+            V2_ROOT / f"RF_DIRECT_GRIDS_FROST_PROBABILITY_MEAN_ENSO_{scenario.upper()}_FIVE_STATES_HAND15_ANADEM30M.tif",
+        )]
         # Source filenames use EL_NINO and LA_NINA, matching the upper-case IDs above.
         for endpoint, source in candidates:
             if not source.is_file():
@@ -249,6 +244,15 @@ def build_layer_specs() -> list[dict]:
     for spec in specs:
         spec["status"] = "version 2.0 complete five-state analytical surface"
         spec["statusPt"] = "superfície analítica v2.0 completa para os cinco estados"
+
+    for spec in specs:
+        if spec["id"] == "seasonal_tmin_p05":
+            spec["subtitle"] = "P05 of annual seasonal minima · 2000–2026"
+            spec["subtitlePt"] = "P05 das mínimas sazonais anuais · 2000–2026"
+            spec["status"] = "version 2.2 lower-tail thermal surface"
+            spec["statusPt"] = "superfície térmica de cauda fria v2.2"
+            spec["scenarioLabel"] = "2000–2026 · v2.2"
+            spec["scenarioLabelPt"] = "2000–2026 · v2.2"
 
     specs.extend([
         {

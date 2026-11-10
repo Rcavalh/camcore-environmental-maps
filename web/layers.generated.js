@@ -132,22 +132,22 @@ window.FROST_LAYERS = [
     "waterMaskedCells": 189891
   },
   {
-    "id": "seasonal_tmin_p25",
-    "endpoint": "tmin_p25",
-    "title": "Seasonal minimum temperature — P25",
-    "titlePt": "Temperatura mínima sazonal — P25",
-    "subtitle": "Version 2.0 complete-period climatology · 2000–2026",
-    "subtitlePt": "Climatologia v2.0 do período completo · 2000–2026",
-    "url": "assets/layers/seasonal_minimum_temperature_p25_2000_2026_v2.png",
+    "id": "seasonal_tmin_p05",
+    "endpoint": "tmin_p05",
+    "title": "Seasonal minimum temperature — P05",
+    "titlePt": "Temperatura mínima sazonal — P05",
+    "subtitle": "P05 of annual seasonal minima · 2000–2026",
+    "subtitlePt": "P05 das mínimas sazonais anuais · 2000–2026",
+    "url": "assets/layers/seasonal_minimum_temperature_p05_2000_2026_v2_2.png",
     "units": "°C",
-    "status": "version 2.0 complete five-state analytical surface",
-    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
+    "status": "version 2.2 lower-tail thermal surface",
+    "statusPt": "superfície térmica de cauda fria v2.2",
     "palette": "RdYlBu_r",
-    "download": "https://zenodo.org/records/21981334/files/SEASONAL_TMIN_P25_2000_2026_C.tif",
+    "download": null,
     "group": "complete",
     "scenario": "2000_2026_v2",
-    "scenarioLabel": "2000–2026 · v2.0",
-    "scenarioLabelPt": "2000–2026 · v2.0",
+    "scenarioLabel": "2000–2026 · v2.2",
+    "scenarioLabelPt": "2000–2026 · v2.2",
     "classes": [],
     "bounds": [
       [
@@ -169,8 +169,8 @@ window.FROST_LAYERS = [
       0.0002694945852359,
       0.0002694945852359
     ],
-    "displayMin": -4.1785,
-    "displayMax": 7.3204,
+    "displayMin": -4.5555,
+    "displayMax": 5.6901,
     "validPercent": 44.494,
     "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
     "waterMaskedCells": 189891
@@ -300,50 +300,6 @@ window.FROST_LAYERS = [
     "waterMaskedCells": 189891
   },
   {
-    "id": "enso_el_nino_tmin_p25",
-    "endpoint": "tmin_p25",
-    "title": "Seasonal minimum temperature — P25",
-    "titlePt": "Temperatura mínima sazonal — P25",
-    "subtitle": "ENSO-conditioned climatology · El Niño",
-    "subtitlePt": "Climatologia condicionada ao ENSO · El Niño",
-    "url": "assets/layers/enso_el_nino_tmin_p25.png",
-    "units": "°C",
-    "status": "version 2.0 complete five-state analytical surface",
-    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
-    "palette": "RdYlBu_r",
-    "download": "https://doi.org/10.5281/zenodo.21981334",
-    "group": "enso",
-    "scenario": "el_nino",
-    "scenarioLabel": "El Niño",
-    "scenarioLabelPt": "El Niño",
-    "classes": [],
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 6000,
-    "previewHeight": 7908,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": -3.926,
-    "displayMax": 9.4578,
-    "validPercent": 44.494,
-    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
-    "waterMaskedCells": 189891
-  },
-  {
     "id": "enso_la_nina_probability",
     "endpoint": "probability",
     "title": "Frost-occurrence probability",
@@ -388,50 +344,6 @@ window.FROST_LAYERS = [
     "waterMaskedCells": 189891
   },
   {
-    "id": "enso_la_nina_tmin_p25",
-    "endpoint": "tmin_p25",
-    "title": "Seasonal minimum temperature — P25",
-    "titlePt": "Temperatura mínima sazonal — P25",
-    "subtitle": "ENSO-conditioned climatology · La Niña",
-    "subtitlePt": "Climatologia condicionada ao ENSO · La Niña",
-    "url": "assets/layers/enso_la_nina_tmin_p25.png",
-    "units": "°C",
-    "status": "version 2.0 complete five-state analytical surface",
-    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
-    "palette": "RdYlBu_r",
-    "download": "https://doi.org/10.5281/zenodo.21981334",
-    "group": "enso",
-    "scenario": "la_nina",
-    "scenarioLabel": "La Niña",
-    "scenarioLabelPt": "La Niña",
-    "classes": [],
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 6000,
-    "previewHeight": 7908,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": -4.2474,
-    "displayMax": 7.1245,
-    "validPercent": 44.494,
-    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
-    "waterMaskedCells": 189891
-  },
-  {
     "id": "enso_neutral_probability",
     "endpoint": "probability",
     "title": "Frost-occurrence probability",
@@ -471,50 +383,6 @@ window.FROST_LAYERS = [
     ],
     "displayMin": 0.0,
     "displayMax": 1.0,
-    "validPercent": 44.494,
-    "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
-    "waterMaskedCells": 189891
-  },
-  {
-    "id": "enso_neutral_tmin_p25",
-    "endpoint": "tmin_p25",
-    "title": "Seasonal minimum temperature — P25",
-    "titlePt": "Temperatura mínima sazonal — P25",
-    "subtitle": "ENSO-conditioned climatology · Neutral",
-    "subtitlePt": "Climatologia condicionada ao ENSO · Neutro",
-    "url": "assets/layers/enso_neutral_tmin_p25.png",
-    "units": "°C",
-    "status": "version 2.0 complete five-state analytical surface",
-    "statusPt": "superfície analítica v2.0 completa para os cinco estados",
-    "palette": "RdYlBu_r",
-    "download": "https://doi.org/10.5281/zenodo.21981334",
-    "group": "enso",
-    "scenario": "neutral",
-    "scenarioLabel": "Neutral",
-    "scenarioLabelPt": "Neutro",
-    "classes": [],
-    "bounds": [
-      [
-        -33.75117713328006,
-        -58.16878925565761
-      ],
-      [
-        -17.16626609035636,
-        -44.16112910077027
-      ]
-    ],
-    "nativeWidth": 51977,
-    "nativeHeight": 61541,
-    "previewWidth": 6000,
-    "previewHeight": 7908,
-    "crs": "EPSG:4674",
-    "previewCrs": "EPSG:3857",
-    "nativeResolution": [
-      0.0002694945852359,
-      0.0002694945852359
-    ],
-    "displayMin": -4.1913,
-    "displayMax": 7.2236,
     "validPercent": 44.494,
     "waterMask": "OpenStreetMap relation 2709093 (Lagoa dos Patos)",
     "waterMaskedCells": 189891

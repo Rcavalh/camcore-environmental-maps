@@ -35,30 +35,32 @@ Object.assign(translations.en,{basemap_map:'Map',basemap_satellite:'Satellite',f
 Object.assign(translations.pt,{basemap_map:'Mapa',basemap_satellite:'Satélite',fullscreen_map:'Mapa em tela cheia',exit_fullscreen:'Sair da tela cheia'});
 
 Object.assign(translations.en,{
-  zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21981334',
+  zenodo_doi:'Archived v2.0 dataset · DOI 10.5281/zenodo.21981334',
   species_zenodo_doi:'Download dataset · DOI 10.5281/zenodo.21939047',
   download_zenodo_file:'Download GeoTIFF from Zenodo',
   open_zenodo_repository:'Open Zenodo repository',
   open_anadem_source:'Open ANADEM source',
   zenodo_file_note:'Archived analytical GeoTIFF (2000–2026).',
   zenodo_repository_note:'This displayed scenario is not included as a separate file in the current Zenodo record.',
-  anadem_source_note:'ANADEM is distributed by its original data provider.'
+  anadem_source_note:'ANADEM is distributed by its original data provider.',
+  p05_archive_note:'The P05 analytical GeoTIFF is not yet included in the current Zenodo release; the map is available for inspection here.'
 });
 Object.assign(translations.pt,{
-  zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21981334',
+  zenodo_doi:'Dados arquivados v2.0 · DOI 10.5281/zenodo.21981334',
   species_zenodo_doi:'Baixar conjunto de dados · DOI 10.5281/zenodo.21939047',
   download_zenodo_file:'Baixar GeoTIFF pelo Zenodo',
   open_zenodo_repository:'Abrir repositório no Zenodo',
   open_anadem_source:'Abrir fonte do ANADEM',
   zenodo_file_note:'GeoTIFF analítico arquivado (2000–2026).',
   zenodo_repository_note:'Este cenário exibido não está incluído como arquivo separado no registro atual do Zenodo.',
-  anadem_source_note:'O ANADEM é distribuído por seu provedor de dados original.'
+  anadem_source_note:'O ANADEM é distribuído por seu provedor de dados original.',
+  p05_archive_note:'O GeoTIFF analítico P05 ainda não integra a versão atual no Zenodo; o mapa pode ser inspecionado aqui.'
 });
 
 Object.assign(translations.en,{
   frost_publication:'Publication and data',
   frost_citation_title:'How to cite this collection',
-  frost_citation_instruction:'When using, reproducing or adapting any Frost Climatology map, cite the Zenodo dataset below.',
+  frost_citation_instruction:'Cite the Zenodo dataset for the archived v2.0 maps. The newer P05 map is not yet included in that release.',
   frost_open_dataset:'Open dataset',
   frost_copy_citation:'Copy citation',
   frost_citation_copied:'Citation copied',
@@ -67,7 +69,7 @@ Object.assign(translations.en,{
 Object.assign(translations.pt,{
   frost_publication:'Publicação e dados',
   frost_citation_title:'Como citar esta coleção',
-  frost_citation_instruction:'Ao usar, reproduzir ou adaptar qualquer mapa de Climatologia de Geadas, cite o conjunto de dados do Zenodo abaixo.',
+  frost_citation_instruction:'Cite o conjunto do Zenodo para os mapas v2.0 arquivados. O novo mapa P05 ainda não integra essa versão.',
   frost_open_dataset:'Abrir conjunto de dados',
   frost_copy_citation:'Copiar citação',
   frost_citation_copied:'Citação copiada',
@@ -96,10 +98,10 @@ const ZENODO_FILES={
   frost_probability:'https://zenodo.org/records/21981334/files/FROST_PROBABILITY_MEAN_2000_2026.tif',
   expected_frost_days:'https://zenodo.org/records/21981334/files/EXPECTED_FROST_DAYS_MEAN_2000_2026.tif',
   seasonal_tmin:'https://zenodo.org/records/21981334/files/SEASONAL_TMIN_MEAN_2000_2026_C.tif',
-  seasonal_tmin_p25:'https://zenodo.org/records/21981334/files/SEASONAL_TMIN_P25_2000_2026_C.tif',
   hand_15km:'https://zenodo.org/records/21981334/files/HAND_15000M.tif'
 };
 function downloadContract(layer){
+  if(layer.id==='seasonal_tmin_p05')return{href:'',label:'',note:'p05_archive_note',kind:'pending'};
   if(ZENODO_FILES[layer.id])return{href:ZENODO_FILES[layer.id],label:'download_zenodo_file',note:'zenodo_file_note',kind:'file'};
   if(layer.id==='anadem')return{href:layer.download,label:'open_anadem_source',note:'anadem_source_note',kind:'source'};
   return{href:ZENODO_RECORD,label:'open_zenodo_repository',note:'zenodo_repository_note',kind:'repository'}
@@ -170,7 +172,8 @@ function activate(id,fit=false){
   document.getElementById('layer-coverage').textContent=`${layer.validPercent.toFixed(1)}% ${translations[state.lang].valid_cells}`;
   document.getElementById('layer-status').textContent=words[2];
   const download=document.getElementById('layer-download'),contract=downloadContract(layer),downloadLabel=download.querySelector('[data-download-label]'),downloadNote=document.getElementById('layer-download-note');
-  download.href=contract.href;download.target='_blank';download.rel='noopener noreferrer';download.removeAttribute('download');download.dataset.kind=contract.kind;
+  download.hidden=contract.kind==='pending';download.style.display=contract.kind==='pending'?'none':'';
+  if(contract.href)download.href=contract.href;else download.removeAttribute('href');download.target='_blank';download.rel='noopener noreferrer';download.removeAttribute('download');download.dataset.kind=contract.kind;
   if(downloadLabel)downloadLabel.textContent=translations[state.lang][contract.label];
   if(downloadNote)downloadNote.textContent=translations[state.lang][contract.note];
   document.getElementById('legend').innerHTML=layer.classes?.length

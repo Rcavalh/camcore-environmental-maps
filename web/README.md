@@ -1,13 +1,13 @@
 # Web map
 
-This bilingual static portal presents five map collections: frost climatology, species
-suitability, bioclimatic variables, monthly heat maps and Camcore tested provenances.
+This bilingual static portal currently presents four map collections: frost climatology,
+bioclimatic variables, monthly heat maps and Camcore tested provenances. The species
+suitability collection is temporarily hidden without deleting its source data.
 The frost layer menu is organized into three compact groups:
 
-- complete period (2000–2026, version 2.0): probability, expected frost days, mean seasonal minimum
-  temperature and the lower-tail P25 seasonal minimum temperature;
-- ENSO phases: probability and P25 seasonal minimum temperature for
-  El Niño, La Niña and neutral seasons;
+- complete period (2000–2026): probability, expected frost days, mean seasonal minimum
+  temperature (version 2.0) and lower-tail P05 seasonal minimum temperature (version 2.2);
+- ENSO phases: frost-occurrence probability for El Niño, La Niña and neutral seasons;
 - terrain: HAND derived with 2-km and 15-km flow-path limits, plus ANADEM elevation.
 
 It includes dark and light themes, an offline list of key cities, and online fallback
