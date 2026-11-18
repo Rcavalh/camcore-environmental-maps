@@ -1,8 +1,10 @@
 # Web map
 
-This bilingual static portal currently presents four map collections: frost climatology,
-bioclimatic variables, monthly heat maps and Camcore tested provenances. The species
-suitability collection is temporarily hidden without deleting its source data.
+This bilingual static portal presents five map collections: frost climatology, species
+suitability, bioclimatic variables, monthly heat maps and Camcore tested provenances.
+The Species Suitability collection is separate from frost-based species allocation and
+retains its natural-range climate-similarity maps, yellow-to-dark-green palette and
+original analytical dataset on Zenodo.
 The frost layer menu is organized into three compact groups:
 
 - complete period (2000–2026): probability, expected frost days, mean seasonal minimum
